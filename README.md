@@ -2,37 +2,115 @@
 
 IPv6 Networking
 
-## Module für Serielle Verbindung hinzufügen
 
-- Router manuell ausschalten über die Phyiscal Device View
-- 2 NIM-2T Module für die seriellen Interfaces installieren & neu configurieren lassen
+## Statische Router Config
 
-![NIM-2T Module](image.png)
+### Alle Router
 
-## Interface für IPv6 konfigurieren
+Aktivierung
 
-- im Router selber erstmal in das Config Terminal reingehen
+    enable
 
-        configure terminal
+In Config gehen
 
-- im Router Config Terminal IPv6 Global Aktivieren & Domainenauflösung ausschalten
-        
-        ipv6 unicast-routing 
-        no ip domain-lookup
+    configure terminal
 
-- im Config Terminal auf das Interface was bearbeitet werden soll navigieren
+Aktiviere ipv6
 
-        interface Serial0/1/0
+    ipv6 unicast-routing
 
-- in der Interface Config Beschreibung der Schnittstelle & IPv6 setzen (Netzgröße dabei mit angeben) und shutdown negieren
+Keine Domainnamenauflösung
 
-        ipv6 address FD01:01:01:30::2/64
-        no shutdown
+    no ip domain-lookup
 
-## Verbindung zwischen Routern testen
+### RT-M-01
 
-- in der CLI mit dem Befehl "ping" und der entsprechenden IPv6 arbeiten (OHNE Netzgröße)
+#### MuenchenLuebeck Connection
 
-        ping FD01:01:01:10::A
+    interface Serial0/1/0
+    description MuenchenLuebeck
+    ipv6 address FD01:01:01:20::D/64
+    no shutdown
 
-![Ping Erfolgreich](image-2.png)
+#### MuenchenBerlin Connection
+
+    interface Serial0/1/1
+    description MuenchenBerlin
+    ipv6 address FD01:01:01:30::D/64
+    no shutdown
+
+#### MuenchenHamburg Connection
+
+    interface Serial0/2/0
+    description MuenchenHamburg
+    ipv6 address FD01:01:01:50::D/64
+    no shutdown
+
+### RT-B-01
+
+#### BerlinMuenchen Connection
+
+    interface Serial0/1/0
+    description BerlinMuenchen
+    ipv6 address FD01:01:01:30::2/64
+    no shutdown
+
+#### BerlinHamburg Connection
+
+    interface Serial0/1/1
+    description BerlinHamburg
+    ipv6 address FD01:01:01:40::2/64
+    no shutdown
+
+#### BerlinLuebeck Connection
+
+    interface Serial0/2/0
+    description BerlinLuebeck
+    ipv6 address FD01:01:01:60::2/64
+    no shutdown
+
+### RT-HH-01
+
+#### HamburgLuebeck Connection
+
+    interface Serial0/1/0
+    description HamburgLuebeck
+    ipv6 address FD01:01:01:10::8/64
+    no shutdown
+
+#### HamburgBerlin Connection
+
+    interface Serial0/1/1
+    description HamburgBerlin
+    ipv6 address FD01:01:01:40::8/64
+    no shutdown
+
+#### HamburgMuenchen Connection
+
+    interface Serial0/2/0
+    description HamburgMuenchen
+    ipv6 address FD01:01:01:50::8/64
+    no shutdown
+
+### RT-HL-01
+
+#### LuebeckHamburg Connection
+
+    interface Serial0/1/0
+    description LuebeckHamburg
+    ipv6 address FD01:01:01:10::A/64
+    no shutdown
+
+#### LuebeckMuenchen Connection
+
+    interface Serial0/1/1
+    description LuebeckMuenchen
+    ipv6 address FD01:01:01:20::A/64
+    no shutdown
+
+#### LuebeckBerlin Connection
+
+    interface Serial0/2/0
+    description LuebeckBerlin
+    ipv6 address FD01:01:01:60::A/64
+    no shutdown
