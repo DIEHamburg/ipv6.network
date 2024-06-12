@@ -113,3 +113,55 @@ Keine Domainnamenauflösung
     description LuebeckBerlin
     ipv6 address FD01:01:01:60::A/64
     no shutdown
+
+## Standort Konfiguration
+
+### München
+
+#### RT-M-01 (RouterSwitch)
+
+Aktiviere Terminal
+
+    enable
+    configure terminal
+
+VLAN 60 Trunk
+
+    interface GigabitEthernet0/0/0.60
+    encapsulation dot1Q 60
+    ipv6 address 2001:DB8:D:60::1/64
+    ipv6 address FE80:DB8:D:60::1 link-local
+    <!-- ipv6 route ::/0 2001:DB8:D:60::2 -->
+
+
+    interface GigabitEthernet0/0/0
+    no shutdown
+
+#### SW-M-01
+
+Aktiviere Terminal
+
+    enable
+    configure terminal
+
+Keine DNS Auflösung
+
+    ipv6 unicast-routing
+    no ip domain-lookup
+
+Setze Trunk Ports
+
+    interface GigabitEthernet1/0/1
+    switchport mode trunk
+    switchport trunk allowed vlan 60
+
+Erstelle VLANsork
+
+    interface vlan 60
+    ipv6 address 2001:DB8:D:60::2/64
+
+Schnittstellen VLAN Zuweisung
+
+    interface GigabitEthernet1/0/2
+    switchport mode access
+    switchport access vlan 60
