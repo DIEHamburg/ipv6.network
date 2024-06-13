@@ -186,3 +186,90 @@ Schnittstellen VLAN Zuweisung
     interface GigabitEthernet1/0/2
     switchport mode access
     switchport access vlan 60
+
+### Hamburg
+
+#### RT-HH-01 (RouterSwitch)
+
+Aktiviere Terminal
+
+    enable
+    configure terminal
+
+VLAN 10 Trunk
+
+    interface GigabitEthernet0/0/0.10
+    encapsulation dot1Q 10
+    ipv6 address 2001:DB8:8:10::1/64
+    ipv6 address FE80:DB8:8:10::1 link-local
+
+VLAN 20 Trunk
+
+    interface GigabitEthernet0/0/0.20
+    encapsulation dot1Q 20
+    ipv6 address 2001:DB8:8:20::1/64
+    ipv6 address FE80:DB8:8:20::1 link-local
+
+VLAN 99 Trunk
+
+    interface GigabitEthernet0/0/0.99
+    encapsulation dot1Q 99
+    ipv6 address 2001:DB8:8:99::1/64
+    ipv6 address FE80:DB8:8:99::1 link-local
+
+    interface GigabitEthernet0/0/0
+    no shutdown
+
+IPV6 Routing
+
+    ipv6 route 2001:DB8:A:30::/64 FD01:01:01:10::A
+    ipv6 route 2001:DB8:A:40::/64 FD01:01:01:10::A
+    ipv6 route 2001:DB8:A:99::/64 FD01:01:01:10::A
+    ipv6 route 2001:DB8:D:60::/64 FD01:01:01:50::D
+    ipv6 route 2001:DB8:D:99::/64 FD01:01:01:50::D
+    ipv6 route 2001:DB8:2:50::/64 FD01:01:01:40::2
+    ipv6 route 2001:DB8:2:99::/64 FD01:01:01:40::2
+    
+#### SW-HH-01
+
+Aktiviere Terminal
+
+    enable
+    configure terminal
+
+Keine DNS Auflösung
+
+    ipv6 unicast-routing
+    no ip domain-lookup
+
+Setze Trunk Ports
+
+    interface GigabitEthernet1/0/1
+    switchport mode trunk
+    switchport trunk allowed vlan 10,20,99
+
+Erstelle VLANs
+
+    interface vlan 10
+    exit
+
+    interface vlan 20
+    exit
+
+    interface vlan 99
+    ipv6 address 2001:DB8:8:99::2/64
+    exit
+
+Schnittstellen VLAN Zuweisung
+
+    interface GigabitEthernet1/0/2
+    switchport mode access
+    switchport access vlan 10
+
+    interface GigabitEthernet1/0/3
+    switchport mode access
+    switchport access vlan 20
+
+    interface GigabitEthernet1/0/4
+    switchport mode access
+    switchport access vlan 99
