@@ -212,14 +212,14 @@ VLAN 99 Trunk
 
 IPV6 Routing
 
-    ipv6 route 2001:DB8:8:10::/64 FD01:01:01:50::8
-    ipv6 route 2001:DB8:8:20::/64 FD01:01:01:50::8
-    ipv6 route 2001:DB8:A:30::/64 FD01:01:01:20::A
-    ipv6 route 2001:DB8:A:40::/64 FD01:01:01:20::A
+    ipv6 route 2001:DB8:8:10::/64 FD01:01:01:40::8
+    ipv6 route 2001:DB8:8:20::/64 FD01:01:01:40::8
+    ipv6 route 2001:DB8:A:30::/64 FD01:01:01:60::A
+    ipv6 route 2001:DB8:A:40::/64 FD01:01:01:60::A
     ipv6 route 2001:DB8:D:60::/64 FD01:01:01:30::D
-    ipv6 route 2001:DB8:A:99::/64 FD01:01:01:50::A
-    ipv6 route 2001:DB8:8:99::/64 FD01:01:01:20::8
-    ipv6 route 2001:DB8:D:99::/64 FD01:01:01:30::D
+    ipv6 route 2001:DB8:A:99::/64 FD01:01:01:60::A
+    ipv6 route 2001:DB8:8:99::/64 FD01:01:01:40::8
+    ipv6 route 2001:DB8:D:99::/64 FD01:01:01:50::D
 
 #### SW-B-01
 
