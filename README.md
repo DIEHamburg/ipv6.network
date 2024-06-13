@@ -114,3 +114,75 @@ Keine Domainnamenauflösung
     description LuebeckBerlin
     ipv6 address FD01:01:01:60::A/64
     no shutdown
+
+## Standort Konfiguration
+
+### München
+
+#### RT-M-01 (RouterSwitch)
+
+Aktiviere Terminal
+
+    enable
+    configure terminal
+
+VLAN 60 Trunk
+
+    interface GigabitEthernet0/0/0.60
+    encapsulation dot1Q 60
+    ipv6 address 2001:DB8:D:60::1/64
+    ipv6 address FE80:DB8:D:60::1 link-local
+
+VLAN 99 Trunk
+
+    interface GigabitEthernet0/0/0.99
+    encapsulation dot1Q 99
+    ipv6 address 2001:DB8:D:99::1/64
+    ipv6 address FE80:DB8:D:99::1 link-local
+    <!-- ipv6 route 2001:DB8:D:99::2 -->
+
+    interface GigabitEthernet0/0/0
+    no shutdown
+
+IPV6 Routing
+
+    ipv6 route 2001:DB8:8:10::/64 FD01:01:01:50::8
+    ipv6 route 2001:DB8:8:20::/64 FD01:01:01:50::8
+    ipv6 route 2001:DB8:A:30::/64 FD01:01:01:20::A
+    ipv6 route 2001:DB8:A:40::/64 FD01:01:01:20::A
+    ipv6 route 2001:DB8:2:50::/64 FD01:01:01:30::2
+    ipv6 route 2001:DB8:8:99::/64 FD01:01:01:50::8
+    ipv6 route 2001:DB8:A:99::/64 FD01:01:01:20::A
+    ipv6 route 2001:DB8:2:99::/64 FD01:01:01:30::2
+
+#### SW-M-01
+
+Aktiviere Terminal
+
+    enable
+    configure terminal
+
+Keine DNS Auflösung
+
+    ipv6 unicast-routing
+    no ip domain-lookup
+
+Setze Trunk Ports
+
+    interface GigabitEthernet1/0/1
+    switchport mode trunk
+    switchport trunk allowed vlan 60,99
+
+Erstelle VLANs
+
+    interface vlan 60
+    <!-- ipv6 address 2001:DB8:D:60::2/64 -->
+
+    interface vlan 99
+    ipv6 address 2001:DB8:D:99::2/64
+
+Schnittstellen VLAN Zuweisung
+
+    interface GigabitEthernet1/0/2
+    switchport mode access
+    switchport access vlan 60
