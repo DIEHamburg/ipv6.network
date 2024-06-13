@@ -270,3 +270,125 @@ Schnittstellen VLAN Zuweisung
     interface GigabitEthernet1/0/4
     switchport mode access
     switchport access vlan 99
+
+## Passwort Konfiguration
+
+### Hamburg
+
+#### RT-HH-01
+
+Aktiviere Terminal
+
+    enable
+    configure terminal
+
+Passwort Einrichtung
+
+    line con 0
+    password [Passwort]
+    login
+    exit
+
+#### SW-HH-01
+
+Aktiviere Terminal
+
+    enable
+    configure terminal
+
+Passwort Einrichtung
+
+    line con 0
+    password [Passwort]
+    login
+    exit
+
+### Lübeck
+
+#### RT-HL-01
+
+Aktiviere Terminal
+
+    enable
+    configure terminal
+
+Passwort Einrichtung
+
+    line con 0
+    password [Passwort]
+    login
+    exit
+
+#### SW-HL-01
+
+Aktiviere Terminal
+
+    enable
+    configure terminal
+
+Passwort Einrichtung
+
+    line con 0
+    password [Passwort]
+    login
+    exit
+
+### Berlin
+
+#### RT-B-01
+
+Aktiviere Terminal
+
+    enable
+    configure terminal
+
+Passwort Einrichtung
+
+    line con 0
+    password [Passwort]
+    login
+    exit
+
+#### SW-B-01
+
+Aktiviere Terminal
+
+    enable
+    configure terminal
+
+Passwort Einrichtung
+
+    line con 0
+    password [Passwort]
+    login
+    exit
+
+### München
+
+#### RT-M-01
+
+Aktiviere Terminal
+
+    enable
+    configure terminal
+
+Passwort Einrichtung
+
+    line con 0
+    password [Passwort]
+    login
+    exit
+
+#### SW-M-01
+
+Aktiviere Terminal
+
+    enable
+    configure terminal
+
+Passwort Einrichtung
+
+    line con 0
+    password [Passwort]
+    login
+    exit
