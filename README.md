@@ -184,6 +184,74 @@ Schnittstellen VLAN Zuweisung
     switchport mode access
     switchport access vlan 60
 
+### Berlin
+
+#### RT-B-01 (RouterSwitch)
+
+Aktiviere Terminal
+
+    enable
+    configure terminal
+
+VLAN 50 Trunk
+
+    interface GigabitEthernet0/0/0.50
+    encapsulation dot1Q 50
+    ipv6 address 2001:DB8:2:50::1/64
+    ipv6 address FE80:DB8:2:50::1 link-local
+
+VLAN 99 Trunk
+
+    interface GigabitEthernet0/0/0.99
+    encapsulation dot1Q 99
+    ipv6 address 2001:DB8:2:99::1/64
+    ipv6 address FE80:DB8:2:99::1 link-local
+
+    interface GigabitEthernet0/0/0
+    no shutdown
+
+IPV6 Routing
+
+    ipv6 route 2001:DB8:8:10::/64 FD01:01:01:40::8
+    ipv6 route 2001:DB8:8:20::/64 FD01:01:01:40::8
+    ipv6 route 2001:DB8:A:30::/64 FD01:01:01:60::A
+    ipv6 route 2001:DB8:A:40::/64 FD01:01:01:60::A
+    ipv6 route 2001:DB8:D:60::/64 FD01:01:01:30::D
+    ipv6 route 2001:DB8:A:99::/64 FD01:01:01:60::A
+    ipv6 route 2001:DB8:8:99::/64 FD01:01:01:40::8
+    ipv6 route 2001:DB8:D:99::/64 FD01:01:01:50::D
+
+#### SW-B-01
+
+Aktiviere Terminal
+
+    enable
+    configure terminal
+
+Keine DNS Auflösung
+
+    ipv6 unicast-routing
+    no ip domain-lookup
+
+Setze Trunk Ports
+
+    interface GigabitEthernet1/0/1
+    switchport mode trunk
+    switchport trunk allowed vlan 50,99
+
+Erstelle VLANs
+
+    interface vlan 50
+
+    interface vlan 99
+    ipv6 address 2001:DB8:2:99::2/64
+
+Schnittstellen VLAN Zuweisung
+
+    interface GigabitEthernet1/0/2
+    switchport mode access
+    switchport access vlan 50
+
 ### Hamburg
 
 #### RT-HH-01 (RouterSwitch)
@@ -226,7 +294,7 @@ IPV6 Routing
     ipv6 route 2001:DB8:D:99::/64 FD01:01:01:50::D
     ipv6 route 2001:DB8:2:50::/64 FD01:01:01:40::2
     ipv6 route 2001:DB8:2:99::/64 FD01:01:01:40::2
-    
+
 #### SW-HH-01
 
 Aktiviere Terminal
@@ -271,6 +339,89 @@ Schnittstellen VLAN Zuweisung
     switchport mode access
     switchport access vlan 99
 
+### Lübeck
+
+#### RT-HL-01 (RouterSwitch)
+
+Aktiviere Terminal
+
+    enable
+    configure terminal
+
+VLAN 30 Trunk
+
+    interface GigabitEthernet0/0/0.30
+    encapsulation dot1Q 30
+    ipv6 address 2001:DB8:A:30::1/64
+    ipv6 address FE80:DB8:A:30::1 link-local
+
+VLAN 40 Trunk
+
+    interface GigabitEthernet0/0/0.40
+    encapsulation dot1Q 40
+    ipv6 address 2001:DB8:A:40::1/64
+    ipv6 address FE80:DB8:A:40::1 link-local
+
+VLAN 99 Trunk
+
+    interface GigabitEthernet0/0/0.99
+    encapsulation dot1Q 99
+    ipv6 address 2001:DB8:A:99::1/64
+    ipv6 address FE80:DB8:A:99::1 link-local
+
+    interface GigabitEthernet0/0/0
+    no shutdown
+
+IPV6 Routing
+
+    ipv6 route 2001:DB8:8:10::/64 FD01:01:01:10::8
+    ipv6 route 2001:DB8:8:20::/64 FD01:01:01:10::8
+    ipv6 route 2001:DB8:2:50::/64 FD01:01:01:60::2
+    ipv6 route 2001:DB8:D:60::/64 FD01:01:01:20::D
+    ipv6 route 2001:DB8:8:99::/64 FD01:01:01:10::8
+    ipv6 route 2001:DB8:2:99::/64 FD01:01:01:60::2
+    ipv6 route 2001:DB8:D:99::/64 FD01:01:01:20::D
+
+#### SW-HL-01
+
+Aktiviere Terminal
+
+    enable
+    configure terminal
+
+Keine DNS Auflösung
+
+    ipv6 unicast-routing
+    no ip domain-lookup
+
+Setze Trunk Ports
+
+    interface GigabitEthernet1/0/1
+    switchport mode trunk
+    switchport trunk allowed vlan 30,40,99
+
+Erstelle VLANs
+
+    interface vlan 30
+    exit
+
+    interface vlan 40
+    exit
+
+    interface vlan 99
+    ipv6 address 2001:DB8:A:99::2/64
+    exit
+
+Schnittstellen VLAN Zuweisung
+
+    interface GigabitEthernet1/0/2
+    switchport mode access
+    switchport access vlan 30
+
+    interface GigabitEthernet1/0/3
+    switchport mode access
+    switchport access vlan 40
+
 ## Passwort Konfiguration
 
 ### Hamburg
@@ -285,7 +436,7 @@ Aktiviere Terminal
 Passwort Einrichtung
 
     line con 0
-    password [Passwort]
+    password yf4Xvwmy7dF2JQwE
     login
     exit
 
@@ -299,7 +450,7 @@ Aktiviere Terminal
 Passwort Einrichtung
 
     line con 0
-    password [Passwort]
+    password bxJxE9erFTXn8eHb
     login
     exit
 
@@ -315,7 +466,7 @@ Aktiviere Terminal
 Passwort Einrichtung
 
     line con 0
-    password [Passwort]
+    password ezX64jyk7MXJsjm8
     login
     exit
 
@@ -329,7 +480,7 @@ Aktiviere Terminal
 Passwort Einrichtung
 
     line con 0
-    password [Passwort]
+    password T85NtxJ6C3E2hda3
     login
     exit
 
@@ -345,7 +496,7 @@ Aktiviere Terminal
 Passwort Einrichtung
 
     line con 0
-    password [Passwort]
+    password bxRn5j2CuKyq7RVD
     login
     exit
 
@@ -359,7 +510,7 @@ Aktiviere Terminal
 Passwort Einrichtung
 
     line con 0
-    password [Passwort]
+    password QVrSHsb79ANNmbeU
     login
     exit
 
@@ -375,7 +526,7 @@ Aktiviere Terminal
 Passwort Einrichtung
 
     line con 0
-    password [Passwort]
+    password ctLFAsuyfbGtES5C
     login
     exit
 
@@ -389,6 +540,144 @@ Aktiviere Terminal
 Passwort Einrichtung
 
     line con 0
-    password [Passwort]
+    password zVJZaXawsTKVSvuk
     login
     exit
+
+## SSH Zugänge
+
+### RT-HH-01
+
+Aktiviere Terminal
+
+    enable
+    configure terminal
+
+Setze Hostname & SSH User
+
+    hostname RT-HH-01
+    crypto key generate rsa general-keys modulus 1024
+    username RouterHamburg password 6TDU3UnsHjCYXKgz
+    ip domain-name diehamburg.com
+    line vty 0 4
+    login local
+    transport input ssh
+
+### SW-HH-01
+
+Aktiviere Terminal
+
+    enable
+    configure terminal
+
+Setze Hostname & SSH User
+
+    hostname SW-HH-01
+    crypto key generate rsa general-keys modulus 1024
+    username SwitchHamburg password aSXr8d2SHB6RKL6n
+    ip domain-name diehamburg.com
+    line vty 0 4
+    login local
+    transport input ssh
+
+### RT-HL-01
+
+Aktiviere Terminal
+
+    enable
+    configure terminal
+
+Setze Hostname & SSH User
+
+    hostname RT-HL-01
+    crypto key generate rsa general-keys modulus 1024
+    username RouterLuebeck password Hu5kc9URzjcd6WeN
+    ip domain-name diehamburg.com
+    line vty 0 4
+    login local
+    transport input ssh
+
+### SW-HL-01
+
+Aktiviere Terminal
+
+    enable
+    configure terminal
+
+Setze Hostname & SSH User
+
+    hostname SW-HL-01
+    crypto key generate rsa general-keys modulus 1024
+    username SwitchLuebeck password M4Qw4E7DbPDrkXbT
+    ip domain-name diehamburg.com
+    line vty 0 4
+    login local
+    transport input ssh
+
+### RT-B-01
+
+Aktiviere Terminal
+
+    enable
+    configure terminal
+
+Setze Hostname & SSH User
+
+    hostname RT-B-01
+    crypto key generate rsa general-keys modulus 1024
+    username RouterBerlin password zDSb4n5HQxSvXmXT
+    ip domain-name diehamburg.com
+    line vty 0 4
+    login local
+    transport input ssh
+
+### SW-B-01
+
+Aktiviere Terminal
+
+    enable
+    configure terminal
+
+Setze Hostname & SSH User
+
+    hostname SW-B-01
+    crypto key generate rsa general-keys modulus 1024
+    username SwitchBerlin password xqSCnYcrnZgyHjs2
+    ip domain-name diehamburg.com
+    line vty 0 4
+    login local
+    transport input ssh
+
+### RT-M-01
+
+Aktiviere Terminal
+
+    enable
+    configure terminal
+
+Setze Hostname & SSH User
+
+    hostname RT-M-01
+    crypto key generate rsa general-keys modulus 1024
+    username RouterMuenchen password XKsVvr3w2jP5A3Ub
+    ip domain-name diehamburg.com
+    line vty 0 4
+    login local
+    transport input ssh
+
+### SW-M-01
+
+Aktiviere Terminal
+
+    enable
+    configure terminal
+
+Setze Hostname & SSH User
+
+    hostname SW-M-01
+    crypto key generate rsa general-keys modulus 1024
+    username SwitchMuenchen password yhpYtsCy7Uh3S3vt
+    ip domain-name diehamburg.com
+    line vty 0 4
+    login local
+    transport input ssh
