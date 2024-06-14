@@ -184,74 +184,6 @@ Schnittstellen VLAN Zuweisung
     switchport mode access
     switchport access vlan 60
 
-### Berlin
-
-#### RT-B-01 (RouterSwitch)
-
-Aktiviere Terminal
-
-    enable
-    configure terminal
-
-VLAN 50 Trunk
-
-    interface GigabitEthernet0/0/0.50
-    encapsulation dot1Q 50
-    ipv6 address 2001:DB8:2:50::1/64
-    ipv6 address FE80:DB8:2:50::1 link-local
-
-VLAN 99 Trunk
-
-    interface GigabitEthernet0/0/0.99
-    encapsulation dot1Q 99
-    ipv6 address 2001:DB8:2:99::1/64
-    ipv6 address FE80:DB8:2:99::1 link-local
-
-    interface GigabitEthernet0/0/0
-    no shutdown
-
-IPV6 Routing
-
-    ipv6 route 2001:DB8:8:10::/64 FD01:01:01:40::8
-    ipv6 route 2001:DB8:8:20::/64 FD01:01:01:40::8
-    ipv6 route 2001:DB8:A:30::/64 FD01:01:01:60::A
-    ipv6 route 2001:DB8:A:40::/64 FD01:01:01:60::A
-    ipv6 route 2001:DB8:D:60::/64 FD01:01:01:30::D
-    ipv6 route 2001:DB8:A:99::/64 FD01:01:01:60::A
-    ipv6 route 2001:DB8:8:99::/64 FD01:01:01:40::8
-    ipv6 route 2001:DB8:D:99::/64 FD01:01:01:50::D
-
-#### SW-B-01
-
-Aktiviere Terminal
-
-    enable
-    configure terminal
-
-Keine DNS Auflösung
-
-    ipv6 unicast-routing
-    no ip domain-lookup
-
-Setze Trunk Ports
-
-    interface GigabitEthernet1/0/1
-    switchport mode trunk
-    switchport trunk allowed vlan 50,99
-
-Erstelle VLANs
-
-    interface vlan 50
-
-    interface vlan 99
-    ipv6 address 2001:DB8:2:99::2/64
-
-Schnittstellen VLAN Zuweisung
-
-    interface GigabitEthernet1/0/2
-    switchport mode access
-    switchport access vlan 50
-
 ### Hamburg
 
 #### RT-HH-01 (RouterSwitch)
@@ -294,7 +226,7 @@ IPV6 Routing
     ipv6 route 2001:DB8:D:99::/64 FD01:01:01:50::D
     ipv6 route 2001:DB8:2:50::/64 FD01:01:01:40::2
     ipv6 route 2001:DB8:2:99::/64 FD01:01:01:40::2
-
+    
 #### SW-HH-01
 
 Aktiviere Terminal
@@ -339,48 +271,53 @@ Schnittstellen VLAN Zuweisung
     switchport mode access
     switchport access vlan 99
 
-### Lübeck
+## Passwort Konfiguration
 
-#### RT-HL-01 (RouterSwitch)
+### Hamburg
+
+#### RT-HH-01
 
 Aktiviere Terminal
 
     enable
     configure terminal
 
-VLAN 30 Trunk
+Passwort Einrichtung
 
-    interface GigabitEthernet0/0/0.30
-    encapsulation dot1Q 30
-    ipv6 address 2001:DB8:A:30::1/64
-    ipv6 address FE80:DB8:A:30::1 link-local
+    line con 0
+    password [Passwort]
+    login
+    exit
 
-VLAN 40 Trunk
+#### SW-HH-01
 
-    interface GigabitEthernet0/0/0.40
-    encapsulation dot1Q 40
-    ipv6 address 2001:DB8:A:40::1/64
-    ipv6 address FE80:DB8:A:40::1 link-local
+Aktiviere Terminal
 
-VLAN 99 Trunk
+    enable
+    configure terminal
 
-    interface GigabitEthernet0/0/0.99
-    encapsulation dot1Q 99
-    ipv6 address 2001:DB8:A:99::1/64
-    ipv6 address FE80:DB8:A:99::1 link-local
+Passwort Einrichtung
 
-    interface GigabitEthernet0/0/0
-    no shutdown
+    line con 0
+    password [Passwort]
+    login
+    exit
 
-IPV6 Routing
+### Lübeck
 
-    ipv6 route 2001:DB8:8:10::/64 FD01:01:01:10::8
-    ipv6 route 2001:DB8:8:20::/64 FD01:01:01:10::8
-    ipv6 route 2001:DB8:2:50::/64 FD01:01:01:60::2
-    ipv6 route 2001:DB8:D:60::/64 FD01:01:01:20::D
-    ipv6 route 2001:DB8:8:99::/64 FD01:01:01:10::8
-    ipv6 route 2001:DB8:2:99::/64 FD01:01:01:60::2
-    ipv6 route 2001:DB8:D:99::/64 FD01:01:01:20::D
+#### RT-HL-01
+
+Aktiviere Terminal
+
+    enable
+    configure terminal
+
+Passwort Einrichtung
+
+    line con 0
+    password [Passwort]
+    login
+    exit
 
 #### SW-HL-01
 
@@ -389,35 +326,69 @@ Aktiviere Terminal
     enable
     configure terminal
 
-Keine DNS Auflösung
+Passwort Einrichtung
 
-    ipv6 unicast-routing
-    no ip domain-lookup
-
-Setze Trunk Ports
-
-    interface GigabitEthernet1/0/1
-    switchport mode trunk
-    switchport trunk allowed vlan 30,40,99
-
-Erstelle VLANs
-
-    interface vlan 30
+    line con 0
+    password [Passwort]
+    login
     exit
 
-    interface vlan 40
+### Berlin
+
+#### RT-B-01
+
+Aktiviere Terminal
+
+    enable
+    configure terminal
+
+Passwort Einrichtung
+
+    line con 0
+    password [Passwort]
+    login
     exit
 
-    interface vlan 99
-    ipv6 address 2001:DB8:A:99::2/64
+#### SW-B-01
+
+Aktiviere Terminal
+
+    enable
+    configure terminal
+
+Passwort Einrichtung
+
+    line con 0
+    password [Passwort]
+    login
     exit
 
-Schnittstellen VLAN Zuweisung
+### München
 
-    interface GigabitEthernet1/0/2
-    switchport mode access
-    switchport access vlan 30
+#### RT-M-01
 
-    interface GigabitEthernet1/0/3
-    switchport mode access
-    switchport access vlan 40
+Aktiviere Terminal
+
+    enable
+    configure terminal
+
+Passwort Einrichtung
+
+    line con 0
+    password [Passwort]
+    login
+    exit
+
+#### SW-M-01
+
+Aktiviere Terminal
+
+    enable
+    configure terminal
+
+Passwort Einrichtung
+
+    line con 0
+    password [Passwort]
+    login
+    exit
