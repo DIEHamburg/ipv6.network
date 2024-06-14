@@ -639,9 +639,9 @@ Aktiviere Terminal
 Setze Hostname & SSH User
 
     hostname RT-HH-01
-    crypto key generate rsa general-keys modulus 1024
     username RouterHamburg password 6TDU3UnsHjCYXKgz
     ip domain-name diehamburg.com
+    crypto key generate rsa general-keys modulus 1024
     line vty 0 4
     login local
     transport input ssh
@@ -656,9 +656,9 @@ Aktiviere Terminal
 Setze Hostname & SSH User
 
     hostname SW-HH-01
-    crypto key generate rsa general-keys modulus 1024
     username SwitchHamburg password aSXr8d2SHB6RKL6n
     ip domain-name diehamburg.com
+    crypto key generate rsa general-keys modulus 1024
     line vty 0 4
     login local
     transport input ssh
@@ -673,9 +673,9 @@ Aktiviere Terminal
 Setze Hostname & SSH User
 
     hostname RT-HL-01
-    crypto key generate rsa general-keys modulus 1024
     username RouterLuebeck password Hu5kc9URzjcd6WeN
     ip domain-name diehamburg.com
+    crypto key generate rsa general-keys modulus 1024
     line vty 0 4
     login local
     transport input ssh
@@ -690,9 +690,9 @@ Aktiviere Terminal
 Setze Hostname & SSH User
 
     hostname SW-HL-01
-    crypto key generate rsa general-keys modulus 1024
     username SwitchLuebeck password M4Qw4E7DbPDrkXbT
     ip domain-name diehamburg.com
+    crypto key generate rsa general-keys modulus 1024
     line vty 0 4
     login local
     transport input ssh
@@ -707,9 +707,9 @@ Aktiviere Terminal
 Setze Hostname & SSH User
 
     hostname RT-B-01
-    crypto key generate rsa general-keys modulus 1024
     username RouterBerlin password zDSb4n5HQxSvXmXT
     ip domain-name diehamburg.com
+    crypto key generate rsa general-keys modulus 1024
     line vty 0 4
     login local
     transport input ssh
@@ -724,9 +724,9 @@ Aktiviere Terminal
 Setze Hostname & SSH User
 
     hostname SW-B-01
-    crypto key generate rsa general-keys modulus 1024
     username SwitchBerlin password xqSCnYcrnZgyHjs2
     ip domain-name diehamburg.com
+    crypto key generate rsa general-keys modulus 1024
     line vty 0 4
     login local
     transport input ssh
@@ -741,9 +741,9 @@ Aktiviere Terminal
 Setze Hostname & SSH User
 
     hostname RT-M-01
-    crypto key generate rsa general-keys modulus 1024
     username RouterMuenchen password XKsVvr3w2jP5A3Ub
     ip domain-name diehamburg.com
+    crypto key generate rsa general-keys modulus 1024
     line vty 0 4
     login local
     transport input ssh
@@ -758,9 +758,9 @@ Aktiviere Terminal
 Setze Hostname & SSH User
 
     hostname SW-M-01
-    crypto key generate rsa general-keys modulus 1024
     username SwitchMuenchen password yhpYtsCy7Uh3S3vt
     ip domain-name diehamburg.com
+    crypto key generate rsa general-keys modulus 1024
     line vty 0 4
     login local
     transport input ssh
