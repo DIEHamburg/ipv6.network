@@ -432,7 +432,7 @@ In der Cli
 
     enable
     configure terminal
-    banner login #Bitte geben sie das Passwort ein.#
+    banner login #Unautorisierter Zugang verboten. Bitte geben sie das Passwort ein.#
     exit
 
 #### SW-HH-01
@@ -441,7 +441,7 @@ In der Cli
 
     enable
     configure terminal
-    banner login #Bitte geben sie das Passwort ein.#
+    banner login #Unautorisierter Zugang verboten. Bitte geben sie das Passwort ein.#
     exit
 
 ### Lübeck
@@ -452,7 +452,7 @@ In der Cli
 
     enable
     configure terminal
-    banner login #Bitte geben sie das Passwort ein.#
+    banner login #Unautorisierter Zugang verboten. Bitte geben sie das Passwort ein.#
     exit
 
 #### SW-HL-01
@@ -461,7 +461,7 @@ In der Cli
 
     enable
     configure terminal
-    banner login #Bitte geben sie das Passwort ein.#
+    banner login #Unautorisierter Zugang verboten. Bitte geben sie das Passwort ein.#
     exit
 
 ### Berlin
@@ -472,7 +472,7 @@ In der Cli
 
     enable
     configure terminal
-    banner login #Bitte geben sie das Passwort ein.#
+    banner login #Unautorisierter Zugang verboten. Bitte geben sie das Passwort ein.#
     exit
 
 #### SW-B-01
@@ -481,7 +481,7 @@ In der Cli
 
     enable
     configure terminal
-    banner login #Bitte geben sie das Passwort ein.#
+    banner login #Unautorisierter Zugang verboten. Bitte geben sie das Passwort ein.#
     exit
 
 ### München
@@ -492,7 +492,7 @@ In der Cli
 
     enable
     configure terminal
-    banner login #Bitte geben sie das Passwort ein.#
+    banner login #Unautorisierter Zugang verboten. Bitte geben sie das Passwort ein.#
     exit
 
 #### SW-M-01
@@ -501,7 +501,7 @@ In der Cli
 
     enable
     configure terminal
-    banner login #Bitte geben sie das Passwort ein.#
+    banner login #Unautorisierter Zugang verboten. Bitte geben sie das Passwort ein.#
     exit
 
 
