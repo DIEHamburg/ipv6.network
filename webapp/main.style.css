@@ -80,7 +80,27 @@ p, b {
             }
         }
     }
+}
 
+.card-hh:hover {
+    h3, p, b {
+        cursor: default;
+    }
+}
+.card-hl:hover {
+    h3, p, b {
+        cursor: default;
+    }
+}
+.card-b:hover {
+    h3, p, b {
+        cursor: default;
+    }
+}
+.card-m:hover {
+    h3, p, b {
+        cursor: default;
+    }
 }
 
 @media only screen and (min-width: 600px) {

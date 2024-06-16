@@ -3,9 +3,12 @@
 */
 
 /* Basic */
+* {
+    color: black;
+}
+
 body {
     background-color: rgb(240, 240, 240);
-    color: black;
 }
 
 .subTxt {
@@ -15,4 +18,17 @@ body {
 /* Cards Styles */
 .card {
     background-color: rgb(255, 255, 255, 0.8);
+}
+
+.card-hh:hover {
+    box-shadow: 0 0 14px rgba(17, 204, 0, 0.4);
+}
+.card-hl:hover {
+    box-shadow: 0 0 14px rgba(204, 190, 0, 0.4);
+}
+.card-b:hover {
+    box-shadow: 0 0 14px rgba(0, 112, 204, 0.4);
+}
+.card-m:hover {
+    box-shadow: 0 0 14px rgba(146, 0, 204, 0.4);
 }
