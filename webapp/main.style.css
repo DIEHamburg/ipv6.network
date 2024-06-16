@@ -7,18 +7,35 @@ p, b {
     font-size: 12pt;
 }
 
+.clear {
+    clear: both;
+}
+
 /* Page Styles */
 .mainPageBox {
+    clear: both;
     margin-left: 0;
     margin-right: 0;
     width: 100%;
+
+    h1 {
+        text-align: center;
+    }
 
     h2 {
         text-align: center;
     }
 }
 
+.devicesHeading {
+    clear: both;
+}
+
 /* Cards Styles */
+.cardsMainBox {
+    margin-top: 4rem;
+}
+
 .card {
     width: 90%;
     margin-left: 5%;
