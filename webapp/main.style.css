@@ -1,10 +1,37 @@
+/* Mobile first */
 * {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-/* Classes */
+/* Page Styles */
 .mainPageBox {
-    margin-left: 10%;
-    margin-right: 10%;
-    width: 90%;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+}
+
+/* Cards Styles */
+
+
+@media only screen and (min-width: 600px) {
+    /* Tablets */
+
+    /* Page Styles */
+    .mainPageBox {
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 95%;
+    }
+
+    /* Cards Styles */
+
+}
+
+@media only screen and (min-width: 768px) {
+    /* Desktop */
+
+    /* Page Styles */
+
+    /* Cards Styles */
+
 }
