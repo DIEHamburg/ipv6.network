@@ -4,8 +4,15 @@
 
 /* Basic */
 body {
-    background-color: white;
+    background-color: rgb(240, 240, 240);
     color: black;
 }
 
+.subTxt {
+    color: gray;
+}
+
 /* Cards Styles */
+.card {
+    background-color: rgb(255, 255, 255, 0.8);
+}

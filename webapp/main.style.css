@@ -1,6 +1,10 @@
 /* Mobile first */
 * {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Verdana;
+}
+
+p, b {
+    font-size: 12pt;
 }
 
 /* Page Styles */
@@ -16,10 +20,35 @@
 
 /* Cards Styles */
 .card {
-    width: 90%;
+    width: 80%;
     margin-left: 5%;
     float: left;
-    border-radius: 16px;
+    border-radius: 12px;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-bottom: 1rem;
+
+    table {
+        width: 100%;
+        padding-bottom: 1rem;
+
+        tr {
+            width: 100%;
+
+            td {
+                clear: both;
+                justify-content: space-between;
+                display: flex;
+                /* text-align: right; */
+
+                p, b {
+                    margin-top: 0.25rem;
+                    margin-bottom: 0.25rem;
+                    float: left;
+                }
+            }
+        }
+    }
 }
 
 @media only screen and (min-width: 600px) {
@@ -29,18 +58,43 @@
     .mainPageBox {
         margin-left: 5%;
         margin-right: 5%;
-        width: 95%;
+        width: 90%;
     }
 
     /* Cards Styles */
-
+    
 }
 
 @media only screen and (min-width: 768px) {
     /* Desktop */
 
     /* Page Styles */
+    p, b {
+        font-size: 11pt;
+    }
 
     /* Cards Styles */
+    .card {
+        width: 40%;
+        margin-left: 2.5%;
+        padding-left: 2.5%;
+        padding-right: 2.5%;
+    }
+
+}
+
+@media only screen and (min-width: 1200px) {
+    /* Page Styles */
+    p, b {
+        font-size: 12pt;
+    }
+
+    /* Cards Styles */
+    .card {
+        width: calc(80%/3);
+        margin-left: calc(5%/3);
+        padding-left: calc(5%/3);
+        padding-right: calc(5%/3);
+    }
 
 }
