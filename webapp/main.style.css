@@ -20,35 +20,50 @@ p, b {
 
 /* Cards Styles */
 .card {
-    width: 80%;
+    width: 90%;
     margin-left: 5%;
-    float: left;
-    border-radius: 12px;
-    padding-left: 5%;
-    padding-right: 5%;
+    margin-right: 5%;
     margin-bottom: 1rem;
+    border-radius: 12px;
+    overflow: hidden;
+    float: left;
 
-    table {
+    img {
         width: 100%;
-        padding-bottom: 1rem;
+        height: 200px;
+        vertical-align: middle;
+        object-fit: cover;
+    }
 
-        tr {
+    .card-body {
+        width: 90%;
+        padding-left: 5%;
+        padding-right: 5%;
+        overflow: hidden;
+
+        table {
             width: 100%;
-
-            td {
-                clear: both;
-                justify-content: space-between;
-                display: flex;
-                /* text-align: right; */
-
-                p, b {
-                    margin-top: 0.25rem;
-                    margin-bottom: 0.25rem;
-                    float: left;
+            padding-bottom: 1rem;
+    
+            tr {
+                width: 100%;
+    
+                td {
+                    clear: both;
+                    justify-content: space-between;
+                    display: flex;
+                    /* text-align: right; */
+    
+                    p, b {
+                        margin-top: 0.25rem;
+                        margin-bottom: 0.25rem;
+                        float: left;
+                    }
                 }
             }
         }
     }
+
 }
 
 @media only screen and (min-width: 600px) {
@@ -56,13 +71,17 @@ p, b {
 
     /* Page Styles */
     .mainPageBox {
-        margin-left: 5%;
-        margin-right: 5%;
-        width: 90%;
+        margin-left: 10%;
+        margin-right: 10%;
+        width: 80%;
     }
 
     /* Cards Styles */
-    
+    .card {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -75,15 +94,21 @@ p, b {
 
     /* Cards Styles */
     .card {
-        width: 40%;
+        width: 45%;
         margin-left: 2.5%;
-        padding-left: 2.5%;
-        padding-right: 2.5%;
+        margin-right: 2.5%;
+
+        .card-body {
+            width: 95%;
+            padding-left: 2.5%;
+            padding-right: 2.5%;
+        }
     }
 
 }
 
 @media only screen and (min-width: 1200px) {
+    /* Large Desktop */
     /* Page Styles */
     p, b {
         font-size: 12pt;
@@ -91,10 +116,9 @@ p, b {
 
     /* Cards Styles */
     .card {
-        width: calc(80%/3);
+        width: calc(90%/3);
         margin-left: calc(5%/3);
-        padding-left: calc(5%/3);
-        padding-right: calc(5%/3);
+        margin-right: calc(5%/3);
     }
 
 }
