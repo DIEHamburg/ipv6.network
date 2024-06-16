@@ -5,6 +5,10 @@
 /* 
     Objects
 */
+body {
+    background-color: white;
+    color: black;
+}
 
 /* 
     Classes
@@ -13,6 +17,3 @@
 /* 
     IDs
 */
-* {
-    background-color: cyan;
-}
