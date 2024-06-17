@@ -31,17 +31,17 @@ namespace Index {
 
                 if (btns) {
                     // -> copy buttons founded
-                    Array.from(btns).forEach(btn => {
+                    Array.from(btns).forEach((btn) => {
 
                         btn.addEventListener("click", (evt) => {
-                            test(evt);
+                            onCopyCode(evt);
                         });
 
                     });
                 }
 
             });
-            
+
         }
     }
 
@@ -52,7 +52,7 @@ namespace Index {
      * @author Flowtastisch
      * @date 17.06.2024
      */
-    function test (evt: MouseEvent) {
+    function onCopyCode (evt: MouseEvent) {
         const   clickedBtn  = evt.currentTarget as HTMLButtonElement | undefined,
                 parentBox   = clickedBtn?.parentElement,
                 codeBoxArr  = parentBox?.getElementsByTagName("pre") as HTMLCollectionOf<HTMLPreElement>;
