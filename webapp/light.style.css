@@ -21,7 +21,7 @@ header {
     background-color:rgb(109, 22, 160);
 }
 
-header h1, header p {
+header h1, header a {
     color: whitesmoke;
 }
 

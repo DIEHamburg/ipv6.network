@@ -60,6 +60,7 @@ header p:hover {
 
 .devicesHeading {
     clear: both;
+    padding-top: 2rem;
 }
 
 /* Cards Styles */
@@ -195,5 +196,5 @@ header p:hover {
         margin-left: calc(5%/3);
         margin-right: calc(5%/3);
     }
-    
+
 }
