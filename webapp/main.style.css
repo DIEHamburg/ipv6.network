@@ -41,8 +41,15 @@ header p {
     display: none;
 }
 
-header p:hover {
+header a {
+    text-decoration: none;
+}
+
+header a:hover {
     text-decoration: underline 1px;
+}
+
+header p:hover {
     cursor: pointer;
 }
 
