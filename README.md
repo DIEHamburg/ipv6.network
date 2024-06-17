@@ -312,8 +312,8 @@ Erstelle VLANs
     ipv6 address FE80:DB8:8:10::1 link-local
 
     interface vlan 20
-    ipv6 address 2001:DB8:A:20::1/64
-    ipv6 address FE80:DB8:A:20::1 link-local
+    ipv6 address 2001:DB8:8:20::1/64
+    ipv6 address FE80:DB8:8:20::1 link-local
 
 Schnittstellen VLAN Zuweisung
 
@@ -754,3 +754,115 @@ Setze Hostname & SSH User
     line vty 0 4
     login local
     transport input ssh
+
+## ACL
+
+### RT-HH-01
+
+Setze die ACL Liste auf die Serial Schnittstellen
+
+    interface serial0/1/0
+    ipv6 traffic-filter ACL1111 in
+    interface serial0/1/1
+    ipv6 traffic-filter ACL1111 in
+    interface serial0/2/0
+    ipv6 traffic-filter ACL1111 in
+
+Access Liste bearbeiten
+
+    ipv6 access-list ACL1111
+
+SSH nur für Hamburg erlauben
+
+    permit tcp 2001:DB8:8::/48 any eq 22
+    deny tcp any any eq 22
+
+Andere TCP und IPv6 Protokolle für alle erlauben
+
+    permit tcp any any
+    permit ipv6 any any
+
+### RT-HL-01
+
+Setze die ACL Liste auf die Serial Schnittstellen
+
+    interface serial0/1/0
+    ipv6 traffic-filter ACL1111 in
+    interface serial0/1/1
+    ipv6 traffic-filter ACL1111 in
+    interface serial0/2/0
+    ipv6 traffic-filter ACL1111 in
+
+Access Liste bearbeiten
+
+    ipv6 access-list ACL1111
+
+SSH nur für Hamburg erlauben
+
+    permit tcp 2001:DB8:8::/48 any eq 22
+    deny tcp any any eq 22
+
+Andere TCP und IPv6 Protokolle für alle erlauben
+
+    permit tcp any any
+    permit ipv6 any any
+
+### RT-B-01
+
+Setze die ACL Liste auf die Serial Schnittstellen
+
+    interface serial0/1/0
+    ipv6 traffic-filter ACL1111 in
+    interface serial0/1/1
+    ipv6 traffic-filter ACL1111 in
+    interface serial0/2/0
+    ipv6 traffic-filter ACL1111 in
+
+Access Liste bearbeiten
+
+    ipv6 access-list ACL1111
+
+SSH nur für Hamburg erlauben
+
+    permit tcp 2001:DB8:8::/48 any eq 22
+    deny tcp any any eq 22
+
+Http nur für Hamburg
+
+    permit tcp 2001:DB8:8::/48 any eq 80
+    deny tcp any any eq 80
+
+Andere TCP und IPv6 Protokolle für alle erlauben
+
+    permit tcp any any
+    permit ipv6 any any
+
+### RT-M-01
+
+Setze die ACL Liste auf die Serial Schnittstellen
+
+    interface serial0/1/0
+    ipv6 traffic-filter ACL1111 in
+    interface serial0/1/1
+    ipv6 traffic-filter ACL1111 in
+    interface serial0/2/0
+    ipv6 traffic-filter ACL1111 in
+
+Access Liste bearbeiten
+
+    ipv6 access-list ACL1111
+
+SSH nur für Hamburg erlauben
+
+    permit tcp 2001:DB8:8::/48 any eq 22
+    deny tcp any any eq 22
+
+Http nur für Hamburg
+
+    permit tcp 2001:DB8:8::/48 any eq 80
+    deny tcp any any eq 80
+
+Andere TCP und IPv6 Protokolle für alle erlauben
+
+    permit tcp any any
+    permit ipv6 any any
