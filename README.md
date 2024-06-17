@@ -125,25 +125,16 @@ Aktiviere Terminal
     enable
     configure terminal
 
-VLAN 60 Trunk
-
-    interface GigabitEthernet0/0/0.60
-    encapsulation dot1Q 60
-    ipv6 address 2001:DB8:D:60::1/64
-    ipv6 address FE80:DB8:D:60::1 link-local
-
-VLAN 99 Trunk
-
-    interface GigabitEthernet0/0/0.99
-    encapsulation dot1Q 99
-    ipv6 address 2001:DB8:D:99::1/64
-    ipv6 address FE80:DB8:D:99::1 link-local
+Router-Switch Schnitstelle
 
     interface GigabitEthernet0/0/0
     no shutdown
+    ipv6 address 2001:DB8:D:99::1/64
+    ipv6 address FE80:DB8:D:99::1 link-local
 
 IPV6 Routing
 
+    ipv6 route ::/0 2001:DB8:D:99::2
     ipv6 route 2001:DB8:8:10::/64 FD01:01:01:50::8
     ipv6 route 2001:DB8:8:20::/64 FD01:01:01:50::8
     ipv6 route 2001:DB8:A:30::/64 FD01:01:01:20::A
@@ -165,24 +156,36 @@ Keine DNS Auflösung
     ipv6 unicast-routing
     no ip domain-lookup
 
-Setze Trunk Ports
+Setze Routerport
 
     interface GigabitEthernet1/0/1
-    switchport mode trunk
-    switchport trunk allowed vlan 60,99
+    no shutdown
+    no switchport
+    ipv6 address 2001:DB8:D:99::2/64
+    ipv6 address FE80:DB8:D:99::2 link-local
 
 Erstelle VLANs
 
     interface vlan 60
-
-    interface vlan 99
-    ipv6 address 2001:DB8:D:99::2/64
+    ipv6 address 2001:DB8:D:60::1/64
+    ipv6 address FE80:DB8:D:60::1 link-local
 
 Schnittstellen VLAN Zuweisung
 
     interface GigabitEthernet1/0/2
     switchport mode access
     switchport access vlan 60
+
+IPV6 Routing
+
+    ipv6 route 2001:DB8:8:10::/64 2001:DB8:D:99::1
+	ipv6 route 2001:DB8:8:20::/64 2001:DB8:D:99::1
+    ipv6 route 2001:DB8:8:99::/64 2001:DB8:D:99::1
+	ipv6 route 2001:DB8:A:30::/64 2001:DB8:D:99::1
+	ipv6 route 2001:DB8:A:40::/64 2001:DB8:D:99::1
+	ipv6 route 2001:DB8:A:99::/64 2001:DB8:D:99::1
+	ipv6 route 2001:DB8:2:50::/64 2001:DB8:D:99::1
+	ipv6 route 2001:DB8:2:99::/64 2001:DB8:D:99::1
 
 ### Berlin
 
@@ -193,25 +196,16 @@ Aktiviere Terminal
     enable
     configure terminal
 
-VLAN 50 Trunk
-
-    interface GigabitEthernet0/0/0.50
-    encapsulation dot1Q 50
-    ipv6 address 2001:DB8:2:50::1/64
-    ipv6 address FE80:DB8:2:50::1 link-local
-
-VLAN 99 Trunk
-
-    interface GigabitEthernet0/0/0.99
-    encapsulation dot1Q 99
-    ipv6 address 2001:DB8:2:99::1/64
-    ipv6 address FE80:DB8:2:99::1 link-local
+Router-Switch Schnitstelle
 
     interface GigabitEthernet0/0/0
     no shutdown
+    ipv6 address 2001:DB8:2:99::1/64
+    ipv6 address FE80:DB8:2:99::1 link-local
 
 IPV6 Routing
 
+    ipv6 route ::/0 2001:DB8:2:99::2
     ipv6 route 2001:DB8:8:10::/64 FD01:01:01:40::8
     ipv6 route 2001:DB8:8:20::/64 FD01:01:01:40::8
     ipv6 route 2001:DB8:A:30::/64 FD01:01:01:60::A
@@ -233,24 +227,36 @@ Keine DNS Auflösung
     ipv6 unicast-routing
     no ip domain-lookup
 
-Setze Trunk Ports
+Setze Routerport
 
     interface GigabitEthernet1/0/1
-    switchport mode trunk
-    switchport trunk allowed vlan 50,99
+    no shutdown
+    no switchport
+    ipv6 address 2001:DB8:2:99::2/64
+    ipv6 address FE80:DB8:2:99::2 link-local
 
 Erstelle VLANs
 
     interface vlan 50
-
-    interface vlan 99
-    ipv6 address 2001:DB8:2:99::2/64
+    ipv6 address 2001:DB8:2:50::1/64
+    ipv6 address FE80:DB8:2:50::1 link-local
 
 Schnittstellen VLAN Zuweisung
 
     interface GigabitEthernet1/0/2
     switchport mode access
     switchport access vlan 50
+
+IPV6 Routing
+
+    ipv6 route 2001:DB8:8:10::/64 2001:DB8:2:99::1
+    ipv6 route 2001:DB8:8:20::/64 2001:DB8:2:99::1
+    ipv6 route 2001:DB8:8:99::/64 2001:DB8:2:99::1
+    ipv6 route 2001:DB8:A:30::/64 2001:DB8:2:99::1
+    ipv6 route 2001:DB8:A:40::/64 2001:DB8:2:99::1
+    ipv6 route 2001:DB8:A:99::/64 2001:DB8:2:99::1
+    ipv6 route 2001:DB8:D:60::/64 2001:DB8:2:99::1
+    ipv6 route 2001:DB8:D:99::/64 2001:DB8:2:99::1
 
 ### Hamburg
 
@@ -261,32 +267,16 @@ Aktiviere Terminal
     enable
     configure terminal
 
-VLAN 10 Trunk
-
-    interface GigabitEthernet0/0/0.10
-    encapsulation dot1Q 10
-    ipv6 address 2001:DB8:8:10::1/64
-    ipv6 address FE80:DB8:8:10::1 link-local
-
-VLAN 20 Trunk
-
-    interface GigabitEthernet0/0/0.20
-    encapsulation dot1Q 20
-    ipv6 address 2001:DB8:8:20::1/64
-    ipv6 address FE80:DB8:8:20::1 link-local
-
-VLAN 99 Trunk
-
-    interface GigabitEthernet0/0/0.99
-    encapsulation dot1Q 99
-    ipv6 address 2001:DB8:8:99::1/64
-    ipv6 address FE80:DB8:8:99::1 link-local
+Router-Switch Schnitstelle
 
     interface GigabitEthernet0/0/0
     no shutdown
+    ipv6 address 2001:DB8:8:99::1/64
+    ipv6 address FE80:DB8:8:99::1 link-local
 
 IPV6 Routing
 
+    ipv6 route ::/0 2001:DB8:8:99::2
     ipv6 route 2001:DB8:A:30::/64 FD01:01:01:10::A
     ipv6 route 2001:DB8:A:40::/64 FD01:01:01:10::A
     ipv6 route 2001:DB8:A:99::/64 FD01:01:01:10::A
@@ -307,23 +297,23 @@ Keine DNS Auflösung
     ipv6 unicast-routing
     no ip domain-lookup
 
-Setze Trunk Ports
+Setze Routerport
 
     interface GigabitEthernet1/0/1
-    switchport mode trunk
-    switchport trunk allowed vlan 10,20,99
+    no shutdown
+    no switchport
+    ipv6 address 2001:DB8:8:99::2/64
+    ipv6 address FE80:DB8:8:99::2 link-local
 
 Erstelle VLANs
 
     interface vlan 10
-    exit
+    ipv6 address 2001:DB8:8:10::1/64
+    ipv6 address FE80:DB8:8:10::1 link-local
 
     interface vlan 20
-    exit
-
-    interface vlan 99
-    ipv6 address 2001:DB8:8:99::2/64
-    exit
+    ipv6 address 2001:DB8:A:20::1/64
+    ipv6 address FE80:DB8:A:20::1 link-local
 
 Schnittstellen VLAN Zuweisung
 
@@ -335,9 +325,15 @@ Schnittstellen VLAN Zuweisung
     switchport mode access
     switchport access vlan 20
 
-    interface GigabitEthernet1/0/4
-    switchport mode access
-    switchport access vlan 99
+IPV6 Routing
+
+    ipv6 route 2001:DB8:A:30::/64 2001:DB8:8:99::1
+    ipv6 route 2001:DB8:A:40::/64 2001:DB8:8:99::1
+    ipv6 route 2001:DB8:A:99::/64 2001:DB8:8:99::1
+    ipv6 route 2001:DB8:2:50::/64 2001:DB8:8:99::1
+    ipv6 route 2001:DB8:2:99::/64 2001:DB8:8:99::1
+    ipv6 route 2001:DB8:D:60::/64 2001:DB8:8:99::1
+    ipv6 route 2001:DB8:D:99::/64 2001:DB8:8:99::1
 
 ### Lübeck
 
@@ -348,32 +344,16 @@ Aktiviere Terminal
     enable
     configure terminal
 
-VLAN 30 Trunk
-
-    interface GigabitEthernet0/0/0.30
-    encapsulation dot1Q 30
-    ipv6 address 2001:DB8:A:30::1/64
-    ipv6 address FE80:DB8:A:30::1 link-local
-
-VLAN 40 Trunk
-
-    interface GigabitEthernet0/0/0.40
-    encapsulation dot1Q 40
-    ipv6 address 2001:DB8:A:40::1/64
-    ipv6 address FE80:DB8:A:40::1 link-local
-
-VLAN 99 Trunk
-
-    interface GigabitEthernet0/0/0.99
-    encapsulation dot1Q 99
-    ipv6 address 2001:DB8:A:99::1/64
-    ipv6 address FE80:DB8:A:99::1 link-local
+Router-Switch Schnitstelle
 
     interface GigabitEthernet0/0/0
     no shutdown
+    ipv6 address 2001:DB8:A:99::1/64
+    ipv6 address FE80:DB8:A:99::1 link-local
 
 IPV6 Routing
 
+    ipv6 route ::/0 2001:DB8:A:99::2
     ipv6 route 2001:DB8:8:10::/64 FD01:01:01:10::8
     ipv6 route 2001:DB8:8:20::/64 FD01:01:01:10::8
     ipv6 route 2001:DB8:2:50::/64 FD01:01:01:60::2
@@ -394,23 +374,23 @@ Keine DNS Auflösung
     ipv6 unicast-routing
     no ip domain-lookup
 
-Setze Trunk Ports
+Setze Routerport
 
     interface GigabitEthernet1/0/1
-    switchport mode trunk
-    switchport trunk allowed vlan 30,40,99
+    no shutdown
+    no switchport
+    ipv6 address 2001:DB8:A:99::2/64
+    ipv6 address FE80:DB8:A:99::2 link-local
 
 Erstelle VLANs
 
     interface vlan 30
-    exit
+    ipv6 address 2001:DB8:A:30::1/64
+    ipv6 address FE80:DB8:A:30::1 link-local
 
     interface vlan 40
-    exit
-
-    interface vlan 99
-    ipv6 address 2001:DB8:A:99::2/64
-    exit
+    ipv6 address 2001:DB8:A:40::1/64
+    ipv6 address FE80:DB8:A:40::1 link-local
 
 Schnittstellen VLAN Zuweisung
 
@@ -421,6 +401,16 @@ Schnittstellen VLAN Zuweisung
     interface GigabitEthernet1/0/3
     switchport mode access
     switchport access vlan 40
+
+IPV6 Routing
+
+    ipv6 route 2001:DB8:8:10::/64 2001:DB8:A:99::1
+    ipv6 route 2001:DB8:8:20::/64 2001:DB8:A:99::1
+    ipv6 route 2001:DB8:8:99::/64 2001:DB8:A:99::1
+    ipv6 route 2001:DB8:2:50::/64 2001:DB8:A:99::1
+    ipv6 route 2001:DB8:2:99::/64 2001:DB8:A:99::1
+    ipv6 route 2001:DB8:D:60::/64 2001:DB8:A:99::1
+    ipv6 route 2001:DB8:D:99::/64 2001:DB8:A:99::1
 
 ## Banner erstellen
 
