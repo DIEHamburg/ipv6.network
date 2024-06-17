@@ -21,14 +21,14 @@ body {
 }
 
 .card-hh:hover {
-    box-shadow: 0 0 14px rgba(17, 204, 0, 0.4);
+    box-shadow: 0 0 14px rgba(17, 204, 0, 0.6);
 }
 .card-hl:hover {
-    box-shadow: 0 0 14px rgba(204, 190, 0, 0.4);
+    box-shadow: 0 0 14px rgba(204, 190, 0, 0.6);
 }
 .card-b:hover {
-    box-shadow: 0 0 14px rgba(0, 112, 204, 0.4);
+    box-shadow: 0 0 14px rgba(0, 112, 204, 0.6);
 }
 .card-m:hover {
-    box-shadow: 0 0 14px rgba(146, 0, 204, 0.4);
+    box-shadow: 0 0 14px rgba(146, 0, 204, 0.6);
 }
