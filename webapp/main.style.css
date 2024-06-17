@@ -65,6 +65,19 @@ header p:hover {
     height: 24pt;
 }
 
+/* Footer Styles */
+footer {
+    margin-top: 2rem;
+    position: sticky;
+    clear: both;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    border-radius: 12px 12px 0 0;
+    text-align: center;
+}
+
 /* Page Styles */
 .mainPageBox {
     clear: both;
