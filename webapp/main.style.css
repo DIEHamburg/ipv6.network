@@ -30,13 +30,17 @@ header * {
     float: left;
 }
 
+header p {
+    font-size: 12pt;
+}
+
 header h1 {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
     font-size: 20pt;
 }
 
-header p {
+header .headerLinks {
     margin-left: 1rem;
     display: none;
 }
@@ -51,6 +55,14 @@ header a:hover {
 
 header p:hover {
     cursor: pointer;
+}
+
+.headerImg {
+    float: right;
+}
+
+.headerImg img {
+    height: 24pt;
 }
 
 /* Page Styles */
@@ -160,10 +172,6 @@ header p:hover {
         padding-right: 2rem;
     }
 
-    header p {
-        display: block;
-    }
-
     /* Cards Styles */
     .card {
         width: 90%;
@@ -178,6 +186,11 @@ header p:hover {
     /* Page Styles */
     p, b {
         font-size: 11pt;
+    }
+
+    /* Header Styles */
+    header .headerLinks {
+        display: block;
     }
 
     /* Cards Styles */
