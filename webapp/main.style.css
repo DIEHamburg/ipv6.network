@@ -86,6 +86,31 @@ header p:hover {
     padding-top: 2rem;
 }
 
+/* Code Block Styles */
+.code-block {
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 24px;
+    overflow-x: auto;
+}
+
+.code-block pre {
+    border-radius: 24px;
+    font-family: courier, monospace;
+    padding: 0 1rem;
+}
+
+.code-block button {
+    border-radius: 24px;
+    float: right;
+    cursor: pointer;
+    padding: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border: 0;
+    font-weight: bold;
+}
+
 /* Cards Styles */
 .cardsMainBox {
     margin-top: 4rem;

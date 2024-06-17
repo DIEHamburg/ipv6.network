@@ -20,6 +20,19 @@ header {
     color: lightgray;
 }
 
+/* Code Block Styles */
+.code-block {
+    background-color: rgba(56, 56, 56, 0.8);
+}
+
+.code-block button {
+    background-color: rgba(37, 37, 37, 0.8);
+}
+
+.code-block button:hover {
+    background-color: rgba(14, 14, 14, 0.8);
+}
+
 /* Cards Styles */
 .card {
     background-color: rgba(37, 37, 37, 0.8);
