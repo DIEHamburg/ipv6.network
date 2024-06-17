@@ -14,10 +14,17 @@ body {
 /* Header Styles */
 header {
     background-color:rgb(109, 22, 160);
+    box-shadow: 0.25rem 0.5rem 0.4rem rgb(109, 22, 160, 0.3);
 }
 
 .subTxt {
     color: lightgray;
+}
+
+/* Footer Styles */
+footer {
+    background-color:rgb(109, 22, 160);
+    box-shadow: 0.25rem -0.5rem 0.4rem rgb(109, 22, 160, 0.3);
 }
 
 /* Code Block Styles */
@@ -36,6 +43,7 @@ header {
 /* Cards Styles */
 .card {
     background-color: rgba(37, 37, 37, 0.8);
+    box-shadow: 0.5rem 0.5rem 0.4rem rgba(77, 77, 77, 0.1);
 }
 
 .card-hh:hover {
