@@ -4,7 +4,6 @@
         "target": "ES2022",
         "sourceMap": true,
         "rootDir": "webapp/src",
-        "types": ["node"],
         "strict": true,
         "resolveJsonModule": true,
         "esModuleInterop": true,
