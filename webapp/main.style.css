@@ -3,6 +3,10 @@
     font-family: Verdana;
 }
 
+body {
+    margin: 0;
+}
+
 p, b {
     font-size: 12pt;
 }

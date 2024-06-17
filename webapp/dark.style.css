@@ -10,6 +10,12 @@
 body {
     background-color: #131313;
 }
+
+/* Header Styles */
+header {
+    background-color:rgb(109, 22, 160);
+}
+
 .subTxt {
     color: lightgray;
 }
