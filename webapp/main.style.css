@@ -11,20 +11,51 @@ p, b {
     clear: both;
 }
 
+/* Header Styles */
+header {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    position: sticky;
+    overflow: hidden;
+    border-radius: 0 0 12px 12px;
+}
+
+header * {
+    float: left;
+}
+
+header h1 {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 20pt;
+}
+
+header p {
+    margin-left: 1rem;
+    display: none;
+}
+
+header p:hover {
+    text-decoration: underline 1px;
+    cursor: pointer;
+}
+
 /* Page Styles */
 .mainPageBox {
     clear: both;
     margin-left: 0;
     margin-right: 0;
     width: 100%;
+}
 
-    h1 {
-        text-align: center;
-    }
+.mainPageBox h1 {
+    text-align: center;
+}
 
-    h2 {
-        text-align: center;
-    }
+.mainPageBox h2 {
+    text-align: center;
 }
 
 .devicesHeading {
@@ -44,49 +75,47 @@ p, b {
     border-radius: 12px;
     overflow: hidden;
     float: left;
-
-    img {
-        width: 100%;
-        height: 200px;
-        vertical-align: middle;
-        object-fit: cover;
-    }
-
-    .card-body {
-        width: 90%;
-        padding-left: 5%;
-        padding-right: 5%;
-        overflow: hidden;
-
-        table {
-            width: 100%;
-            padding-bottom: 1rem;
-    
-            tr {
-                width: 100%;
-    
-                td {
-                    clear: both;
-                    justify-content: space-between;
-                    display: flex;
-                    /* text-align: right; */
-    
-                    p, b {
-                        margin-top: 0.25rem;
-                        margin-bottom: 0.25rem;
-                        float: left;
-                    }
-                }
-            }
-        }
-    }
 }
 
-.card-hh:hover {
-    h3, p, b {
-        cursor: default;
-    }
+.card img {
+    width: 100%;
+    height: 200px;
+    vertical-align: middle;
+    object-fit: cover;
 }
+
+.card .card-body {
+    width: 90%;
+    padding-left: 5%;
+    padding-right: 5%;
+    overflow: hidden;
+}
+
+.card .card-body table {
+    width: 100%;
+    padding-bottom: 1rem;
+}
+
+.card .card-body table tr {
+    width: 100%;
+}
+
+.card .card-body table tr td {
+    clear: both;
+    justify-content: space-between;
+    display: flex;
+}
+
+.card .card-body table tr td p, b {
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+    float: left;
+}
+
+.card-hh:hover h3, p, b {
+    cursor: default;
+}
+
 .card-hl:hover {
     h3, p, b {
         cursor: default;
@@ -113,6 +142,16 @@ p, b {
         width: 80%;
     }
 
+    /* Header Styles */
+    header {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    header p {
+        display: block;
+    }
+
     /* Cards Styles */
     .card {
         width: 90%;
@@ -134,14 +173,13 @@ p, b {
         width: 45%;
         margin-left: 2.5%;
         margin-right: 2.5%;
-
-        .card-body {
-            width: 95%;
-            padding-left: 2.5%;
-            padding-right: 2.5%;
-        }
     }
 
+    .card .card-body {
+        width: 95%;
+        padding-left: 2.5%;
+        padding-right: 2.5%;
+    }
 }
 
 @media only screen and (min-width: 1200px) {
@@ -157,5 +195,5 @@ p, b {
         margin-left: calc(5%/3);
         margin-right: calc(5%/3);
     }
-
+    
 }

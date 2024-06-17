@@ -9,10 +9,20 @@
 
 body {
     background-color: rgb(240, 240, 240);
+    margin: 0;
 }
 
 .subTxt {
     color: gray;
+}
+
+/* Header Styles */
+header {
+    background-color:rgb(109, 22, 160);
+}
+
+header h1, header p {
+    color: whitesmoke;
 }
 
 /* Cards Styles */
