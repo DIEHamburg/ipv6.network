@@ -104,10 +104,8 @@ footer {
 .accordion {
     width: 100%;
     margin: 90px auto;
-    background-color: white;
     padding: 45px;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
   
 .container {
@@ -118,14 +116,12 @@ footer {
     padding: 10px 0;
     font-size: 24px; /* Größe der Label-Schrift */
     font-weight: bold; /* Fettgedruckte Label-Schrift */
-    color: #333; /* Farbe der Label-Schrift */
     cursor: pointer;
     position: relative;
 }
   
 .label::before {
     content: '+';
-    color: black;
     position: absolute;
     top: 50%;
     right: -10px;
@@ -134,7 +130,6 @@ footer {
 }
   
 .content {
-    background: white;
     font-size: 20px;
     text-align: justify;
     width: 100%;
@@ -150,7 +145,6 @@ footer {
 }
   
 hr {
-    border: 1px solid grey;
     margin-top: 15px;
     margin-bottom: 15px;
 }
