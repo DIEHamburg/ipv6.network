@@ -807,6 +807,11 @@ Http nur für Hamburg
     permit tcp 2001:DB8:8::/48 any eq 80
     deny tcp any any eq 80
 
+Ping nur für Hamburg erlauben
+
+    permit icmp 2001:DB8:8::/48 any
+    deny icmp any any
+
 Andere TCP und IPv6 Protokolle für alle erlauben
 
     permit tcp any any
