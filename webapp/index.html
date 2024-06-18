@@ -291,6 +291,184 @@ exit</pre>
                 </div>
                 <!-- Passwords END -->
 
+                <hr>
+
+                <!-- SSH BEGIN -->
+                <div class="container">
+                    <div class="label">SSH Zugänge</div>
+                    <div class="content">
+                        <!-- SSH Hamburg -->
+                        <h3>Hamburg</h3>
+                        <h4>RT-HH-01</h4>
+                        <p>Aktiviere Terminal</p>
+                        <div class="code-block" style="clear:both">
+                            <button>Kopieren</button>
+                            <pre>
+enable
+configure terminal</pre>
+                        </div>
+                        <p>Setze Hostname & SSH User</p>
+                        <div class="code-block" style="clear:both">
+                            <button>Kopieren</button>
+                            <pre>
+hostname RT-HH-01
+username RouterHamburg password 6TDU3UnsHjCYXKgz
+ip domain-name diehamburg.com
+crypto key generate rsa general-keys modulus 1024
+line vty 0 4
+login local
+transport input ssh</pre>
+                        </div>
+                        <h4>SW-HH-01</h4>
+                        <p>Aktiviere Terminal</p>
+                        <div class="code-block" style="clear:both">
+                            <button>Kopieren</button>
+                            <pre>
+enable
+configure terminal</pre>
+                        </div>
+                        <p>Setze Hostname & SSH User</p>
+                        <div class="code-block" style="clear:both">
+                            <button>Kopieren</button>
+                            <pre>
+hostname SW-HH-01
+username SwitchHamburg password aSXr8d2SHB6RKL6n
+ip domain-name diehamburg.com
+crypto key generate rsa general-keys modulus 1024
+line vty 0 4
+login local
+transport input ssh</pre>
+                        </div>
+                        <!-- SSH Lübeck -->
+                        <h3>Lübeck</h3>
+                        <h4>RT-HL-01</h4>
+                        <p>Aktiviere Terminal</p>
+                        <div class="code-block" style="clear:both">
+                            <button>Kopieren</button>
+                            <pre>
+enable
+configure terminal</pre>
+                        </div>
+                        <p>Setze Hostname & SSH User</p>
+                        <div class="code-block" style="clear:both">
+                            <button>Kopieren</button>
+                            <pre>
+hostname RT-HL-01
+username RouterLuebeck password Hu5kc9URzjcd6WeN
+ip domain-name diehamburg.com
+crypto key generate rsa general-keys modulus 1024
+line vty 0 4
+login local
+transport input ssh</pre>
+                        </div>
+                        <h4>SW-HL-01</h4>
+                        <p>Aktiviere Terminal</p>
+                        <div class="code-block" style="clear:both">
+                            <button>Kopieren</button>
+                            <pre>
+enable
+configure terminal</pre>
+                        </div>
+                        <p>Setze Hostname & SSH User</p>
+                        <div class="code-block" style="clear:both">
+                            <button>Kopieren</button>
+                            <pre>
+hostname SW-HL-01
+username SwitchLuebeck password M4Qw4E7DbPDrkXbT
+ip domain-name diehamburg.com
+crypto key generate rsa general-keys modulus 1024
+line vty 0 4
+login local
+transport input ssh</pre>
+                        </div>
+                        <!-- SSH Berlin -->
+                        <h3>Berlin</h3>
+                        <h4>RT-B-01</h4>
+                        <p>Aktiviere Terminal</p>
+                        <div class="code-block" style="clear:both">
+                            <button>Kopieren</button>
+                            <pre>
+enable
+configure terminal</pre>
+                        </div>
+                        <p>Setze Hostname & SSH User</p>
+                        <div class="code-block" style="clear:both">
+                            <button>Kopieren</button>
+                            <pre>
+hostname RT-B-01
+username RouterBerlin password zDSb4n5HQxSvXmXT
+ip domain-name diehamburg.com
+crypto key generate rsa general-keys modulus 1024
+line vty 0 4
+login local
+transport input ssh</pre>
+                        </div>
+                        <h4>SW-B-01</h4>
+                        <p>Aktiviere Terminal</p>
+                        <div class="code-block" style="clear:both">
+                            <button>Kopieren</button>
+                            <pre>
+enable
+configure terminal</pre>
+                        </div>
+                        <p>Setze Hostname & SSH User</p>
+                        <div class="code-block" style="clear:both">
+                            <button>Kopieren</button>
+                            <pre>
+hostname SW-B-01
+username SwitchBerlin password xqSCnYcrnZgyHjs2
+ip domain-name diehamburg.com
+crypto key generate rsa general-keys modulus 1024
+line vty 0 4
+login local
+transport input ssh</pre>
+                        </div>
+                        <!-- SSH München -->
+                        <h3>München</h3>
+                        <h4>RT-M-01</h4>
+                        <p>Aktiviere Terminal</p>
+                        <div class="code-block" style="clear:both">
+                            <button>Kopieren</button>
+                            <pre>
+enable
+configure terminal</pre>
+                        </div>
+                        <p>Setze Hostname & SSH User</p>
+                        <div class="code-block" style="clear:both">
+                            <button>Kopieren</button>
+                            <pre>
+hostname RT-M-01
+username RouterMuenchen password XKsVvr3w2jP5A3Ub
+ip domain-name diehamburg.com
+crypto key generate rsa general-keys modulus 1024
+line vty 0 4
+login local
+transport input ssh</pre>
+                        </div>
+                        <h4>SW-M-01</h4>
+                        <p>Aktiviere Terminal</p>
+                        <div class="code-block" style="clear:both">
+                            <button>Kopieren</button>
+                            <pre>
+enable
+configure terminal</pre>
+                        </div>
+                        <p>Setze Hostname & SSH User</p>
+                        <div class="code-block" style="clear:both">
+                            <button>Kopieren</button>
+                            <pre>
+hostname SW-M-01
+username SwitchMuenchen password yhpYtsCy7Uh3S3vt
+ip domain-name diehamburg.com
+crypto key generate rsa general-keys modulus 1024
+line vty 0 4
+login local
+transport input ssh</pre>
+                        </div>
+                    </div>
+                </div>
+                <!-- SSH END -->
+
             </div>
             <!-- Accordion END -->
          
