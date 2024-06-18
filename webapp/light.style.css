@@ -36,6 +36,29 @@ footer p {
     color: whitesmoke;
 }
 
+/* Accordion Styles */
+  
+.accordion {
+    background-color: rgb(255, 255, 255, 0.8);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+  
+.label {
+    color: #333;
+}
+  
+.label::before {
+    color: black;
+}
+  
+.content {
+    background: rgb(255, 255, 255, 0.8);
+}
+  
+hr {
+    border: 1px solid grey;
+}
+
 /* Code Block Styles */
 .code-block {
     background-color: rgba(230, 230, 230, 0.8);
