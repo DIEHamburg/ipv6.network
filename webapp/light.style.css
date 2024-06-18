@@ -36,7 +36,7 @@ footer p {
     color: whitesmoke;
 }
 
-/* Akkordeon Styles */
+/* Accordion Styles */
   
 .accordion {
     background-color: rgb(255, 255, 255, 0.8);
@@ -44,7 +44,7 @@ footer p {
 }
   
 .label {
-    color: #333; /* Farbe der Label-Schrift */
+    color: #333;
 }
   
 .label::before {

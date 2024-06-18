@@ -99,7 +99,7 @@ footer {
     padding-top: 2rem;
 }
 
-/* Akkordeon Styles */
+/* Accordion Styles */
   
 .accordion {
     width: 100%;
@@ -114,8 +114,8 @@ footer {
   
 .label {
     padding: 10px 0;
-    font-size: 24px; /* Größe der Label-Schrift */
-    font-weight: bold; /* Fettgedruckte Label-Schrift */
+    font-size: 24px;
+    font-weight: bold;
     cursor: pointer;
     position: relative;
 }
@@ -139,9 +139,9 @@ footer {
 }
   
 .active .content {
-    height: auto; /* Höhe der aktiven Inhalte */
-    padding: 15px; /* Innenabstand der aktiven Inhalte */
-    margin-top: 10px; /* Oberer Abstand der aktiven Inhalte */
+    height: auto;
+    padding: 15px;
+    margin-top: 10px;
 }
   
 hr {

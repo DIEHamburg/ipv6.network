@@ -27,7 +27,7 @@ footer {
     box-shadow: 0.25rem -0.5rem 0.4rem rgb(109, 22, 160, 0.3);
 }
 
-/* Akkordeon Styles */
+/* Accordion Styles */
   
 .accordion {
     background-color: rgba(37, 37, 37, 0.8);
@@ -35,7 +35,7 @@ footer {
 }
   
 .label {
-    color: rgb(255, 255, 255); /* Farbe der Label-Schrift */
+    color: rgb(255, 255, 255);
 }
   
 .label::before {
