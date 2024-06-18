@@ -59,10 +59,13 @@ header p:hover {
 
 .headerImg {
     float: right;
+    height: calc(12pt + 1em);
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
 }
 
 .headerImg img {
-    height: 24pt;
+    height: 100%;
 }
 
 /* Footer Styles */
@@ -110,6 +113,10 @@ footer {
   
 .container {
     margin: 10px 0;
+}
+
+.content small {
+    font-style: italic;
 }
   
 .label {
