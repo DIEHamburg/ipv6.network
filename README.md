@@ -816,7 +816,7 @@ Andere TCP und IPv6 Protokolle für alle erlauben
 
 Setze die ACL Liste auf die Serial Schnittstellen
 
-    interface range gig1/0/1 - gig1/1/4
+    interface range gig1/0/1 - 24
     ipv6 traffic-filter GlobalSwitchACL in
 
 Access Liste bearbeiten
