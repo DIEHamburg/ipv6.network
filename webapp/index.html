@@ -1,14 +1,795 @@
 <html>
     <head>
         <script src="base.aw.controller.js"></script>
-        <link rel="stylesheet" href="./main.style.css">
+        <link rel="stylesheet" href="main.style.css">
         <title>IPv6</title>
     </head>
     <body>
-        <header></header>
-        <main>
-            <h1>Hello World</h1>
+        <header>
+            <h1>IPv6 Doku</h1>
+            <p class="headerLinks">
+                <a href="#setup">Setup</a>
+            </p>
+            <p class="headerLinks">
+                <a href="#router">Router</a>
+            </p>
+            <p class="headerLinks">
+                <a href="#switches">Switches</a>
+            </p>
+            <p class="headerLinks">
+                <a href="#clientsAndServer">Clients & Server</a>
+            </p>
+            <p class="headerImg">
+                <img src="icon-contrast.png" onclick="AW.Base.changeLightOrDarkMode()">
+            </p>
+        </header>
+        <main class="mainPageBox">                
+            <h1>Setup</h1>
+
+            <!-- Accordion BEGIN -->
+            <div class="accordion">
+                <div class="container">
+                    <div class="label">Transportnetze</div>
+                     <!-- Hamburg BEGIN -->
+                        <div class="content">
+                            <img src="./serial-routes.png">
+                            <h4>Hamburg/RT-HH-01</h4>
+                            <h5>Aktiviere Terminal</h5>
+                            <div class="code-block" style="clear:both">
+                            <button>Kopieren</button>
+                            <pre>                  
+enable
+configure terminal</pre>
+                            </div>
+                        <h5>IPV6 Routing</h5>
+                        <div class="code-block" style="clear:both">
+                            <button>Kopieren</button>
+                            <pre>
+ipv6 route 2001:DB8:A:30::/64 FD01:01:01:10::A
+ipv6 route 2001:DB8:A:40::/64 FD01:01:01:10::A
+ipv6 route 2001:DB8:A:99::/64 FD01:01:01:10::A
+ipv6 route 2001:DB8:D:60::/64 FD01:01:01:50::D
+ipv6 route 2001:DB8:D:99::/64 FD01:01:01:50::D
+ipv6 route 2001:DB8:2:50::/64 FD01:01:01:40::2
+ipv6 route 2001:DB8:2:99::/64 FD01:01:01:40::2</pre>
+                                    </div>
+                        </div>
+                        <!-- Hamburg End -->
+
+                        <!-- Lübeck Begin -->
+                        <div class="content">Lübeck/RT-HL-01
+                            <h5>Aktiviere Terminal</h5>
+                            <div class="code-block" style="clear:both">
+                            <button>Kopieren</button>
+                            <pre>                  
+enable
+configure terminal</pre>
+                            </div>
+                        <h5>IPV6 Routing</h5>
+                        <div class="code-block" style="clear:both">
+                            <button>Kopieren</button>
+                            <pre>
+ipv6 route 2001:DB8:8:10::/64 FD01:01:01:10::8
+ipv6 route 2001:DB8:8:20::/64 FD01:01:01:10::8
+ipv6 route 2001:DB8:2:50::/64 FD01:01:01:60::2
+ipv6 route 2001:DB8:D:60::/64 FD01:01:01:20::D
+ipv6 route 2001:DB8:8:99::/64 FD01:01:01:10::8
+ipv6 route 2001:DB8:2:99::/64 FD01:01:01:60::2
+ipv6 route 2001:DB8:D:99::/64 FD01:01:01:20::D</pre>
+                                    </div>
+                        </div>
+                        <!-- Lübeck End -->
+
+                        <!-- München Begin -->
+                        <div class="content">München/RT-M-01
+                            <h5>Aktiviere Terminal</h5>
+                            <div class="code-block" style="clear:both">
+                            <button>Kopieren</button>
+                            <pre>                  
+enable
+configure terminal</pre>
+                            </div>
+                        <h5>IPV6 Routing</h5>
+                        <div class="code-block" style="clear:both">
+                            <button>Kopieren</button>
+                            <pre>
+ipv6 route 2001:DB8:8:10::/64 FD01:01:01:50::8
+ipv6 route 2001:DB8:8:20::/64 FD01:01:01:50::8
+ipv6 route 2001:DB8:A:30::/64 FD01:01:01:20::A
+ipv6 route 2001:DB8:A:40::/64 FD01:01:01:20::A
+ipv6 route 2001:DB8:2:50::/64 FD01:01:01:30::2
+ipv6 route 2001:DB8:8:99::/64 FD01:01:01:50::8
+ipv6 route 2001:DB8:A:99::/64 FD01:01:01:20::A
+ipv6 route 2001:DB8:2:99::/64 FD01:01:01:30::2</pre>
+                                    </div>
+                        </div>
+                        <!-- München End -->
+
+                        <!-- Berlin Begin -->
+                        <div class="content">Berlin/RT-B-01
+                            <h5>Aktiviere Terminal</h5>
+                            <div class="code-block" style="clear:both">
+                            <button>Kopieren</button>
+                            <pre>                  
+enable
+configure terminal</pre>
+                            </div>
+                        <h5>IPV6 Routing</h5>
+                        <div class="code-block" style="clear:both">
+                            <button>Kopieren</button>
+                            <pre>
+ipv6 route 2001:DB8:8:10::/64 FD01:01:01:40::8
+ipv6 route 2001:DB8:8:20::/64 FD01:01:01:40::8
+ipv6 route 2001:DB8:A:30::/64 FD01:01:01:60::A
+ipv6 route 2001:DB8:A:40::/64 FD01:01:01:60::A
+ipv6 route 2001:DB8:D:60::/64 FD01:01:01:30::D
+ipv6 route 2001:DB8:A:99::/64 FD01:01:01:60::A
+ipv6 route 2001:DB8:8:99::/64 FD01:01:01:40::8
+ipv6 route 2001:DB8:D:99::/64 FD01:01:01:50::D</pre>
+                                    </div>
+                        </div>
+                        <!-- Berlin End -->
+
+                </div>
+                <hr>
+                <div class="container">
+                    <div class="label">What is CSS?</div>
+                    <div class="content">inhalt</div>
+                </div>
+                <hr>
+            </div>
+            <!-- Accordion END -->
+         
+            <!-- Devices Cards BEGIN -->
+            <div class="cardsMainBox">
+                <h1 class="devicesHeading" id="router">Router</h1>
+                <div class="card card-hh">
+                    <img src="./router-img.jpg">
+                    <div class="card-body">
+                        <h3>RT-HH-01</h3>
+                        <p class="subTxt">Router</p>
+                        <table>
+                            <tr>
+                                <td>
+                                    <b>Local Unicast:</b>
+                                    <p>FD01:01:01:10::8/64</p>
+                                </td>
+                                <td>
+                                    <b>Next Hop:</b>
+                                    <p>FD01:01:01:10::A</p>
+                                </td>
+                                <td><br></td>
+                                <td>
+                                    <b>Local Unicast:</b>
+                                    <p>FD01:01:01:40::8/64</p>
+                                </td>
+                                <td>
+                                    <b>Next Hop:</b>
+                                    <p>FD01:01:01:40::2</p>
+                                </td>
+                                <td><br></td>
+                                <td>
+                                    <b>Local Unicast:</b>
+                                    <p>FD01:01:01:50::8/64</p>
+                                </td>
+                                <td>
+                                    <b>Next Hop:</b>
+                                    <p>FD01:01:01:50::D</p>
+                                </td>
+                                <td><br></td>
+                                <td>
+                                    <b>Global Unicast:</b>
+                                    <p>2001:DB8:8:99::1/64</p>
+                                </td>
+                                <td>
+                                    <b>Link-Local:</b>
+                                    <p>FE80:DB8:8:99::1</p>
+                                </td>
+                                <td><br></td>
+                                <td>
+                                    <b>Standort:</b>
+                                    <p>Hamburg</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="card card-hl">
+                    <img src="./router-img.jpg">
+                    <div class="card-body">
+                        <h3>RT-HL-01</h3>
+                        <p class="subTxt">Router</p>
+                        <table>
+                            <tr>
+                                <td>
+                                    <b>Local Unicast:</b>
+                                    <p>FD01:01:01:10::A/64</p>
+                                </td>
+                                <td>
+                                    <b>Next Hop:</b>
+                                    <p>FD01:01:01:10::8</p>
+                                </td>
+                                <td><br></td>
+                                <td>
+                                    <b>Local Unicast:</b>
+                                    <p>FD01:01:01:20::A/64</p>
+                                </td>
+                                <td>
+                                    <b>Next Hop:</b>
+                                    <p>FD01:01:01:20::D</p>
+                                </td>
+                                <td><br></td>
+                                <td>
+                                    <b>Local Unicast:</b>
+                                    <p>FD01:01:01:60::A/64</p>
+                                </td>
+                                <td>
+                                    <b>Next Hop:</b>
+                                    <p>FD01:01:01:60::2</p>
+                                </td>
+                                <td><br></td>
+                                <td>
+                                    <b>Global Unicast:</b>
+                                    <p>2001:DB8:A:99::1/64</p>
+                                </td>
+                                <td>
+                                    <b>Link-Local:</b>
+                                    <p>FE80:DB8:A:99::1</p>
+                                </td>
+                                <td><br></td>
+                                <td>
+                                    <b>Standort:</b>
+                                    <p>Lübeck</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="card card-b">
+                    <img src="./router-img.jpg">
+                    <div class="card-body">
+                        <h3>RT-B-01</h3>
+                        <p class="subTxt">Router</p>
+                        <table>
+                            <tr>
+                                <td>
+                                    <b>Local Unicast:</b>
+                                    <p>FD01:01:01:30::2/64</p>
+                                </td>
+                                <td>
+                                    <b>Next Hop:</b>
+                                    <p>FD01:01:01:30::D</p>
+                                </td>
+                                <td><br></td>
+                                <td>
+                                    <b>Local Unicast:</b>
+                                    <p>FD01:01:01:40::2/64</p>
+                                </td>
+                                <td>
+                                    <b>Next Hop:</b>
+                                    <p>FD01:01:01:40::8</p>
+                                </td>
+                                <td><br></td>
+                                <td>
+                                    <b>Local Unicast:</b>
+                                    <p>FD01:01:01:60::2/64</p>
+                                </td>
+                                <td>
+                                    <b>Next Hop:</b>
+                                    <p>FD01:01:01:60::A</p>
+                                </td>
+                                <td><br></td>
+                                <td>
+                                    <b>Global Unicast:</b>
+                                    <p>2001:DB8:2:99::1/64</p>
+                                </td>
+                                <td>
+                                    <b>Link-Local:</b>
+                                    <p>FE80:DB8:2:99::1</p>
+                                </td>
+                                <td><br></td>
+                                <td>
+                                    <b>Standort:</b>
+                                    <p>Berlin</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="card card-m">
+                    <img src="./router-img.jpg">
+                    <div class="card-body">
+                        <h3>RT-M-01</h3>
+                        <p class="subTxt">Router</p>
+                        <table>
+                            <tr>
+                                <td>
+                                    <b>Local Unicast:</b>
+                                    <p>FD01:01:01:20::D/64</p>
+                                </td>
+                                <td>
+                                    <b>Next Hop:</b>
+                                    <p>FD01:01:01:20::A</p>
+                                </td>
+                                <td><br></td>
+                                <td>
+                                    <b>Local Unicast:</b>
+                                    <p>FD01:01:01:30::D/64</p>
+                                </td>
+                                <td>
+                                    <b>Next Hop:</b>
+                                    <p>FD01:01:01:30::2</p>
+                                </td>
+                                <td><br></td>
+                                <td>
+                                    <b>Local Unicast:</b>
+                                    <p>FD01:01:01:50::D/64</p>
+                                </td>
+                                <td>
+                                    <b>Next Hop:</b>
+                                    <p>FD01:01:01:50::8</p>
+                                </td>
+                                <td><br></td>
+                                <td>
+                                    <b>Global Unicast:</b>
+                                    <p>2001:DB8:D:99::1/64</p>
+                                </td>
+                                <td>
+                                    <b>Link-Local:</b>
+                                    <p>FE80:DB8:D:99::1</p>
+                                </td>
+                                <td><br></td>
+                                <td>
+                                    <b>Standort:</b>
+                                    <p>München</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <br class="clear">
+            <div class="cardsMainBox">
+                <h1 class="devicesHeading" id="switches">Switches</h1>
+                <div class="card card-hh">
+                    <img src="./switch-img.jpg">
+                    <div class="card-body">
+                        <h3>SW-HH-01</h3>
+                        <p class="subTxt">Switch</p>
+                        <table>
+                            <tr>
+                                <td>
+                                    <b>VLAN:</b>
+                                    <p>10</p>
+                                </td>
+                                <td>
+                                    <b>Global Unicast:</b>
+                                    <p>2001:DB8:8:10::1/64</p>
+                                </td>
+                                <td>
+                                    <b>Link-Local:</b>
+                                    <p>FE80:DB8:8:10::1</p>
+                                </td>
+                                <td><br></td>
+                                <td>
+                                    <b>VLAN:</b>
+                                    <p>20</p>
+                                </td>
+                                <td>
+                                    <b>Global Unicast:</b>
+                                    <p>2001:DB8:8:20::1/64</p>
+                                </td>
+                                <td>
+                                    <b>Link-Local:</b>
+                                    <p>FE80:DB8:8:20::1</p>
+                                </td>
+                                <td><br></td>
+                                <td>
+                                    <b>Global Unicast:</b>
+                                    <p>2001:DB8:8:99::2/64</p>
+                                </td>
+                                <td>
+                                    <b>Link-Local:</b>
+                                    <p>FE80:DB8:8:99::2</p>
+                                </td>
+                                <td>
+                                    <b>Gateway:</b>
+                                    <p>2001:DB8:8:99::1</p>
+                                </td>
+                                <td><br></td>
+                                <td>
+                                    <b>Standort:</b>
+                                    <p>Hamburg</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="card card-hl">
+                    <img src="./switch-img.jpg">
+                    <div class="card-body">
+                        <h3>SW-HL-01</h3>
+                        <p class="subTxt">Switch</p>
+                        <table>
+                            <tr>
+                                <td>
+                                    <b>VLAN:</b>
+                                    <p>30</p>
+                                </td>
+                                <td>
+                                    <b>Global Unicast:</b>
+                                    <p>2001:DB8:A:30::1/64</p>
+                                </td>
+                                <td>
+                                    <b>Link-Local:</b>
+                                    <p>FE80:DB8:A:30::1</p>
+                                </td>
+                                <td><br></td>
+                                <td>
+                                    <b>VLAN:</b>
+                                    <p>40</p>
+                                </td>
+                                <td>
+                                    <b>Global Unicast:</b>
+                                    <p>2001:DB8:A:40::1/64</p>
+                                </td>
+                                <td>
+                                    <b>Link-Local:</b>
+                                    <p>FE80:DB8:A:40::1</p>
+                                </td>
+                                <td><br></td>
+                                <td>
+                                    <b>Global Unicast:</b>
+                                    <p>2001:DB8:A:99::2/64</p>
+                                </td>
+                                <td>
+                                    <b>Link-Local:</b>
+                                    <p>FE80:DB8:A:99::2</p>
+                                </td>
+                                <td>
+                                    <b>Gateway:</b>
+                                    <p>2001:DB8:A:99::1</p>
+                                </td>
+                                <td><br></td>
+                                <td>
+                                    <b>Standort:</b>
+                                    <p>Lübeck</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="card card-b">
+                    <img src="./switch-img.jpg">
+                    <div class="card-body">
+                        <h3>SW-B-01</h3>
+                        <p class="subTxt">Switch</p>
+                        <table>
+                            <tr>
+                                <td>
+                                    <b>VLAN:</b>
+                                    <p>50</p>
+                                </td>
+                                <td>
+                                    <b>Global Unicast:</b>
+                                    <p>2001:DB8:2:50::1/64</p>
+                                </td>
+                                <td>
+                                    <b>Link-Local:</b>
+                                    <p>FE80:DB8:2:50::1</p>
+                                </td>
+                                <td><br></td>
+                                <td>
+                                    <b>Global Unicast:</b>
+                                    <p>2001:DB8:2:99::2/64</p>
+                                </td>
+                                <td>
+                                    <b>Link-Local:</b>
+                                    <p>FE80:DB8:2:99::2</p>
+                                </td>
+                                <td>
+                                    <b>Gateway:</b>
+                                    <p>2001:DB8:2:99::1</p>
+                                </td>
+                                <td><br></td>
+                                <td>
+                                    <br><br>
+                                </td>
+                                <td>
+                                    <p>&nbsp;</p>
+                                </td>
+                                <td>
+                                    <br>
+                                </td>
+                                <td><br></td>
+                                <td>
+                                    <b>Standort:</b>
+                                    <p>Berlin</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="card card-m">
+                    <img src="./switch-img.jpg">
+                    <div class="card-body">
+                        <h3>SW-M-01</h3>
+                        <p class="subTxt">Switch</p>
+                        <table>
+                            <tr>
+                                <td>
+                                    <b>VLAN:</b>
+                                    <p>60</p>
+                                </td>
+                                <td>
+                                    <b>Global Unicast:</b>
+                                    <p>2001:DB8:D:60::1/64</p>
+                                </td>
+                                <td>
+                                    <b>Link-Local:</b>
+                                    <p>FE80:DB8:D:60::1</p>
+                                </td>
+                                <td><br></td>
+                                <td>
+                                    <b>Global Unicast:</b>
+                                    <p>2001:DB8:D:99::2/64</p>
+                                </td>
+                                <td>
+                                    <b>Link-Local:</b>
+                                    <p>FE80:DB8:D:99::2</p>
+                                </td>
+                                <td>
+                                    <b>Gateway:</b>
+                                    <p>2001:DB8:D:99::1</p>
+                                </td>
+                                <td><br></td>
+                                <td>
+                                    <br><br>
+                                </td>
+                                <td>
+                                    <p>&nbsp;</p>
+                                </td>
+                                <td>
+                                    <br>
+                                </td>
+                                <td><br></td>
+                                <td>
+                                    <b>Standort:</b>
+                                    <p>München</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <br class="clear">
+            <div class="cardsMainBox">
+                <h1 class="devicesHeading" id="clientsAndServer">Clients & Server</h1>
+                <div class="card card-hh">
+                    <img src="./pc-img.jpg">
+                    <div class="card-body">
+                        <h3>Hacii</h3>
+                        <p class="subTxt">Windows PC</p>
+                        <table>
+                            <tr>
+                                <td>
+                                    <b>Global Unicast:</b>
+                                    <p>2001:DB8:8:10::A/64</p>
+                                </td>
+                                <td>
+                                    <b>Link-Local:</b>
+                                    <p>FE80:DB8:8:10::A</p>
+                                </td>
+                                <td>
+                                    <b>Gateway:</b>
+                                    <p>2001:DB8:8:10::1</p>
+                                </td>
+                                <td>
+                                    <b>DNS-Server:</b>
+                                    <p>2001:DB8:2:50::A</p>
+                                </td>
+                                <td>
+                                    <b>Standort:</b>
+                                    <p>Hamburg</p>
+                                </td>
+                                <td>
+                                    <b>VLAN:</b>
+                                    <p>10</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="card card-hh">
+                    <img src="./pc-img.jpg">
+                    <div class="card-body">
+                        <h3>Tacii</h3>
+                        <p class="subTxt">Windows PC</p>
+                        <table>
+                            <tr>
+                                <td>
+                                    <b>Global Unicast:</b>
+                                    <p>2001:DB8:8:20::A/64</p>
+                                </td>
+                                <td>
+                                    <b>Link-Local:</b>
+                                    <p>FE80:DB8:8:20::A</p>
+                                </td>
+                                <td>
+                                    <b>Gateway:</b>
+                                    <p>2001:DB8:8:20::1</p>
+                                </td>
+                                <td>
+                                    <b>DNS-Server:</b>
+                                    <p>2001:DB8:2:50::A</p>
+                                </td>
+                                <td>
+                                    <b>Standort:</b>
+                                    <p>Hamburg</p>
+                                </td>
+                                <td>
+                                    <b>VLAN:</b>
+                                    <p>20</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="card card-hl">
+                    <img src="./pc-img.jpg">
+                    <div class="card-body">
+                        <h3>Klacii</h3>
+                        <p class="subTxt">Windows PC</p>
+                        <table>
+                            <tr>
+                                <td>
+                                    <b>Global Unicast:</b>
+                                    <p>2001:DB8:A:30::A/64</p>
+                                </td>
+                                <td>
+                                    <b>Link-Local:</b>
+                                    <p>FE80:DB8:A:30::A</p>
+                                </td>
+                                <td>
+                                    <b>Gateway:</b>
+                                    <p>2001:DB8:A:30::1</p>
+                                </td>
+                                <td>
+                                    <b>DNS-Server:</b>
+                                    <p>2001:DB8:2:50::A</p>
+                                </td>
+                                <td>
+                                    <b>Standort:</b>
+                                    <p>Lübeck</p>
+                                </td>
+                                <td>
+                                    <b>VLAN:</b>
+                                    <p>30</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="card card-hl">
+                    <img src="./pc-img.jpg">
+                    <div class="card-body">
+                        <h3>Picii</h3>
+                        <p class="subTxt">Windows PC</p>
+                        <table>
+                            <tr>
+                                <td>
+                                    <b>Global Unicast:</b>
+                                    <p>2001:DB8:A:40::A/64</p>
+                                </td>
+                                <td>
+                                    <b>Link-Local:</b>
+                                    <p>FE80:DB8:A:40::A</p>
+                                </td>
+                                <td>
+                                    <b>Gateway:</b>
+                                    <p>2001:DB8:A:40::1</p>
+                                </td>
+                                <td>
+                                    <b>DNS-Server:</b>
+                                    <p>2001:DB8:2:50::A</p>
+                                </td>
+                                <td>
+                                    <b>Standort:</b>
+                                    <p>Lübeck</p>
+                                </td>
+                                <td>
+                                    <b>VLAN:</b>
+                                    <p>40</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="card card-b">
+                    <img src="./server-img.jpg">
+                    <div class="card-body">
+                        <h3>DNScii</h3>
+                        <p class="subTxt">DNS- & WEB-Server</p>
+                        <table>
+                            <tr>
+                                <td>
+                                    <b>Global Unicast:</b>
+                                    <p>2001:DB8:2:50::A/64</p>
+                                </td>
+                                <td>
+                                    <b>Link-Local:</b>
+                                    <p>FE80:DB8:2:50::A</p>
+                                </td>
+                                <td>
+                                    <b>Gateway:</b>
+                                    <p>2001:DB8:2:50::1</p>
+                                </td>
+                                <td>
+                                    <b>DNS-Server:</b>
+                                    <p>2001:DB8:2:50::A</p>
+                                </td>
+                                <td>
+                                    <b>Standort:</b>
+                                    <p>Berlin</p>
+                                </td>
+                                <td>
+                                    <b>VLAN:</b>
+                                    <p>50</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="card card-m">
+                    <img src="./server-img.jpg">
+                    <div class="card-body">
+                        <h3>Webcii</h3>
+                        <p class="subTxt">Web-Server</p>
+                        <table>
+                            <tr>
+                                <td>
+                                    <b>Global Unicast:</b>
+                                    <p>2001:DB8:D:60::A/64</p>
+                                </td>
+                                <td>
+                                    <b>Link-Local:</b>
+                                    <p>FE80:DB8:D:60::A</p>
+                                </td>
+                                <td>
+                                    <b>Gateway:</b>
+                                    <p>2001:DB8:D:60::1</p>
+                                </td>
+                                <td>
+                                    <b>DNS-Server:</b>
+                                    <p>2001:DB8:2:50::A</p>
+                                </td>
+                                <td>
+                                    <b>Standort:</b>
+                                    <p>München</p>
+                                </td>
+                                <td>
+                                    <b>VLAN:</b>
+                                    <p>60</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- Devices Cards END -->
         </main>
-        <footer></footer>
+        <br class="clear">
+        <footer>
+            <p>&#169; Copyright <a href="https://github.com/DIEHamburg" target="_blank">DIEHamburg</a> - School Project</p>
+        </footer>
     </body>
 </html>
+
+<!-- Code Block saved for later -->
+<!-- <div class="code-block" style="clear:both">
+    <button>Kopieren</button>
+    <pre>
+function beispielFunktion () {
+    console.log("Hallo Welt!");
+}</pre>
+</div> -->

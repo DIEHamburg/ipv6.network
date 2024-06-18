@@ -2,17 +2,91 @@
     Here you define only the colors for the darkmode
 */
 
-/* 
-    Objects
-*/
-
-/* 
-    Classes
-*/
-
-/* 
-    IDs
-*/
+/* Basic */
 * {
-    background-color: cyan;
+    color: black;
+}
+
+body {
+    background-color: rgb(240, 240, 240);
+    margin: 0;
+}
+
+.subTxt {
+    color: gray;
+}
+
+/* Header Styles */
+header {
+    background-color:rgb(109, 22, 160);
+    box-shadow: 0.25rem 0.5rem 0.4rem rgb(109, 22, 160, 0.2);
+}
+
+header h1, header a {
+    color: whitesmoke;
+}
+
+/* Footer Styles */
+footer {
+    background-color:rgb(109, 22, 160);
+    box-shadow: 0.25rem -0.5rem 0.4rem rgb(109, 22, 160, 0.2);
+}
+
+footer p {
+    color: whitesmoke;
+}
+
+/* Accordion Styles */
+  
+.accordion {
+    background-color: rgb(255, 255, 255, 0.8);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+  
+.label {
+    color: #333;
+}
+  
+.label::before {
+    color: black;
+}
+  
+.content {
+    background: rgb(255, 255, 255, 0.8);
+}
+  
+hr {
+    border: 1px solid grey;
+}
+
+/* Code Block Styles */
+.code-block {
+    background-color: rgba(230, 230, 230, 0.8);
+}
+
+.code-block button {
+    background-color: rgb(245, 245, 245, 0.8);
+}
+
+.code-block button:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Cards Styles */
+.card {
+    background-color: rgb(255, 255, 255, 0.8);
+    box-shadow: 0.5rem 0.5rem 0.4rem rgba(77, 77, 77, 0.1);
+}
+
+.card-hh:hover {
+    box-shadow: 0 0 14px rgba(17, 204, 0, 0.6);
+}
+.card-hl:hover {
+    box-shadow: 0 0 14px rgba(204, 190, 0, 0.6);
+}
+.card-b:hover {
+    box-shadow: 0 0 14px rgba(0, 112, 204, 0.6);
+}
+.card-m:hover {
+    box-shadow: 0 0 14px rgba(146, 0, 204, 0.6);
 }
