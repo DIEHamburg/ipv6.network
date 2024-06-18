@@ -30,25 +30,108 @@
             <div class="accordion">
                 <div class="container">
                     <div class="label">Transportnetze</div>
+                     <!-- Hamburg BEGIN -->
                         <div class="content">Hamburg
-                            <h3>Aktiviere Terminal</h3>
+                            <h5>Aktiviere Terminal</h5>
                             <div class="code-block" style="clear:both">
                             <button>Kopieren</button>
                             <pre>                  
 enable
 configure terminal</pre>
                             </div>
-                            <h3>Aktiviere Terminal</h3>
+                        <h5>IPV6 Routing</h5>
                         <div class="code-block" style="clear:both">
                             <button>Kopieren</button>
                             <pre>
 
-interface GigabitEthernet0/0/0.10
-encapsulation dot1Q 10
-ipv6 address 2001:DB8:8:10::1/64
-ipv6 address FE80:DB8:8:10::1 link-local</pre>
-                            </div>
+ipv6 route 2001:DB8:A:30::/64 FD01:01:01:10::A
+ipv6 route 2001:DB8:A:40::/64 FD01:01:01:10::A
+ipv6 route 2001:DB8:A:99::/64 FD01:01:01:10::A
+ipv6 route 2001:DB8:D:60::/64 FD01:01:01:50::D
+ipv6 route 2001:DB8:D:99::/64 FD01:01:01:50::D
+ipv6 route 2001:DB8:2:50::/64 FD01:01:01:40::2
+ipv6 route 2001:DB8:2:99::/64 FD01:01:01:40::2</pre>
+                                    </div>
                         </div>
+                        <!-- Hamburg End -->
+
+                        <!-- Lübeck Begin -->
+                        <div class="content">Luebeck
+                            <h5>Aktiviere Terminal</h5>
+                            <div class="code-block" style="clear:both">
+                            <button>Kopieren</button>
+                            <pre>                  
+enable
+configure terminal</pre>
+                            </div>
+                        <h5>IPV6 Routing</h5>
+                        <div class="code-block" style="clear:both">
+                            <button>Kopieren</button>
+                            <pre>
+
+ipv6 route 2001:DB8:8:10::/64 FD01:01:01:10::8
+ipv6 route 2001:DB8:8:20::/64 FD01:01:01:10::8
+ipv6 route 2001:DB8:2:50::/64 FD01:01:01:60::2
+ipv6 route 2001:DB8:D:60::/64 FD01:01:01:20::D
+ipv6 route 2001:DB8:8:99::/64 FD01:01:01:10::8
+ipv6 route 2001:DB8:2:99::/64 FD01:01:01:60::2
+ipv6 route 2001:DB8:D:99::/64 FD01:01:01:20::D</pre>
+                                    </div>
+                        </div>
+                        <!-- Lübeck End -->
+
+                        <!-- Muenchen Begin -->
+                        <div class="content">Luebeck
+                            <h5>Aktiviere Terminal</h5>
+                            <div class="code-block" style="clear:both">
+                            <button>Kopieren</button>
+                            <pre>                  
+enable
+configure terminal</pre>
+                            </div>
+                        <h5>IPV6 Routing</h5>
+                        <div class="code-block" style="clear:both">
+                            <button>Kopieren</button>
+                            <pre>
+
+ipv6 route 2001:DB8:8:10::/64 FD01:01:01:50::8
+ipv6 route 2001:DB8:8:20::/64 FD01:01:01:50::8
+ipv6 route 2001:DB8:A:30::/64 FD01:01:01:20::A
+ipv6 route 2001:DB8:A:40::/64 FD01:01:01:20::A
+ipv6 route 2001:DB8:2:50::/64 FD01:01:01:30::2
+ipv6 route 2001:DB8:8:99::/64 FD01:01:01:50::8
+ipv6 route 2001:DB8:A:99::/64 FD01:01:01:20::A
+ipv6 route 2001:DB8:2:99::/64 FD01:01:01:30::2</pre>
+                                    </div>
+                        </div>
+                        <!-- Muenchen End -->
+
+                        <!-- Berlin Begin -->
+                        <div class="content">Luebeck
+                            <h5>Aktiviere Terminal</h5>
+                            <div class="code-block" style="clear:both">
+                            <button>Kopieren</button>
+                            <pre>                  
+enable
+configure terminal</pre>
+                            </div>
+                        <h5>IPV6 Routing</h5>
+                        <div class="code-block" style="clear:both">
+                            <button>Kopieren</button>
+                            <pre>
+
+ipv6 route 2001:DB8:8:10::/64 FD01:01:01:40::8
+ipv6 route 2001:DB8:8:20::/64 FD01:01:01:40::8
+ipv6 route 2001:DB8:A:30::/64 FD01:01:01:60::A
+ipv6 route 2001:DB8:A:40::/64 FD01:01:01:60::A
+ipv6 route 2001:DB8:D:60::/64 FD01:01:01:30::D
+ipv6 route 2001:DB8:A:99::/64 FD01:01:01:60::A
+ipv6 route 2001:DB8:8:99::/64 FD01:01:01:40::8
+ipv6 route 2001:DB8:D:99::/64 FD01:01:01:50::D</pre>
+                                    </div>
+                        </div>
+                        <!-- Berlin End -->
+
                 </div>
                 <hr>
                 <div class="container">
