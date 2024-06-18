@@ -469,6 +469,124 @@ transport input ssh</pre>
                 </div>
                 <!-- SSH END -->
 
+                <hr>
+
+                <!-- ACL BEGIN -->
+                <div class="container">
+                    <div class="label">ACL Konfiguration</div>
+                    <div class="content">
+                        <!-- ACL Hamburg & Lübeck Router -->
+                        <h3>RT-HH-01 / RT-HL-01 (ACL)</h3>
+                        <p>Setze die ACL Liste auf die Serial Schnittstellen</p>
+                        <div class="code-block" style="clear:both">
+                            <button>Kopieren</button>
+                            <pre>
+interface serial0/1/0
+ipv6 traffic-filter ClientRouterACL in
+interface serial0/1/1
+ipv6 traffic-filter ClientRouterACL in
+interface serial0/2/0
+ipv6 traffic-filter ClientRouterACL in</pre>
+                        </div>
+                        <p>Access Liste bearbeiten</p>
+                        <div class="code-block" style="clear:both">
+                            <button>Kopieren</button>
+                            <pre>
+ipv6 access-list ClientRouterACL</pre>
+                        </div>
+                        <p>SSH nur für Hamburg erlauben</p>
+                        <div class="code-block" style="clear:both">
+                            <button>Kopieren</button>
+                            <pre>
+permit tcp 2001:DB8:8::/48 any eq 22
+deny tcp any any eq 22</pre>
+                        </div>
+                        <p>Andere TCP und IPv6 Protokolle für alle erlauben</p>
+                        <div class="code-block" style="clear:both">
+                            <button>Kopieren</button>
+                            <pre>
+permit tcp any any
+permit ipv6 any any</pre>
+                        </div>
+                        <!-- ACL Berlin & München Router -->
+                        <h3>RT-B-01 / RT-M-01 (ACL)</h3>
+                        <p>Setze die ACL Liste auf die Serial Schnittstellen</p>
+                        <div class="code-block" style="clear:both">
+                            <button>Kopieren</button>
+                            <pre>
+interface serial0/1/0
+ipv6 traffic-filter ServerRouterACL in
+interface serial0/1/1
+ipv6 traffic-filter ServerRouterACL in
+interface serial0/2/0
+ipv6 traffic-filter ServerRouterACL in</pre>
+                        </div>
+                        <p>Access Liste bearbeiten</p>
+                        <div class="code-block" style="clear:both">
+                            <button>Kopieren</button>
+                            <pre>
+ipv6 access-list ServerRouterACL</pre>
+                        </div>
+                        <p>SSH nur für Hamburg erlauben</p>
+                        <div class="code-block" style="clear:both">
+                            <button>Kopieren</button>
+                            <pre>
+permit tcp 2001:DB8:8::/48 any eq 22
+deny tcp any any eq 22</pre>
+                        </div>
+                        <p>Http nur für Hamburg erlauben</p>
+                        <div class="code-block" style="clear:both">
+                            <button>Kopieren</button>
+                            <pre>
+permit tcp 2001:DB8:8::/48 any eq 80
+deny tcp any any eq 80</pre>
+                        </div>
+                        <p>Ping nur für Hamburg erlauben</p>
+                        <div class="code-block" style="clear:both">
+                            <button>Kopieren</button>
+                            <pre>
+permit icmp 2001:DB8:8::/48 any
+deny icmp any any</pre>
+                        </div>
+                        <p>Andere TCP und IPv6 Protokolle für alle erlauben</p>
+                        <div class="code-block" style="clear:both">
+                            <button>Kopieren</button>
+                            <pre>
+permit tcp any any
+permit ipv6 any any</pre>
+                        </div>
+                        <!-- ACL Switches all Locations (All ML3 Switches) -->
+                        <h3>SW-HH-01 / SW-HL-01 / SW-B-01 / SW-M-01 (ACL)</h3>
+                        <small>Funktioniert nicht im Packet Tracer. Müsste aber theoretisch funktionieren.</small>
+                        <p>Setze die ACL Liste auf die Serial Schnittstellen</p>
+                        <div class="code-block" style="clear:both">
+                            <button>Kopieren</button>
+                            <pre>
+interface range gig1/0/1 - 24
+ipv6 traffic-filter GlobalSwitchACL in</pre>
+                        </div>
+                        <p>Access Liste bearbeiten</p>
+                        <div class="code-block" style="clear:both">
+                            <button>Kopieren</button>
+                            <pre>
+ipv6 access-list GlobalSwitchACL</pre>
+                        </div>
+                        <p>SSH nur für Hamburg erlauben</p>
+                        <div class="code-block" style="clear:both">
+                            <button>Kopieren</button>
+                            <pre>
+permit tcp 2001:DB8:8::/48 any eq 22
+deny tcp any any eq 22</pre>
+                        </div>
+                        <p>Andere TCP und IPv6 Protokolle für alle erlauben</p>
+                        <div class="code-block" style="clear:both">
+                            <button>Kopieren</button>
+                            <pre>
+permit tcp any any
+permit ipv6 any any</pre>
+                        </div>
+                <!-- ACL END -->
+
             </div>
             <!-- Accordion END -->
          
