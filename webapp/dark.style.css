@@ -45,6 +45,10 @@ footer {
 .content {
     background: rgba(37, 37, 37, 0.8);
 }
+
+.content small {
+    color:rgb(215, 183, 233);
+}
   
 hr {
     border: 1px solid rgb(255, 255, 255);

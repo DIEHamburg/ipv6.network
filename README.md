@@ -755,7 +755,7 @@ Setze Hostname & SSH User
     login local
     transport input ssh
 
-## ACL
+## ACL Konfiguration
 
 ### RT-HH-01 / RT-HL-01 (ACL)
 
@@ -802,7 +802,7 @@ SSH nur für Hamburg erlauben
     permit tcp 2001:DB8:8::/48 any eq 22
     deny tcp any any eq 22
 
-Http nur für Hamburg
+Http nur für Hamburg erlauben
 
     permit tcp 2001:DB8:8::/48 any eq 80
     deny tcp any any eq 80
@@ -818,6 +818,8 @@ Andere TCP und IPv6 Protokolle für alle erlauben
     permit ipv6 any any
 
 ### SW-HH-01 / SW-HL-01 / SW-B-01 / SW-M-01 (ACL)
+
+> Funktioniert nicht im Packet Tracer. Müsste aber theoretisch funktionieren.
 
 Setze die ACL Liste auf die Serial Schnittstellen
 
