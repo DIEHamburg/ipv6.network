@@ -111,6 +111,10 @@ footer {
 .container {
     margin: 10px 0;
 }
+
+.content small {
+    font-style: italic;
+}
   
 .label {
     padding: 10px 0;

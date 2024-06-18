@@ -54,7 +54,11 @@ footer p {
 .content {
     background: rgb(255, 255, 255, 0.8);
 }
-  
+
+.content small {
+    color:rgb(123, 81, 146);
+}
+
 hr {
     border: 1px solid grey;
 }
