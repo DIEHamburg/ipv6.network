@@ -32,7 +32,7 @@ footer {
     box-shadow: 0.25rem -0.5rem 0.4rem rgb(109, 22, 160, 0.2);
 }
 
-footer p {
+footer p, a {
     color: whitesmoke;
 }
 

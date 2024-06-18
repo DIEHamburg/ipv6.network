@@ -91,9 +91,9 @@ namespace Index {
                             
                     if (box instanceof HTMLDivElement) {
                         if (box.style.display === "block") {
-                            box.style.display = "none";
+                            box.style.display = "none !important";
                         } else {
-                            box.style.display = "block";
+                            box.style.display = "block !important";
                         }
                     }
                 }
