@@ -42,7 +42,7 @@ footer p, a {
 }
    
 ::-webkit-scrollbar-thumb {
-    background: rgba(95, 95, 95, 0.8);; 
+    background: rgba(95, 95, 95, 0.8);
 }
   
 ::-webkit-scrollbar-thumb:hover {
