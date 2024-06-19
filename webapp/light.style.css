@@ -57,15 +57,12 @@ footer p, a {
 }
   
 .label {
-    color: #333;
+    background-color: rgb(255, 255, 255, 0.8);
 }
-  
-.label::before {
-    color: black;
-}
-  
-.content {
-    background: rgb(255, 255, 255, 0.8);
+
+.accordionbox-active .label {
+    background-color: rgb(109, 22, 160);
+    color: whitesmoke
 }
 
 .content small {
