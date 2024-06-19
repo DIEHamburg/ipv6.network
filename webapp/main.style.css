@@ -90,6 +90,23 @@ footer {
     text-align: center;
 }
 
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 0.6rem;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    cursor: grab;
+}
+
+::-webkit-scrollbar-thumb:active {
+    cursor: grabbing !important;
+}
+
 /* Page Styles */
 .mainPageBox {
     clear: both;

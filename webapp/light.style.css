@@ -18,7 +18,7 @@ body {
 
 /* Header Styles */
 header {
-    background-color:rgb(109, 22, 160);
+    background-color: rgb(109, 22, 160);
     box-shadow: 0.25rem 0.5rem 0.4rem rgb(109, 22, 160, 0.2);
 }
 
@@ -34,6 +34,19 @@ footer {
 
 footer p, a {
     color: whitesmoke;
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar-track {
+    background: #d4d4d4; 
+}
+   
+::-webkit-scrollbar-thumb {
+    background: rgba(95, 95, 95, 0.8);
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(77, 16, 112, 0.8);
 }
 
 /* Accordion Styles */
