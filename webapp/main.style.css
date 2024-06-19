@@ -68,6 +68,11 @@ header p:hover {
     height: 100%;
 }
 
+.headerLogoImg {
+    height: 3rem;
+    margin-right: 1rem;
+}
+
 /* Footer Styles */
 footer {
     margin-top: 2rem;
