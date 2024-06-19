@@ -78,27 +78,46 @@ namespace Index {
      */
     function accordion () {
         const accordionContainers = document.getElementsByClassName('container');
+    
+        if (accordionContainers) {
+            // -> founded
 
-        Array.from(accordionContainers).forEach(container => {
-            container.addEventListener('click', (evt) => {
-                const element = evt.currentTarget;
-                if(element instanceof HTMLDivElement){
-                    element.classList.toggle('active');
-            
-                    const content = element.getElementsByClassName('content'),
-                            contentArray = Array.from(content),
-                            box = contentArray[0];
-                            
-                    if (box instanceof HTMLDivElement) {
-                        if (box.style.display === "block") {
-                            box.style.display = "none";
-                        } else {
-                            box.style.display = "block";
-                        }
-                    }
+            Array.from(accordionContainers).forEach(container => {
+                const accordionHeading = container.getElementsByClassName('label');
+
+                if (accordionHeading) {
+                    // -> founded
+
+                    const singleHeading = Array.from(accordionHeading)[0];
+                    
+                    singleHeading.addEventListener('click', (evt) => {
+                        onAccordionHeaderClicked(evt);
+                    });
                 }
             });
-        });
+            
+        }
+    }
+
+    /**
+     * @method reacts to a click
+     * @author lf9-Team
+     * @date 17.06.2024
+     */
+    function onAccordionHeaderClicked (evt: Event) {
+        const element = evt.currentTarget;
+                        
+        if (element instanceof HTMLDivElement) {
+
+            const parentBox = element.parentElement;
+
+            if (parentBox instanceof HTMLDivElement) {
+
+                parentBox.classList.toggle('accordionbox-active');
+
+            }
+            
+        }
     }
 
     /**

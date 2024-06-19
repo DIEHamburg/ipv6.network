@@ -136,12 +136,11 @@ footer {
     margin-right: 5%;
     margin-bottom: 1rem;
     border-radius: 12px;
-    padding-block-start: 0.25em;
-    padding-block-end: 0.25em;
+    overflow: hidden;
 }
   
 .container {
-    margin: 10px 0;
+    margin: 0;
     overflow: hidden;
 }
 
@@ -150,11 +149,13 @@ footer {
 }
   
 .label {
-    padding: 10px 1em;
+    padding: 1.5rem 1em;
     font-size: 24px;
     font-weight: bold;
     cursor: pointer;
     position: relative;
+    overflow: hidden;
+    /* border-radius: 12px 12px 0 0; */
 }
   
 .label::before {
@@ -172,6 +173,14 @@ footer {
     height: auto;
     margin: 1rem 2.5%;
     display: none;
+}
+
+.accordionbox-active .content {
+    display: block !important;
+}
+
+hr {
+    margin: 0;
 }
 
 /* Code Block Styles */
@@ -285,6 +294,16 @@ footer {
         padding-right: 2rem;
     }
 
+    /* Accordion Styles */
+    .accordion {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-bottom: 1rem;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
     /* Cards Styles */
     .card {
         width: 90%;
@@ -306,6 +325,13 @@ footer {
         display: block;
     }
 
+    /* Accordion Styles */
+    .accordion {
+        width: 95%;
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+    }
+
     /* Cards Styles */
     .card {
         width: 45%;
@@ -325,6 +351,13 @@ footer {
     /* Page Styles */
     p, b {
         font-size: 12pt;
+    }
+
+    /* Accordion Styles */
+    .accordion {
+        width: calc(90% + 4 * (5% / 3));
+        margin-left: calc(5%/3);
+        margin-right: calc(5%/3);
     }
 
     /* Cards Styles */

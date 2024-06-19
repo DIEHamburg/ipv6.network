@@ -46,13 +46,14 @@ footer {
     background-color: rgba(37, 37, 37, 0.8);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-  
+
 .label {
-    color: rgb(255, 255, 255);
+    background-color: rgba(37, 37, 37, 0.8);
+    color: whitesmoke;
 }
-  
-.label::before {
-    color: rgb(255, 255, 255);
+
+.accordionbox-active .label {
+    background-color: rgb(109, 22, 160);
 }
   
 .content {
