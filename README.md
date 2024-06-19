@@ -2,7 +2,7 @@
 
 IPv6 Networking
 
-## Statische Router Config
+## Transportnetz Router Config
 
 ### Alle Router
 
@@ -132,7 +132,9 @@ Router-Switch Schnitstelle
     ipv6 address 2001:DB8:D:99::1/64
     ipv6 address FE80:DB8:D:99::1 link-local
 
-IPV6 Routing
+IPV6 Routing Statisch **ODER** OSPFv3
+
+Statisch:
 
     ipv6 route ::/0 2001:DB8:D:99::2
     ipv6 route 2001:DB8:8:10::/64 FD01:01:01:50::8
@@ -143,6 +145,20 @@ IPV6 Routing
     ipv6 route 2001:DB8:8:99::/64 FD01:01:01:50::8
     ipv6 route 2001:DB8:A:99::/64 FD01:01:01:20::A
     ipv6 route 2001:DB8:2:99::/64 FD01:01:01:30::2
+
+OPSFv3:
+
+    ipv6 router ospf 10
+    router-id 1.1.4.1
+    interface gig0/0/0
+    ipv6 ospf 10 area 0
+    interface se0/1/0
+    ipv6 ospf 10 area 0
+    interface se0/2/0
+    ipv6 ospf 10 area 0
+    interface se0/1/1
+    ipv6 ospf 10 area 0
+
 
 #### SW-M-01
 
@@ -176,7 +192,9 @@ Schnittstellen VLAN Zuweisung
     switchport mode access
     switchport access vlan 60
 
-IPV6 Routing
+IPV6 Routing Statisch **ODER** OSPFv3
+
+Statisch:
 
     ipv6 route 2001:DB8:8:10::/64 2001:DB8:D:99::1
     ipv6 route 2001:DB8:8:20::/64 2001:DB8:D:99::1
@@ -186,6 +204,16 @@ IPV6 Routing
     ipv6 route 2001:DB8:A:99::/64 2001:DB8:D:99::1
     ipv6 route 2001:DB8:2:50::/64 2001:DB8:D:99::1
     ipv6 route 2001:DB8:2:99::/64 2001:DB8:D:99::1
+
+OSPFv3:
+
+    ipv6 router ospf 10
+    router-id 1.1.4.2
+    interface gig1/0/1
+    ipv6 ospf 10 area 0
+    interface vlan 60
+    ipv6 ospf 10 area 0
+
 
 ### Berlin
 
@@ -203,7 +231,9 @@ Router-Switch Schnitstelle
     ipv6 address 2001:DB8:2:99::1/64
     ipv6 address FE80:DB8:2:99::1 link-local
 
-IPV6 Routing
+IPV6 Routing Statisch **ODER** OSPFv3
+
+Statisch:
 
     ipv6 route ::/0 2001:DB8:2:99::2
     ipv6 route 2001:DB8:8:10::/64 FD01:01:01:40::8
@@ -214,6 +244,19 @@ IPV6 Routing
     ipv6 route 2001:DB8:A:99::/64 FD01:01:01:60::A
     ipv6 route 2001:DB8:8:99::/64 FD01:01:01:40::8
     ipv6 route 2001:DB8:D:99::/64 FD01:01:01:50::D
+
+OSPFv3:
+
+    ipv6 router ospf 10
+    router-id 1.1.3.1
+    interface gig0/0/0
+    ipv6 ospf 10 area 0
+    interface se0/1/0
+    ipv6 ospf 10 area 0
+    interface se0/2/0
+    ipv6 ospf 10 area 0
+    interface se0/1/1
+    ipv6 ospf 10 area 0
 
 #### SW-B-01
 
@@ -247,7 +290,9 @@ Schnittstellen VLAN Zuweisung
     switchport mode access
     switchport access vlan 50
 
-IPV6 Routing
+IPV6 Routing Statisch **ODER** OSPFv3
+
+Statisch:
 
     ipv6 route 2001:DB8:8:10::/64 2001:DB8:2:99::1
     ipv6 route 2001:DB8:8:20::/64 2001:DB8:2:99::1
@@ -257,6 +302,16 @@ IPV6 Routing
     ipv6 route 2001:DB8:A:99::/64 2001:DB8:2:99::1
     ipv6 route 2001:DB8:D:60::/64 2001:DB8:2:99::1
     ipv6 route 2001:DB8:D:99::/64 2001:DB8:2:99::1
+
+OSPFv3:
+
+    ipv6 router ospf 10
+    router-id 1.1.3.2
+    interface gig1/0/1
+    description SW-B zu RT-B
+    ipv6 ospf 10 area 0
+    interface vlan 50
+    ipv6 ospf 10 area 0
 
 ### Hamburg
 
@@ -274,7 +329,9 @@ Router-Switch Schnitstelle
     ipv6 address 2001:DB8:8:99::1/64
     ipv6 address FE80:DB8:8:99::1 link-local
 
-IPV6 Routing
+IPV6 Routing Statisch **ODER** OSPFv3
+
+Statisch:
 
     ipv6 route ::/0 2001:DB8:8:99::2
     ipv6 route 2001:DB8:A:30::/64 FD01:01:01:10::A
@@ -284,6 +341,19 @@ IPV6 Routing
     ipv6 route 2001:DB8:D:99::/64 FD01:01:01:50::D
     ipv6 route 2001:DB8:2:50::/64 FD01:01:01:40::2
     ipv6 route 2001:DB8:2:99::/64 FD01:01:01:40::2
+
+OSPFv3:
+
+    ipv6 router ospf 10
+    router-id 1.1.1.1
+    interface gig0/0/0
+    ipv6 router ospf 10 area 0
+    interface se0/1/0
+    ipv6 router ospf 10 area 0
+    interface se0/2/0
+    ipv6 router ospf 10 area 0
+    interface se0/1/1
+    ipv6 router ospf 10 area 0
 
 #### SW-HH-01
 
@@ -325,7 +395,9 @@ Schnittstellen VLAN Zuweisung
     switchport mode access
     switchport access vlan 20
 
-IPV6 Routing
+IPV6 Routing Statisch **ODER** OSPFv3
+
+Statisch:
 
     ipv6 route 2001:DB8:A:30::/64 2001:DB8:8:99::1
     ipv6 route 2001:DB8:A:40::/64 2001:DB8:8:99::1
@@ -334,6 +406,17 @@ IPV6 Routing
     ipv6 route 2001:DB8:2:99::/64 2001:DB8:8:99::1
     ipv6 route 2001:DB8:D:60::/64 2001:DB8:8:99::1
     ipv6 route 2001:DB8:D:99::/64 2001:DB8:8:99::1
+
+OSPFv3:
+
+    ipv6 router ospf 10
+    router-id 1.1.1.2
+    interface gig1/0/1
+    ipv6 ospf 10 area 0
+    interface vlan 10
+    ipv6 ospf 10 area 0
+    interface vlan 20
+    ipv6 ospf 10 area 0
 
 ### Lübeck
 
@@ -351,7 +434,9 @@ Router-Switch Schnitstelle
     ipv6 address 2001:DB8:A:99::1/64
     ipv6 address FE80:DB8:A:99::1 link-local
 
-IPV6 Routing
+IPV6 Routing Statisch **ODER** OSPFv3
+
+Statisch:
 
     ipv6 route ::/0 2001:DB8:A:99::2
     ipv6 route 2001:DB8:8:10::/64 FD01:01:01:10::8
@@ -361,6 +446,19 @@ IPV6 Routing
     ipv6 route 2001:DB8:8:99::/64 FD01:01:01:10::8
     ipv6 route 2001:DB8:2:99::/64 FD01:01:01:60::2
     ipv6 route 2001:DB8:D:99::/64 FD01:01:01:20::D
+
+OPSFv3:
+
+    ipv6 router ospf 10
+    router-id 1.1.2.1
+    interface gig0/0/0
+    ipv6 router ospf 10 area 0
+    interface se0/1/0
+    ipv6 router ospf 10 area 0
+    interface se0/2/0
+    ipv6 router ospf 10 area 0
+    interface se0/1/1
+    ipv6 router ospf 10 area 0
 
 #### SW-HL-01
 
@@ -402,7 +500,9 @@ Schnittstellen VLAN Zuweisung
     switchport mode access
     switchport access vlan 40
 
-IPV6 Routing
+IPV6 Routing Statisch **ODER** OSPFv3
+
+Statisch:
 
     ipv6 route 2001:DB8:8:10::/64 2001:DB8:A:99::1
     ipv6 route 2001:DB8:8:20::/64 2001:DB8:A:99::1
@@ -411,6 +511,17 @@ IPV6 Routing
     ipv6 route 2001:DB8:2:99::/64 2001:DB8:A:99::1
     ipv6 route 2001:DB8:D:60::/64 2001:DB8:A:99::1
     ipv6 route 2001:DB8:D:99::/64 2001:DB8:A:99::1
+
+OSPFv3:
+
+    ipv6 router ospf 10
+    router-id 1.1.2.2
+    interface gig1/0/1
+    ipv6 ospf 10 area 0
+    interface vlan 30
+    ipv6 ospf 10 area 0
+    interface vlan 40
+    ipv6 ospf 10 area 0
 
 ## Banner erstellen
 
