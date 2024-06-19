@@ -1,100 +1,218 @@
 <html>
-    <head>
-        <script src="base.aw.controller.js"></script>
-        <link rel="stylesheet" href="main.style.css">
-        <title>IPv6 Doku - DIEHamburg</title>
-        <link rel="icon" type="image/x-icon" href="favicon.ico">
-    </head>
-    <body>
-        <header>
-            <img class="headerLogoImg fakeBtn" onclick="Index.navigateToURL('https://github.com/DIEHamburg')" src="logo.png">
-            <h1 class="fakeBtn" onclick="Index.navigateToURL('https://github.com/DIEHamburg')">IPv6 Doku</h1>
-            <p class="headerLinks">
-                <a href="#setup">Setup</a>
-            </p>
-            <p class="headerLinks">
-                <a href="#router">Router</a>
-            </p>
-            <p class="headerLinks">
-                <a href="#switches">Switches</a>
-            </p>
-            <p class="headerLinks">
-                <a href="#clientsAndServer">Clients & Server</a>
-            </p>
-            <p class="headerImg">
-                <img src="icon-contrast.png" onclick="AW.Base.changeLightOrDarkMode()">
-            </p>
-        </header>
-        <main class="mainPageBox">                
-            <h1>Setup</h1>
 
-            <!-- Accordion BEGIN -->
-            <div class="accordion">
-                <div class="container">
-                    <div class="label">Transportnetz Router Config</div>
-                     <!-- Hamburg BEGIN -->
-                        <div class="content">
-                            <img src="./serial-routes.png">
-                            <h4>Hamburg/RT-HH-01</h4>
-                            <h5>Aktiviere Terminal</h5>
-                            <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>                  
+<head>
+    <script src="base.aw.controller.js"></script>
+    <link rel="stylesheet" href="main.style.css">
+    <title>IPv6 Doku - DIEHamburg</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body>
+    <header>
+        <img class="headerLogoImg fakeBtn" onclick="Index.navigateToURL('https://github.com/DIEHamburg')"
+            src="logo.png">
+        <h1 class="fakeBtn" onclick="Index.navigateToURL('https://github.com/DIEHamburg')">IPv6 Doku</h1>
+        <p class="headerLinks">
+            <a href="#setup">Setup</a>
+        </p>
+        <p class="headerLinks">
+            <a href="#router">Router</a>
+        </p>
+        <p class="headerLinks">
+            <a href="#switches">Switches</a>
+        </p>
+        <p class="headerLinks">
+            <a href="#clientsAndServer">Clients & Server</a>
+        </p>
+        <p class="headerImg">
+            <img src="icon-contrast.png" onclick="AW.Base.changeLightOrDarkMode()">
+        </p>
+    </header>
+    <main class="mainPageBox">
+        <h1>Setup</h1>
+
+        <!-- Accordion BEGIN -->
+        <div class="accordion">
+            <div class="container">
+
+                <!-- Transportnetze BEGIN -->
+
+                <div class="label">Transportnetz Router Config</div>
+                <div class="content">
+                    <img src="./serial-routes.png">
+                    <h2>Statische Router Config</h2>
+                    <h3>Alle Router</h3>
+                    <h4>Aktiviere Terminal</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+enable</pre>
+                    </div>
+                    <h4>In Config gehen</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+configure terminal</pre>
+                    </div>
+                    <h4>Aktiviere ipv6</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+ipv6 unicast-routing</pre>
+                    </div>
+                    <h4>Keine Domainnamenauflösung</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+no ip domain-lookup</pre>
+                    </div>
+                    <h3>RT-M-01</h3>
+                    <h4>MünchenLübeck Connection</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+interface Serial0/1/0
+description MuenchenLuebeck
+ipv6 address FD01:01:01:20::D/64
+no shutdown</pre>
+                    </div>
+                    <h4>MünchenBerlin Connection</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+interface Serial0/1/1
+description MuenchenBerlin
+ipv6 address FD01:01:01:30::D/64
+no shutdown</pre>
+                    </div>
+                    <h4>MünchenHamburg Connection</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+interface Serial0/2/0
+description MuenchenHamburg
+ipv6 address FD01:01:01:50::D/64
+no shutdown</pre>
+                    </div>
+                    <h3>RT-B-01</h3>
+                    <h4>BerlinMuenchen Connection</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+interface Serial0/1/0
+description BerlinMuenchen
+ipv6 address FD01:01:01:30::2/64
+no shutdown</pre>
+                    </div>
+                    <h4>BerlinHamburg Connection</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+interface Serial0/1/1
+description BerlinHamburg
+ipv6 address FD01:01:01:40::2/64
+no shutdown</pre>
+                    </div>
+                    <h4>BerlinLuebeck Connection</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+interface Serial0/2/0
+description BerlinLuebeck
+ipv6 address FD01:01:01:60::2/64
+no shutdown</pre>
+                    </div>
+                    <h3>RT-HH-01</h3>
+                    <h4>HamburgLuebeck Connection</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+interface Serial0/1/0
+description HamburgLuebeck
+ipv6 address FD01:01:01:10::8/64
+no shutdown</pre>
+                    </div>
+                    <h4>HamburgBerlin Connection</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+interface Serial0/1/1
+description HamburgBerlin
+ipv6 address FD01:01:01:40::8/64
+no shutdown</pre>
+                    </div>
+                    <h4>HamburgMuenchen Connection</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+interface Serial0/2/0
+description HamburgMuenchen
+ipv6 address FD01:01:01:50::8/64
+no shutdown</pre>
+                    </div>
+                    <h3>RT-HL-01</h3>
+                    <h4>LuebeckHamburg Connection</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+interface Serial0/1/0
+description LuebeckHamburg
+ipv6 address FD01:01:01:10::A/64
+no shutdown</pre>
+                    </div>
+                    <h4>LuebeckMuenchen Connection</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+interface Serial0/1/1
+description LuebeckMuenchen
+ipv6 address FD01:01:01:20::A/64
+no shutdown</pre>
+                    </div>
+                    <h4>LuebeckBerlin Connection</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+interface Serial0/2/0
+description LuebeckBerlin
+ipv6 address FD01:01:01:60::A/64
+no shutdown</pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Transportnetze End -->
+            <!-- Standortkonfiguration Begin -->
+
+            <hr>
+
+            <div class="container">
+                <div class="label">Standort Konfiguration</div>
+                <div class="content">
+                    <!-- München Begin -->
+                    <h3>München</h3>
+                    <h4>RT-M-01 (RouterSwitch)</h4>
+                    <h4>Aktiviere Terminal</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 enable
 configure terminal</pre>
-                            </div>
-                        <h5>IPV6 Routing</h5>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
-ipv6 route 2001:DB8:A:30::/64 FD01:01:01:10::A
-ipv6 route 2001:DB8:A:40::/64 FD01:01:01:10::A
-ipv6 route 2001:DB8:A:99::/64 FD01:01:01:10::A
-ipv6 route 2001:DB8:D:60::/64 FD01:01:01:50::D
-ipv6 route 2001:DB8:D:99::/64 FD01:01:01:50::D
-ipv6 route 2001:DB8:2:50::/64 FD01:01:01:40::2
-ipv6 route 2001:DB8:2:99::/64 FD01:01:01:40::2</pre>
-                                    </div>
-                        </div>
-                        <!-- Hamburg End -->
-
-                        <!-- Lübeck Begin -->
-                        <div class="content">Lübeck/RT-HL-01
-                            <h5>Aktiviere Terminal</h5>
-                            <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>                  
-enable
-configure terminal</pre>
-                            </div>
-                        <h5>IPV6 Routing</h5>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
-ipv6 route 2001:DB8:8:10::/64 FD01:01:01:10::8
-ipv6 route 2001:DB8:8:20::/64 FD01:01:01:10::8
-ipv6 route 2001:DB8:2:50::/64 FD01:01:01:60::2
-ipv6 route 2001:DB8:D:60::/64 FD01:01:01:20::D
-ipv6 route 2001:DB8:8:99::/64 FD01:01:01:10::8
-ipv6 route 2001:DB8:2:99::/64 FD01:01:01:60::2
-ipv6 route 2001:DB8:D:99::/64 FD01:01:01:20::D</pre>
-                                    </div>
-                        </div>
-                        <!-- Lübeck End -->
-
-                        <!-- München Begin -->
-                        <div class="content">München/RT-M-01
-                            <h5>Aktiviere Terminal</h5>
-                            <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>                  
-enable
-configure terminal</pre>
-                            </div>
-                        <h5>IPV6 Routing</h5>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+                    </div>
+                    <h4>Router-Switch Schnitstelle</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+interface GigabitEthernet0/0/0
+no shutdown
+ipv6 address 2001:DB8:D:99::1/64
+ipv6 address FE80:DB8:D:99::1 link-local</pre>
+                    </div>
+                    <h4>IPV6 Routing</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+ipv6 route ::/0 2001:DB8:D:99::2
 ipv6 route 2001:DB8:8:10::/64 FD01:01:01:50::8
 ipv6 route 2001:DB8:8:20::/64 FD01:01:01:50::8
 ipv6 route 2001:DB8:A:30::/64 FD01:01:01:20::A
@@ -103,23 +221,86 @@ ipv6 route 2001:DB8:2:50::/64 FD01:01:01:30::2
 ipv6 route 2001:DB8:8:99::/64 FD01:01:01:50::8
 ipv6 route 2001:DB8:A:99::/64 FD01:01:01:20::A
 ipv6 route 2001:DB8:2:99::/64 FD01:01:01:30::2</pre>
-                                    </div>
-                        </div>
-                        <!-- München End -->
-
-                        <!-- Berlin Begin -->
-                        <div class="content">Berlin/RT-B-01
-                            <h5>Aktiviere Terminal</h5>
-                            <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>                  
+                    </div>
+                    <h4>SW-M-01</h4>
+                    <h4>Aktiviere Terminal</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 enable
 configure terminal</pre>
-                            </div>
-                        <h5>IPV6 Routing</h5>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+                    </div>
+                    <h4>Keine DNS Auflösung</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+ipv6 unicast-routing
+no ip domain-lookup</pre>
+                    </div>
+                    <h4>Setze Routerport</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+interface GigabitEthernet1/0/1
+no shutdown
+no switchport
+ipv6 address 2001:DB8:D:99::2/64
+ipv6 address FE80:DB8:D:99::2 link-local</pre>
+                    </div>
+                    <h4>Erstelle VLANs</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+interface vlan 60
+ipv6 address 2001:DB8:D:60::1/64
+ipv6 address FE80:DB8:D:60::1 link-local</pre>
+                    </div>
+                    <h4>Schnittstellen VLAN Zuweisung</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+interface GigabitEthernet1/0/2
+switchport mode access
+switchport access vlan 60</pre>
+                    </div>
+                    <h4>IPV6 Routing</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+ipv6 route 2001:DB8:8:10::/64 2001:DB8:D:99::1
+ipv6 route 2001:DB8:8:20::/64 2001:DB8:D:99::1
+ipv6 route 2001:DB8:8:99::/64 2001:DB8:D:99::1
+ipv6 route 2001:DB8:A:30::/64 2001:DB8:D:99::1
+ipv6 route 2001:DB8:A:40::/64 2001:DB8:D:99::1
+ipv6 route 2001:DB8:A:99::/64 2001:DB8:D:99::1
+ipv6 route 2001:DB8:2:50::/64 2001:DB8:D:99::1
+ipv6 route 2001:DB8:2:99::/64 2001:DB8:D:99::1</pre>
+                    </div>
+                    <!-- München End -->
+                    <!-- Berlin Begin -->
+                    <h3>Berlin</h3>
+                    <h4>RT-B-01 (RouterSwitch)</h4>
+                    <h4>Aktiviere Terminal</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+enable
+configure terminal</pre>
+                    </div>
+                    <h4>Router-Switch Schnitstelle</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+interface GigabitEthernet0/0/0
+no shutdown
+ipv6 address 2001:DB8:2:99::1/64
+ipv6 address FE80:DB8:2:99::1 link-local</pre>
+                    </div>
+                    <h4>IPV6 Routing</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+ipv6 route ::/0 2001:DB8:2:99::2
 ipv6 route 2001:DB8:8:10::/64 FD01:01:01:40::8
 ipv6 route 2001:DB8:8:20::/64 FD01:01:01:40::8
 ipv6 route 2001:DB8:A:30::/64 FD01:01:01:60::A
@@ -128,191 +309,531 @@ ipv6 route 2001:DB8:D:60::/64 FD01:01:01:30::D
 ipv6 route 2001:DB8:A:99::/64 FD01:01:01:60::A
 ipv6 route 2001:DB8:8:99::/64 FD01:01:01:40::8
 ipv6 route 2001:DB8:D:99::/64 FD01:01:01:50::D</pre>
-                                    </div>
-                        </div>
-                        <!-- Berlin End -->
-
-                </div>
-                <hr>
-                <div class="container">
-                    <div class="label">What is CSS?</div>
-                    <div class="content">inhalt</div>
-                </div>
-
-                <hr>
-
-                <!-- Passwords BEGIN -->
-                <div class="container">
-                    <div class="label">Passwort Konfiguration</div>
-                    <div class="content">
-                        <!-- Passwords Hamburg -->
-                        <h3>Hamburg</h3>
-                        <h4>RT-HH-01</h4>
-                        <p>Aktiviere Terminal</p>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+                    </div>
+                    <h4>SW-B-01</h4>
+                    <h4>Aktiviere Terminal</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 enable
 configure terminal</pre>
-                        </div>
-                        <p>Passwort Einrichtung</p>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+                    </div>
+                    <h4>Keine DNS Auflösung</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+ipv6 unicast-routing
+no ip domain-lookup</pre>
+                    </div>
+                    <h4>Setze Routerport</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+interface GigabitEthernet1/0/1
+no shutdown
+no switchport
+ipv6 address 2001:DB8:2:99::2/64
+ipv6 address FE80:DB8:2:99::2 link-local</pre>
+                    </div>
+                    <h4>Erstelle VLANs</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+interface vlan 50
+ipv6 address 2001:DB8:2:50::1/64
+ipv6 address FE80:DB8:2:50::1 link-local</pre>
+                    </div>
+                    <h4>Schnittstellen VLAN Zuweisung</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+interface GigabitEthernet1/0/2
+switchport mode access
+switchport access vlan 50</pre>
+                    </div>
+                    <h4>IPV6 Routing</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+ipv6 route 2001:DB8:8:10::/64 2001:DB8:2:99::1
+ipv6 route 2001:DB8:8:20::/64 2001:DB8:2:99::1
+ipv6 route 2001:DB8:8:99::/64 2001:DB8:2:99::1
+ipv6 route 2001:DB8:A:30::/64 2001:DB8:2:99::1
+ipv6 route 2001:DB8:A:40::/64 2001:DB8:2:99::1
+ipv6 route 2001:DB8:A:99::/64 2001:DB8:2:99::1
+ipv6 route 2001:DB8:D:60::/64 2001:DB8:2:99::1
+ipv6 route 2001:DB8:D:99::/64 2001:DB8:2:99::1</pre>
+                    </div>
+                    <!-- Berlin End -->
+                    <!-- Hamburg Begin -->
+                    <h3>Hamburg</h3>
+                    <h4>RT-HH-01 (RouterSwitch)</h4>
+                    <h4>Aktiviere Terminal</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+enable
+configure terminal</pre>
+                    </div>
+                    <h4>Router-Switch Schnitstelle</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+interface GigabitEthernet0/0/0
+no shutdown
+ipv6 address 2001:DB8:8:99::1/64
+ipv6 address FE80:DB8:8:99::1 link-local</pre>
+                    </div>
+                    <h4>IPV6 Routing</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+ipv6 route ::/0 2001:DB8:8:99::2
+ipv6 route 2001:DB8:A:30::/64 FD01:01:01:10::A
+ipv6 route 2001:DB8:A:40::/64 FD01:01:01:10::A
+ipv6 route 2001:DB8:A:99::/64 FD01:01:01:10::A
+ipv6 route 2001:DB8:D:60::/64 FD01:01:01:50::D
+ipv6 route 2001:DB8:D:99::/64 FD01:01:01:50::D
+ipv6 route 2001:DB8:2:50::/64 FD01:01:01:40::2
+ipv6 route 2001:DB8:2:99::/64 FD01:01:01:40::2</pre>
+                    </div>
+                    <h4>SW-HH-01</h4>
+                    <h4>Aktiviere Terminal</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+enable
+configure terminal</pre>
+                    </div>
+                    <h4>Keine DNS Auflösung</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+ipv6 unicast-routing
+no ip domain-lookup</pre>
+                    </div>
+                    <h4>Setze Routerport</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+interface GigabitEthernet1/0/1
+no shutdown
+no switchport
+ipv6 address 2001:DB8:8:99::2/64
+ipv6 address FE80:DB8:8:99::2 link-local</pre>
+                    </div>
+                    <h4>Erstelle VLANs</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+interface vlan 10
+ipv6 address 2001:DB8:8:10::1/64
+ipv6 address FE80:DB8:8:10::1 link-local
+
+interface vlan 20
+ipv6 address 2001:DB8:8:20::1/64
+ipv6 address FE80:DB8:8:20::1 link-local</pre>
+                    </div>
+                    <h4>Schnittstellen VLAN Zuweisung</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+interface GigabitEthernet1/0/2
+switchport mode access
+switchport access vlan 10
+
+interface GigabitEthernet1/0/3
+switchport mode access
+switchport access vlan 20</pre>
+                    </div>
+                    <h4>IPV6 Routing</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+ipv6 route 2001:DB8:A:30::/64 2001:DB8:8:99::1
+ipv6 route 2001:DB8:A:40::/64 2001:DB8:8:99::1
+ipv6 route 2001:DB8:A:99::/64 2001:DB8:8:99::1
+ipv6 route 2001:DB8:2:50::/64 2001:DB8:8:99::1
+ipv6 route 2001:DB8:2:99::/64 2001:DB8:8:99::1
+ipv6 route 2001:DB8:D:60::/64 2001:DB8:8:99::1
+ipv6 route 2001:DB8:D:99::/64 2001:DB8:8:99::1</pre>
+                    </div>
+                    <!-- Hamburg End -->
+                    <!-- Lübeck Begin -->
+                    <h3>Hamburg</h3>
+                    <h4>RT-HL-01 (RouterSwitch)</h4>
+                    <h4>Aktiviere Terminal</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+enable
+configure terminal</pre>
+                    </div>
+                    <h4>Router-Switch Schnitstelle</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+interface GigabitEthernet0/0/0
+no shutdown
+ipv6 address 2001:DB8:A:99::1/64
+ipv6 address FE80:DB8:A:99::1 link-local</pre>
+                    </div>
+                    <h4>IPV6 Routing</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+ipv6 route ::/0 2001:DB8:A:99::2
+ipv6 route 2001:DB8:8:10::/64 FD01:01:01:10::8
+ipv6 route 2001:DB8:8:20::/64 FD01:01:01:10::8
+ipv6 route 2001:DB8:2:50::/64 FD01:01:01:60::2
+ipv6 route 2001:DB8:D:60::/64 FD01:01:01:20::D
+ipv6 route 2001:DB8:8:99::/64 FD01:01:01:10::8
+ipv6 route 2001:DB8:2:99::/64 FD01:01:01:60::2
+ipv6 route 2001:DB8:D:99::/64 FD01:01:01:20::D</pre>
+                    </div>
+                    <h4>SW-HL-01</h4>
+                    <h4>Aktiviere Terminal</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+enable
+configure terminal</pre>
+                    </div>
+                    <h4>Keine DNS Auflösung</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+ipv6 unicast-routing
+no ip domain-lookup</pre>
+                    </div>
+                    <h4>Setze Routerport</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+interface GigabitEthernet1/0/1
+no shutdown
+no switchport
+ipv6 address 2001:DB8:A:99::2/64
+ipv6 address FE80:DB8:A:99::2 link-local</pre>
+                    </div>
+                    <h4>Erstelle VLANs</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+interface vlan 30
+ipv6 address 2001:DB8:A:30::1/64
+ipv6 address FE80:DB8:A:30::1 link-local
+
+interface vlan 40
+ipv6 address 2001:DB8:A:40::1/64
+ipv6 address FE80:DB8:A:40::1 link-local</pre>
+                    </div>
+                    <h4>Schnittstellen VLAN Zuweisung</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+interface GigabitEthernet1/0/2
+switchport mode access
+switchport access vlan 30
+
+interface GigabitEthernet1/0/3
+switchport mode access
+switchport access vlan 40</pre>
+                    </div>
+                    <h4>IPV6 Routing</h4>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+ipv6 route 2001:DB8:8:10::/64 2001:DB8:A:99::1
+ipv6 route 2001:DB8:8:20::/64 2001:DB8:A:99::1
+ipv6 route 2001:DB8:8:99::/64 2001:DB8:A:99::1
+ipv6 route 2001:DB8:2:50::/64 2001:DB8:A:99::1
+ipv6 route 2001:DB8:2:99::/64 2001:DB8:A:99::1
+ipv6 route 2001:DB8:D:60::/64 2001:DB8:A:99::1
+ipv6 route 2001:DB8:D:99::/64 2001:DB8:A:99::1</pre>
+                    </div>
+                    <!-- Lübeck End -->
+                </div>
+            </div>
+
+            <!-- Standortkonfiguration Begin -->
+
+            <hr>
+            <!-- Banner Begin -->
+            <div class="container">
+                <div class="label">Banner erstellen</div>
+                <div class="content">
+                    <!-- Hamburg Begin -->
+                    <h3>Hamburg</h3>
+                    <h4>RT-HH-01</h4>
+                    <h5>In der Cli</h5>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+enable
+configure terminal
+banner login #Unautorisierter Zugang verboten. Bitte geben sie das Passwort ein.#
+exit</pre>
+                    </div>
+                    <h4>SW-HH-01</h4>
+                    <h5>In der Cli</h5>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+enable
+configure terminal
+banner login #Unautorisierter Zugang verboten. Bitte geben sie das Passwort ein.#
+exit</pre>
+                    </div>
+                    <!-- Hamburg End -->
+                    <!-- Lübeck Begin -->
+                    <h3>Lübeck</h3>
+                    <h4>RT-HL-01</h4>
+                    <h5>In der Cli</h5>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+enable
+configure terminal
+banner login #Unautorisierter Zugang verboten. Bitte geben sie das Passwort ein.#
+exit</pre>
+                    </div>
+                    <h4>SW-HL-01</h4>
+                    <h5>In der Cli</h5>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+enable
+configure terminal
+banner login #Unautorisierter Zugang verboten. Bitte geben sie das Passwort ein.#
+exit</pre>
+                    </div>
+                    <!-- Lübeck End -->
+                    <!-- Berlin Begin -->
+                    <h3>Berlin</h3>
+                    <h4>RT-B-01</h4>
+                    <h5>In der Cli</h5>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+enable
+configure terminal
+banner login #Unautorisierter Zugang verboten. Bitte geben sie das Passwort ein.#
+exit</pre>
+                    </div>
+                    <h4>SW-B-01</h4>
+                    <h5>In der Cli</h5>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+enable
+configure terminal
+banner login #Unautorisierter Zugang verboten. Bitte geben sie das Passwort ein.#
+exit</pre>
+                    </div>
+                    <!-- Berlin End -->
+                    <!-- München Begin -->
+                    <h3>München</h3>
+                    <h4>RT-M-01</h4>
+                    <h5>In der Cli</h5>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+enable
+configure terminal
+banner login #Unautorisierter Zugang verboten. Bitte geben sie das Passwort ein.#
+exit</pre>
+                    </div>
+                    <h4>SW-M-01</h4>
+                    <h5>In der Cli</h5>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+enable
+configure terminal
+banner login #Unautorisierter Zugang verboten. Bitte geben sie das Passwort ein.#
+exit</pre>
+                    </div>
+                    <!-- München End -->
+                </div>
+            </div>
+
+            <!-- Banner Begin -->
+
+            <hr>
+
+            <!-- Passwords BEGIN -->
+            <div class="container">
+                <div class="label">Passwort Konfiguration</div>
+                <div class="content">
+                    <!-- Passwords Hamburg -->
+                    <h3>Hamburg</h3>
+                    <h4>RT-HH-01</h4>
+                    <p>Aktiviere Terminal</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+enable
+configure terminal</pre>
+                    </div>
+                    <p>Passwort Einrichtung</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 line con 0
 password yf4Xvwmy7dF2JQwE
 login
 exit</pre>
-                        </div>
-                        <h4>SW-HH-01</h4>
-                        <p>Aktiviere Terminal</p>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+                    </div>
+                    <h4>SW-HH-01</h4>
+                    <p>Aktiviere Terminal</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 enable
 configure terminal</pre>
-                        </div>
-                        <p>Passwort Einrichtung</p>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+                    </div>
+                    <p>Passwort Einrichtung</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 line con 0
 password bxJxE9erFTXn8eHb
 login
 exit</pre>
-                        </div>
-                        <!-- Passwords Lübeck -->
-                        <h3>Lübeck</h3>
-                        <h4>RT-HL-01</h4>
-                        <p>Aktiviere Terminal</p>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+                    </div>
+                    <!-- Passwords Lübeck -->
+                    <h3>Lübeck</h3>
+                    <h4>RT-HL-01</h4>
+                    <p>Aktiviere Terminal</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 enable
 configure terminal</pre>
-                        </div>
-                        <p>Passwort Einrichtung</p>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+                    </div>
+                    <p>Passwort Einrichtung</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 line con 0
 password ezX64jyk7MXJsjm8
 login
 exit</pre>
-                        </div>
-                        <h4>SW-HL-01</h4>
-                        <p>Aktiviere Terminal</p>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+                    </div>
+                    <h4>SW-HL-01</h4>
+                    <p>Aktiviere Terminal</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 enable
 configure terminal</pre>
-                        </div>
-                        <p>Passwort Einrichtung</p>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+                    </div>
+                    <p>Passwort Einrichtung</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 line con 0
 password T85NtxJ6C3E2hda3
 login
 exit</pre>
-                        </div>
-                        <!-- Passwords Berlin -->
-                        <h3>Berlin</h3>
-                        <h4>RT-B-01</h4>
-                        <p>Aktiviere Terminal</p>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+                    </div>
+                    <!-- Passwords Berlin -->
+                    <h3>Berlin</h3>
+                    <h4>RT-B-01</h4>
+                    <p>Aktiviere Terminal</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 enable
 configure terminal</pre>
-                        </div>
-                        <p>Passwort Einrichtung</p>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+                    </div>
+                    <p>Passwort Einrichtung</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 line con 0
 password bxRn5j2CuKyq7RVD
 login
 exit</pre>
-                        </div>
-                        <h4>SW-B-01</h4>
-                        <p>Aktiviere Terminal</p>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+                    </div>
+                    <h4>SW-B-01</h4>
+                    <p>Aktiviere Terminal</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 enable
 configure terminal</pre>
-                        </div>
-                        <p>Passwort Einrichtung</p>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+                    </div>
+                    <p>Passwort Einrichtung</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 line con 0
 password QVrSHsb79ANNmbeU
 login
 exit</pre>
-                        </div>
-                        <!-- Passwords München -->
-                        <h3>München</h3>
-                        <h4>RT-M-01</h4>
-                        <p>Aktiviere Terminal</p>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+                    </div>
+                    <!-- Passwords München -->
+                    <h3>München</h3>
+                    <h4>RT-M-01</h4>
+                    <p>Aktiviere Terminal</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 enable
 configure terminal</pre>
-                        </div>
-                        <p>Passwort Einrichtung</p>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+                    </div>
+                    <p>Passwort Einrichtung</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 line con 0
 password ctLFAsuyfbGtES5C
 login
 exit</pre>
-                        </div>
-                        <h4>SW-M-01</h4>
-                        <p>Aktiviere Terminal</p>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+                    </div>
+                    <h4>SW-M-01</h4>
+                    <p>Aktiviere Terminal</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 enable
 configure terminal</pre>
-                        </div>
-                        <p>Passwort Einrichtung</p>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+                    </div>
+                    <p>Passwort Einrichtung</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 line con 0
 password zVJZaXawsTKVSvuk
 login
 exit</pre>
-                        </div>
                     </div>
                 </div>
-                <!-- Passwords END -->
+            </div>
+            <!-- Passwords END -->
 
-                <hr>
+            <hr>
 
-                <!-- SSH BEGIN -->
-                <div class="container">
-                    <div class="label">SSH Zugänge</div>
-                    <div class="content">
-                        <!-- SSH Hamburg -->
-                        <h3>Hamburg</h3>
-                        <h4>RT-HH-01</h4>
-                        <p>Aktiviere Terminal</p>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+            <!-- SSH BEGIN -->
+            <div class="container">
+                <div class="label">SSH Zugänge</div>
+                <div class="content">
+                    <!-- SSH Hamburg -->
+                    <h3>Hamburg</h3>
+                    <h4>RT-HH-01</h4>
+                    <p>Aktiviere Terminal</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 enable
 configure terminal</pre>
-                        </div>
-                        <p>Setze Hostname & SSH User</p>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+                    </div>
+                    <p>Setze Hostname & SSH User</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 hostname RT-HH-01
 username RouterHamburg password 6TDU3UnsHjCYXKgz
 ip domain-name diehamburg.com
@@ -320,19 +841,19 @@ crypto key generate rsa general-keys modulus 1024
 line vty 0 4
 login local
 transport input ssh</pre>
-                        </div>
-                        <h4>SW-HH-01</h4>
-                        <p>Aktiviere Terminal</p>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+                    </div>
+                    <h4>SW-HH-01</h4>
+                    <p>Aktiviere Terminal</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 enable
 configure terminal</pre>
-                        </div>
-                        <p>Setze Hostname & SSH User</p>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+                    </div>
+                    <p>Setze Hostname & SSH User</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 hostname SW-HH-01
 username SwitchHamburg password aSXr8d2SHB6RKL6n
 ip domain-name diehamburg.com
@@ -340,21 +861,21 @@ crypto key generate rsa general-keys modulus 1024
 line vty 0 4
 login local
 transport input ssh</pre>
-                        </div>
-                        <!-- SSH Lübeck -->
-                        <h3>Lübeck</h3>
-                        <h4>RT-HL-01</h4>
-                        <p>Aktiviere Terminal</p>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+                    </div>
+                    <!-- SSH Lübeck -->
+                    <h3>Lübeck</h3>
+                    <h4>RT-HL-01</h4>
+                    <p>Aktiviere Terminal</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 enable
 configure terminal</pre>
-                        </div>
-                        <p>Setze Hostname & SSH User</p>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+                    </div>
+                    <p>Setze Hostname & SSH User</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 hostname RT-HL-01
 username RouterLuebeck password Hu5kc9URzjcd6WeN
 ip domain-name diehamburg.com
@@ -362,19 +883,19 @@ crypto key generate rsa general-keys modulus 1024
 line vty 0 4
 login local
 transport input ssh</pre>
-                        </div>
-                        <h4>SW-HL-01</h4>
-                        <p>Aktiviere Terminal</p>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+                    </div>
+                    <h4>SW-HL-01</h4>
+                    <p>Aktiviere Terminal</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 enable
 configure terminal</pre>
-                        </div>
-                        <p>Setze Hostname & SSH User</p>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+                    </div>
+                    <p>Setze Hostname & SSH User</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 hostname SW-HL-01
 username SwitchLuebeck password M4Qw4E7DbPDrkXbT
 ip domain-name diehamburg.com
@@ -382,21 +903,21 @@ crypto key generate rsa general-keys modulus 1024
 line vty 0 4
 login local
 transport input ssh</pre>
-                        </div>
-                        <!-- SSH Berlin -->
-                        <h3>Berlin</h3>
-                        <h4>RT-B-01</h4>
-                        <p>Aktiviere Terminal</p>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+                    </div>
+                    <!-- SSH Berlin -->
+                    <h3>Berlin</h3>
+                    <h4>RT-B-01</h4>
+                    <p>Aktiviere Terminal</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 enable
 configure terminal</pre>
-                        </div>
-                        <p>Setze Hostname & SSH User</p>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+                    </div>
+                    <p>Setze Hostname & SSH User</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 hostname RT-B-01
 username RouterBerlin password zDSb4n5HQxSvXmXT
 ip domain-name diehamburg.com
@@ -404,19 +925,19 @@ crypto key generate rsa general-keys modulus 1024
 line vty 0 4
 login local
 transport input ssh</pre>
-                        </div>
-                        <h4>SW-B-01</h4>
-                        <p>Aktiviere Terminal</p>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+                    </div>
+                    <h4>SW-B-01</h4>
+                    <p>Aktiviere Terminal</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 enable
 configure terminal</pre>
-                        </div>
-                        <p>Setze Hostname & SSH User</p>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+                    </div>
+                    <p>Setze Hostname & SSH User</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 hostname SW-B-01
 username SwitchBerlin password xqSCnYcrnZgyHjs2
 ip domain-name diehamburg.com
@@ -424,21 +945,21 @@ crypto key generate rsa general-keys modulus 1024
 line vty 0 4
 login local
 transport input ssh</pre>
-                        </div>
-                        <!-- SSH München -->
-                        <h3>München</h3>
-                        <h4>RT-M-01</h4>
-                        <p>Aktiviere Terminal</p>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+                    </div>
+                    <!-- SSH München -->
+                    <h3>München</h3>
+                    <h4>RT-M-01</h4>
+                    <p>Aktiviere Terminal</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 enable
 configure terminal</pre>
-                        </div>
-                        <p>Setze Hostname & SSH User</p>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+                    </div>
+                    <p>Setze Hostname & SSH User</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 hostname RT-M-01
 username RouterMuenchen password XKsVvr3w2jP5A3Ub
 ip domain-name diehamburg.com
@@ -446,19 +967,19 @@ crypto key generate rsa general-keys modulus 1024
 line vty 0 4
 login local
 transport input ssh</pre>
-                        </div>
-                        <h4>SW-M-01</h4>
-                        <p>Aktiviere Terminal</p>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+                    </div>
+                    <h4>SW-M-01</h4>
+                    <p>Aktiviere Terminal</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 enable
 configure terminal</pre>
-                        </div>
-                        <p>Setze Hostname & SSH User</p>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+                    </div>
+                    <p>Setze Hostname & SSH User</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 hostname SW-M-01
 username SwitchMuenchen password yhpYtsCy7Uh3S3vt
 ip domain-name diehamburg.com
@@ -466,776 +987,777 @@ crypto key generate rsa general-keys modulus 1024
 line vty 0 4
 login local
 transport input ssh</pre>
-                        </div>
                     </div>
                 </div>
-                <!-- SSH END -->
+            </div>
+            <!-- SSH END -->
 
-                <hr>
+            <hr>
 
-                <!-- ACL BEGIN -->
-                <div class="container">
-                    <div class="label">ACL Konfiguration</div>
-                    <div class="content">
-                        <!-- ACL Hamburg & Lübeck Router -->
-                        <h3>RT-HH-01 / RT-HL-01 (ACL)</h3>
-                        <p>Setze die ACL Liste auf die Serial Schnittstellen</p>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+            <!-- ACL BEGIN -->
+            <div class="container">
+                <div class="label">ACL Konfiguration</div>
+                <div class="content">
+                    <!-- ACL Hamburg & Lübeck Router -->
+                    <h3>RT-HH-01 / RT-HL-01 (ACL)</h3>
+                    <p>Setze die ACL Liste auf die Serial Schnittstellen</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 interface serial0/1/0
 ipv6 traffic-filter ClientRouterACL in
 interface serial0/1/1
 ipv6 traffic-filter ClientRouterACL in
 interface serial0/2/0
 ipv6 traffic-filter ClientRouterACL in</pre>
-                        </div>
-                        <p>Access Liste bearbeiten</p>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+                    </div>
+                    <p>Access Liste bearbeiten</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 ipv6 access-list ClientRouterACL</pre>
-                        </div>
-                        <p>SSH nur für Hamburg erlauben</p>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+                    </div>
+                    <p>SSH nur für Hamburg erlauben</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 permit tcp 2001:DB8:8::/48 any eq 22
 deny tcp any any eq 22</pre>
-                        </div>
-                        <p>Andere TCP und IPv6 Protokolle für alle erlauben</p>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+                    </div>
+                    <p>Andere TCP und IPv6 Protokolle für alle erlauben</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 permit tcp any any
 permit ipv6 any any</pre>
-                        </div>
-                        <!-- ACL Berlin & München Router -->
-                        <h3>RT-B-01 / RT-M-01 (ACL)</h3>
-                        <p>Setze die ACL Liste auf die Serial Schnittstellen</p>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+                    </div>
+                    <!-- ACL Berlin & München Router -->
+                    <h3>RT-B-01 / RT-M-01 (ACL)</h3>
+                    <p>Setze die ACL Liste auf die Serial Schnittstellen</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 interface serial0/1/0
 ipv6 traffic-filter ServerRouterACL in
 interface serial0/1/1
 ipv6 traffic-filter ServerRouterACL in
 interface serial0/2/0
 ipv6 traffic-filter ServerRouterACL in</pre>
-                        </div>
-                        <p>Access Liste bearbeiten</p>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+                    </div>
+                    <p>Access Liste bearbeiten</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 ipv6 access-list ServerRouterACL</pre>
-                        </div>
-                        <p>SSH nur für Hamburg erlauben</p>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+                    </div>
+                    <p>SSH nur für Hamburg erlauben</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 permit tcp 2001:DB8:8::/48 any eq 22
 deny tcp any any eq 22</pre>
-                        </div>
-                        <p>Http nur für Hamburg erlauben</p>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+                    </div>
+                    <p>Http nur für Hamburg erlauben</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 permit tcp 2001:DB8:8::/48 any eq 80
 deny tcp any any eq 80</pre>
-                        </div>
-                        <p>Ping nur für Hamburg erlauben</p>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+                    </div>
+                    <p>Ping nur für Hamburg erlauben</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 permit icmp 2001:DB8:8::/48 any
 deny icmp any any</pre>
-                        </div>
-                        <p>Andere TCP und IPv6 Protokolle für alle erlauben</p>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+                    </div>
+                    <p>Andere TCP und IPv6 Protokolle für alle erlauben</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 permit tcp any any
 permit ipv6 any any</pre>
-                        </div>
-                        <!-- ACL Switches all Locations (All ML3 Switches) -->
-                        <h3>SW-HH-01 / SW-HL-01 / SW-B-01 / SW-M-01 (ACL)</h3>
-                        <small>Funktioniert nicht im Packet Tracer. Müsste aber theoretisch funktionieren.</small>
-                        <p>Setze die ACL Liste auf die Serial Schnittstellen</p>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+                    </div>
+                    <!-- ACL Switches all Locations (All ML3 Switches) -->
+                    <h3>SW-HH-01 / SW-HL-01 / SW-B-01 / SW-M-01 (ACL)</h3>
+                    <small>Funktioniert nicht im Packet Tracer. Müsste aber theoretisch funktionieren.</small>
+                    <p>Setze die ACL Liste auf die Serial Schnittstellen</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 interface range gig1/0/1 - 24
 ipv6 traffic-filter GlobalSwitchACL in</pre>
-                        </div>
-                        <p>Access Liste bearbeiten</p>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+                    </div>
+                    <p>Access Liste bearbeiten</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 ipv6 access-list GlobalSwitchACL</pre>
-                        </div>
-                        <p>SSH nur für Hamburg erlauben</p>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+                    </div>
+                    <p>SSH nur für Hamburg erlauben</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 permit tcp 2001:DB8:8::/48 any eq 22
 deny tcp any any eq 22</pre>
-                        </div>
-                        <p>Andere TCP und IPv6 Protokolle für alle erlauben</p>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
+                    </div>
+                    <p>Andere TCP und IPv6 Protokolle für alle erlauben</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 permit tcp any any
 permit ipv6 any any</pre>
-                        </div>
-                    </div>
-                </div>
-                <!-- ACL END -->
-            </div>
-            <!-- Accordion END -->
-            <br><br>
-            <!-- Devices Cards BEGIN -->
-            <div class="cardsMainBox">
-                <h1 class="devicesHeading" id="router">Router</h1>
-                <div class="card card-hh">
-                    <img src="./router-img.jpg">
-                    <div class="card-body">
-                        <h3>RT-HH-01</h3>
-                        <p class="subTxt">Router</p>
-                        <table>
-                            <tr>
-                                <td>
-                                    <b>Local Unicast:</b>
-                                    <p>FD01:01:01:10::8/64</p>
-                                </td>
-                                <td>
-                                    <b>Next Hop:</b>
-                                    <p>FD01:01:01:10::A</p>
-                                </td>
-                                <td><br></td>
-                                <td>
-                                    <b>Local Unicast:</b>
-                                    <p>FD01:01:01:40::8/64</p>
-                                </td>
-                                <td>
-                                    <b>Next Hop:</b>
-                                    <p>FD01:01:01:40::2</p>
-                                </td>
-                                <td><br></td>
-                                <td>
-                                    <b>Local Unicast:</b>
-                                    <p>FD01:01:01:50::8/64</p>
-                                </td>
-                                <td>
-                                    <b>Next Hop:</b>
-                                    <p>FD01:01:01:50::D</p>
-                                </td>
-                                <td><br></td>
-                                <td>
-                                    <b>Global Unicast:</b>
-                                    <p>2001:DB8:8:99::1/64</p>
-                                </td>
-                                <td>
-                                    <b>Link-Local:</b>
-                                    <p>FE80:DB8:8:99::1</p>
-                                </td>
-                                <td><br></td>
-                                <td>
-                                    <b>Standort:</b>
-                                    <p>Hamburg</p>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                <div class="card card-hl">
-                    <img src="./router-img.jpg">
-                    <div class="card-body">
-                        <h3>RT-HL-01</h3>
-                        <p class="subTxt">Router</p>
-                        <table>
-                            <tr>
-                                <td>
-                                    <b>Local Unicast:</b>
-                                    <p>FD01:01:01:10::A/64</p>
-                                </td>
-                                <td>
-                                    <b>Next Hop:</b>
-                                    <p>FD01:01:01:10::8</p>
-                                </td>
-                                <td><br></td>
-                                <td>
-                                    <b>Local Unicast:</b>
-                                    <p>FD01:01:01:20::A/64</p>
-                                </td>
-                                <td>
-                                    <b>Next Hop:</b>
-                                    <p>FD01:01:01:20::D</p>
-                                </td>
-                                <td><br></td>
-                                <td>
-                                    <b>Local Unicast:</b>
-                                    <p>FD01:01:01:60::A/64</p>
-                                </td>
-                                <td>
-                                    <b>Next Hop:</b>
-                                    <p>FD01:01:01:60::2</p>
-                                </td>
-                                <td><br></td>
-                                <td>
-                                    <b>Global Unicast:</b>
-                                    <p>2001:DB8:A:99::1/64</p>
-                                </td>
-                                <td>
-                                    <b>Link-Local:</b>
-                                    <p>FE80:DB8:A:99::1</p>
-                                </td>
-                                <td><br></td>
-                                <td>
-                                    <b>Standort:</b>
-                                    <p>Lübeck</p>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                <div class="card card-b">
-                    <img src="./router-img.jpg">
-                    <div class="card-body">
-                        <h3>RT-B-01</h3>
-                        <p class="subTxt">Router</p>
-                        <table>
-                            <tr>
-                                <td>
-                                    <b>Local Unicast:</b>
-                                    <p>FD01:01:01:30::2/64</p>
-                                </td>
-                                <td>
-                                    <b>Next Hop:</b>
-                                    <p>FD01:01:01:30::D</p>
-                                </td>
-                                <td><br></td>
-                                <td>
-                                    <b>Local Unicast:</b>
-                                    <p>FD01:01:01:40::2/64</p>
-                                </td>
-                                <td>
-                                    <b>Next Hop:</b>
-                                    <p>FD01:01:01:40::8</p>
-                                </td>
-                                <td><br></td>
-                                <td>
-                                    <b>Local Unicast:</b>
-                                    <p>FD01:01:01:60::2/64</p>
-                                </td>
-                                <td>
-                                    <b>Next Hop:</b>
-                                    <p>FD01:01:01:60::A</p>
-                                </td>
-                                <td><br></td>
-                                <td>
-                                    <b>Global Unicast:</b>
-                                    <p>2001:DB8:2:99::1/64</p>
-                                </td>
-                                <td>
-                                    <b>Link-Local:</b>
-                                    <p>FE80:DB8:2:99::1</p>
-                                </td>
-                                <td><br></td>
-                                <td>
-                                    <b>Standort:</b>
-                                    <p>Berlin</p>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                <div class="card card-m">
-                    <img src="./router-img.jpg">
-                    <div class="card-body">
-                        <h3>RT-M-01</h3>
-                        <p class="subTxt">Router</p>
-                        <table>
-                            <tr>
-                                <td>
-                                    <b>Local Unicast:</b>
-                                    <p>FD01:01:01:20::D/64</p>
-                                </td>
-                                <td>
-                                    <b>Next Hop:</b>
-                                    <p>FD01:01:01:20::A</p>
-                                </td>
-                                <td><br></td>
-                                <td>
-                                    <b>Local Unicast:</b>
-                                    <p>FD01:01:01:30::D/64</p>
-                                </td>
-                                <td>
-                                    <b>Next Hop:</b>
-                                    <p>FD01:01:01:30::2</p>
-                                </td>
-                                <td><br></td>
-                                <td>
-                                    <b>Local Unicast:</b>
-                                    <p>FD01:01:01:50::D/64</p>
-                                </td>
-                                <td>
-                                    <b>Next Hop:</b>
-                                    <p>FD01:01:01:50::8</p>
-                                </td>
-                                <td><br></td>
-                                <td>
-                                    <b>Global Unicast:</b>
-                                    <p>2001:DB8:D:99::1/64</p>
-                                </td>
-                                <td>
-                                    <b>Link-Local:</b>
-                                    <p>FE80:DB8:D:99::1</p>
-                                </td>
-                                <td><br></td>
-                                <td>
-                                    <b>Standort:</b>
-                                    <p>München</p>
-                                </td>
-                            </tr>
-                        </table>
                     </div>
                 </div>
             </div>
-            <br class="clear">
-            <div class="cardsMainBox">
-                <h1 class="devicesHeading" id="switches">Switches</h1>
-                <div class="card card-hh">
-                    <img src="./switch-img.jpg">
-                    <div class="card-body">
-                        <h3>SW-HH-01</h3>
-                        <p class="subTxt">Switch</p>
-                        <table>
-                            <tr>
-                                <td>
-                                    <b>VLAN:</b>
-                                    <p>10</p>
-                                </td>
-                                <td>
-                                    <b>Global Unicast:</b>
-                                    <p>2001:DB8:8:10::1/64</p>
-                                </td>
-                                <td>
-                                    <b>Link-Local:</b>
-                                    <p>FE80:DB8:8:10::1</p>
-                                </td>
-                                <td><br></td>
-                                <td>
-                                    <b>VLAN:</b>
-                                    <p>20</p>
-                                </td>
-                                <td>
-                                    <b>Global Unicast:</b>
-                                    <p>2001:DB8:8:20::1/64</p>
-                                </td>
-                                <td>
-                                    <b>Link-Local:</b>
-                                    <p>FE80:DB8:8:20::1</p>
-                                </td>
-                                <td><br></td>
-                                <td>
-                                    <b>Global Unicast:</b>
-                                    <p>2001:DB8:8:99::2/64</p>
-                                </td>
-                                <td>
-                                    <b>Link-Local:</b>
-                                    <p>FE80:DB8:8:99::2</p>
-                                </td>
-                                <td>
-                                    <b>Gateway:</b>
-                                    <p>2001:DB8:8:99::1</p>
-                                </td>
-                                <td><br></td>
-                                <td>
-                                    <b>Standort:</b>
-                                    <p>Hamburg</p>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                <div class="card card-hl">
-                    <img src="./switch-img.jpg">
-                    <div class="card-body">
-                        <h3>SW-HL-01</h3>
-                        <p class="subTxt">Switch</p>
-                        <table>
-                            <tr>
-                                <td>
-                                    <b>VLAN:</b>
-                                    <p>30</p>
-                                </td>
-                                <td>
-                                    <b>Global Unicast:</b>
-                                    <p>2001:DB8:A:30::1/64</p>
-                                </td>
-                                <td>
-                                    <b>Link-Local:</b>
-                                    <p>FE80:DB8:A:30::1</p>
-                                </td>
-                                <td><br></td>
-                                <td>
-                                    <b>VLAN:</b>
-                                    <p>40</p>
-                                </td>
-                                <td>
-                                    <b>Global Unicast:</b>
-                                    <p>2001:DB8:A:40::1/64</p>
-                                </td>
-                                <td>
-                                    <b>Link-Local:</b>
-                                    <p>FE80:DB8:A:40::1</p>
-                                </td>
-                                <td><br></td>
-                                <td>
-                                    <b>Global Unicast:</b>
-                                    <p>2001:DB8:A:99::2/64</p>
-                                </td>
-                                <td>
-                                    <b>Link-Local:</b>
-                                    <p>FE80:DB8:A:99::2</p>
-                                </td>
-                                <td>
-                                    <b>Gateway:</b>
-                                    <p>2001:DB8:A:99::1</p>
-                                </td>
-                                <td><br></td>
-                                <td>
-                                    <b>Standort:</b>
-                                    <p>Lübeck</p>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                <div class="card card-b">
-                    <img src="./switch-img.jpg">
-                    <div class="card-body">
-                        <h3>SW-B-01</h3>
-                        <p class="subTxt">Switch</p>
-                        <table>
-                            <tr>
-                                <td>
-                                    <b>VLAN:</b>
-                                    <p>50</p>
-                                </td>
-                                <td>
-                                    <b>Global Unicast:</b>
-                                    <p>2001:DB8:2:50::1/64</p>
-                                </td>
-                                <td>
-                                    <b>Link-Local:</b>
-                                    <p>FE80:DB8:2:50::1</p>
-                                </td>
-                                <td><br></td>
-                                <td>
-                                    <b>Global Unicast:</b>
-                                    <p>2001:DB8:2:99::2/64</p>
-                                </td>
-                                <td>
-                                    <b>Link-Local:</b>
-                                    <p>FE80:DB8:2:99::2</p>
-                                </td>
-                                <td>
-                                    <b>Gateway:</b>
-                                    <p>2001:DB8:2:99::1</p>
-                                </td>
-                                <td><br></td>
-                                <td>
-                                    <br><br>
-                                </td>
-                                <td>
-                                    <p>&nbsp;</p>
-                                </td>
-                                <td>
-                                    <br>
-                                </td>
-                                <td><br></td>
-                                <td>
-                                    <b>Standort:</b>
-                                    <p>Berlin</p>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                <div class="card card-m">
-                    <img src="./switch-img.jpg">
-                    <div class="card-body">
-                        <h3>SW-M-01</h3>
-                        <p class="subTxt">Switch</p>
-                        <table>
-                            <tr>
-                                <td>
-                                    <b>VLAN:</b>
-                                    <p>60</p>
-                                </td>
-                                <td>
-                                    <b>Global Unicast:</b>
-                                    <p>2001:DB8:D:60::1/64</p>
-                                </td>
-                                <td>
-                                    <b>Link-Local:</b>
-                                    <p>FE80:DB8:D:60::1</p>
-                                </td>
-                                <td><br></td>
-                                <td>
-                                    <b>Global Unicast:</b>
-                                    <p>2001:DB8:D:99::2/64</p>
-                                </td>
-                                <td>
-                                    <b>Link-Local:</b>
-                                    <p>FE80:DB8:D:99::2</p>
-                                </td>
-                                <td>
-                                    <b>Gateway:</b>
-                                    <p>2001:DB8:D:99::1</p>
-                                </td>
-                                <td><br></td>
-                                <td>
-                                    <br><br>
-                                </td>
-                                <td>
-                                    <p>&nbsp;</p>
-                                </td>
-                                <td>
-                                    <br>
-                                </td>
-                                <td><br></td>
-                                <td>
-                                    <b>Standort:</b>
-                                    <p>München</p>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
+            <!-- ACL END -->
+        </div>
+        <!-- Accordion END -->
+        <br><br>
+        <!-- Devices Cards BEGIN -->
+        <div class="cardsMainBox">
+            <h1 class="devicesHeading" id="router">Router</h1>
+            <div class="card card-hh">
+                <img src="./router-img.jpg">
+                <div class="card-body">
+                    <h3>RT-HH-01</h3>
+                    <p class="subTxt">Router</p>
+                    <table>
+                        <tr>
+                            <td>
+                                <b>Local Unicast:</b>
+                                <p>FD01:01:01:10::8/64</p>
+                            </td>
+                            <td>
+                                <b>Next Hop:</b>
+                                <p>FD01:01:01:10::A</p>
+                            </td>
+                            <td><br></td>
+                            <td>
+                                <b>Local Unicast:</b>
+                                <p>FD01:01:01:40::8/64</p>
+                            </td>
+                            <td>
+                                <b>Next Hop:</b>
+                                <p>FD01:01:01:40::2</p>
+                            </td>
+                            <td><br></td>
+                            <td>
+                                <b>Local Unicast:</b>
+                                <p>FD01:01:01:50::8/64</p>
+                            </td>
+                            <td>
+                                <b>Next Hop:</b>
+                                <p>FD01:01:01:50::D</p>
+                            </td>
+                            <td><br></td>
+                            <td>
+                                <b>Global Unicast:</b>
+                                <p>2001:DB8:8:99::1/64</p>
+                            </td>
+                            <td>
+                                <b>Link-Local:</b>
+                                <p>FE80:DB8:8:99::1</p>
+                            </td>
+                            <td><br></td>
+                            <td>
+                                <b>Standort:</b>
+                                <p>Hamburg</p>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             </div>
-            <br class="clear">
-            <div class="cardsMainBox">
-                <h1 class="devicesHeading" id="clientsAndServer">Clients & Server</h1>
-                <div class="card card-hh">
-                    <img src="./pc-img.jpg">
-                    <div class="card-body">
-                        <h3>Hacii</h3>
-                        <p class="subTxt">Windows PC</p>
-                        <table>
-                            <tr>
-                                <td>
-                                    <b>Global Unicast:</b>
-                                    <p>2001:DB8:8:10::A/64</p>
-                                </td>
-                                <td>
-                                    <b>Link-Local:</b>
-                                    <p>FE80:DB8:8:10::A</p>
-                                </td>
-                                <td>
-                                    <b>Gateway:</b>
-                                    <p>2001:DB8:8:10::1</p>
-                                </td>
-                                <td>
-                                    <b>DNS-Server:</b>
-                                    <p>2001:DB8:2:50::A</p>
-                                </td>
-                                <td>
-                                    <b>Standort:</b>
-                                    <p>Hamburg</p>
-                                </td>
-                                <td>
-                                    <b>VLAN:</b>
-                                    <p>10</p>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                <div class="card card-hh">
-                    <img src="./pc-img.jpg">
-                    <div class="card-body">
-                        <h3>Tacii</h3>
-                        <p class="subTxt">Windows PC</p>
-                        <table>
-                            <tr>
-                                <td>
-                                    <b>Global Unicast:</b>
-                                    <p>2001:DB8:8:20::A/64</p>
-                                </td>
-                                <td>
-                                    <b>Link-Local:</b>
-                                    <p>FE80:DB8:8:20::A</p>
-                                </td>
-                                <td>
-                                    <b>Gateway:</b>
-                                    <p>2001:DB8:8:20::1</p>
-                                </td>
-                                <td>
-                                    <b>DNS-Server:</b>
-                                    <p>2001:DB8:2:50::A</p>
-                                </td>
-                                <td>
-                                    <b>Standort:</b>
-                                    <p>Hamburg</p>
-                                </td>
-                                <td>
-                                    <b>VLAN:</b>
-                                    <p>20</p>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                <div class="card card-hl">
-                    <img src="./pc-img.jpg">
-                    <div class="card-body">
-                        <h3>Klacii</h3>
-                        <p class="subTxt">Windows PC</p>
-                        <table>
-                            <tr>
-                                <td>
-                                    <b>Global Unicast:</b>
-                                    <p>2001:DB8:A:30::A/64</p>
-                                </td>
-                                <td>
-                                    <b>Link-Local:</b>
-                                    <p>FE80:DB8:A:30::A</p>
-                                </td>
-                                <td>
-                                    <b>Gateway:</b>
-                                    <p>2001:DB8:A:30::1</p>
-                                </td>
-                                <td>
-                                    <b>DNS-Server:</b>
-                                    <p>2001:DB8:2:50::A</p>
-                                </td>
-                                <td>
-                                    <b>Standort:</b>
-                                    <p>Lübeck</p>
-                                </td>
-                                <td>
-                                    <b>VLAN:</b>
-                                    <p>30</p>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                <div class="card card-hl">
-                    <img src="./pc-img.jpg">
-                    <div class="card-body">
-                        <h3>Picii</h3>
-                        <p class="subTxt">Windows PC</p>
-                        <table>
-                            <tr>
-                                <td>
-                                    <b>Global Unicast:</b>
-                                    <p>2001:DB8:A:40::A/64</p>
-                                </td>
-                                <td>
-                                    <b>Link-Local:</b>
-                                    <p>FE80:DB8:A:40::A</p>
-                                </td>
-                                <td>
-                                    <b>Gateway:</b>
-                                    <p>2001:DB8:A:40::1</p>
-                                </td>
-                                <td>
-                                    <b>DNS-Server:</b>
-                                    <p>2001:DB8:2:50::A</p>
-                                </td>
-                                <td>
-                                    <b>Standort:</b>
-                                    <p>Lübeck</p>
-                                </td>
-                                <td>
-                                    <b>VLAN:</b>
-                                    <p>40</p>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                <div class="card card-b">
-                    <img src="./server-img.jpg">
-                    <div class="card-body">
-                        <h3>DNScii</h3>
-                        <p class="subTxt">DNS- & WEB-Server</p>
-                        <table>
-                            <tr>
-                                <td>
-                                    <b>Global Unicast:</b>
-                                    <p>2001:DB8:2:50::A/64</p>
-                                </td>
-                                <td>
-                                    <b>Link-Local:</b>
-                                    <p>FE80:DB8:2:50::A</p>
-                                </td>
-                                <td>
-                                    <b>Gateway:</b>
-                                    <p>2001:DB8:2:50::1</p>
-                                </td>
-                                <td>
-                                    <b>DNS-Server:</b>
-                                    <p>2001:DB8:2:50::A</p>
-                                </td>
-                                <td>
-                                    <b>Standort:</b>
-                                    <p>Berlin</p>
-                                </td>
-                                <td>
-                                    <b>VLAN:</b>
-                                    <p>50</p>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                <div class="card card-m">
-                    <img src="./server-img.jpg">
-                    <div class="card-body">
-                        <h3>Webcii</h3>
-                        <p class="subTxt">Web-Server</p>
-                        <table>
-                            <tr>
-                                <td>
-                                    <b>Global Unicast:</b>
-                                    <p>2001:DB8:D:60::A/64</p>
-                                </td>
-                                <td>
-                                    <b>Link-Local:</b>
-                                    <p>FE80:DB8:D:60::A</p>
-                                </td>
-                                <td>
-                                    <b>Gateway:</b>
-                                    <p>2001:DB8:D:60::1</p>
-                                </td>
-                                <td>
-                                    <b>DNS-Server:</b>
-                                    <p>2001:DB8:2:50::A</p>
-                                </td>
-                                <td>
-                                    <b>Standort:</b>
-                                    <p>München</p>
-                                </td>
-                                <td>
-                                    <b>VLAN:</b>
-                                    <p>60</p>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
+            <div class="card card-hl">
+                <img src="./router-img.jpg">
+                <div class="card-body">
+                    <h3>RT-HL-01</h3>
+                    <p class="subTxt">Router</p>
+                    <table>
+                        <tr>
+                            <td>
+                                <b>Local Unicast:</b>
+                                <p>FD01:01:01:10::A/64</p>
+                            </td>
+                            <td>
+                                <b>Next Hop:</b>
+                                <p>FD01:01:01:10::8</p>
+                            </td>
+                            <td><br></td>
+                            <td>
+                                <b>Local Unicast:</b>
+                                <p>FD01:01:01:20::A/64</p>
+                            </td>
+                            <td>
+                                <b>Next Hop:</b>
+                                <p>FD01:01:01:20::D</p>
+                            </td>
+                            <td><br></td>
+                            <td>
+                                <b>Local Unicast:</b>
+                                <p>FD01:01:01:60::A/64</p>
+                            </td>
+                            <td>
+                                <b>Next Hop:</b>
+                                <p>FD01:01:01:60::2</p>
+                            </td>
+                            <td><br></td>
+                            <td>
+                                <b>Global Unicast:</b>
+                                <p>2001:DB8:A:99::1/64</p>
+                            </td>
+                            <td>
+                                <b>Link-Local:</b>
+                                <p>FE80:DB8:A:99::1</p>
+                            </td>
+                            <td><br></td>
+                            <td>
+                                <b>Standort:</b>
+                                <p>Lübeck</p>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             </div>
-            <!-- Devices Cards END -->
-        </main>
+            <div class="card card-b">
+                <img src="./router-img.jpg">
+                <div class="card-body">
+                    <h3>RT-B-01</h3>
+                    <p class="subTxt">Router</p>
+                    <table>
+                        <tr>
+                            <td>
+                                <b>Local Unicast:</b>
+                                <p>FD01:01:01:30::2/64</p>
+                            </td>
+                            <td>
+                                <b>Next Hop:</b>
+                                <p>FD01:01:01:30::D</p>
+                            </td>
+                            <td><br></td>
+                            <td>
+                                <b>Local Unicast:</b>
+                                <p>FD01:01:01:40::2/64</p>
+                            </td>
+                            <td>
+                                <b>Next Hop:</b>
+                                <p>FD01:01:01:40::8</p>
+                            </td>
+                            <td><br></td>
+                            <td>
+                                <b>Local Unicast:</b>
+                                <p>FD01:01:01:60::2/64</p>
+                            </td>
+                            <td>
+                                <b>Next Hop:</b>
+                                <p>FD01:01:01:60::A</p>
+                            </td>
+                            <td><br></td>
+                            <td>
+                                <b>Global Unicast:</b>
+                                <p>2001:DB8:2:99::1/64</p>
+                            </td>
+                            <td>
+                                <b>Link-Local:</b>
+                                <p>FE80:DB8:2:99::1</p>
+                            </td>
+                            <td><br></td>
+                            <td>
+                                <b>Standort:</b>
+                                <p>Berlin</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="card card-m">
+                <img src="./router-img.jpg">
+                <div class="card-body">
+                    <h3>RT-M-01</h3>
+                    <p class="subTxt">Router</p>
+                    <table>
+                        <tr>
+                            <td>
+                                <b>Local Unicast:</b>
+                                <p>FD01:01:01:20::D/64</p>
+                            </td>
+                            <td>
+                                <b>Next Hop:</b>
+                                <p>FD01:01:01:20::A</p>
+                            </td>
+                            <td><br></td>
+                            <td>
+                                <b>Local Unicast:</b>
+                                <p>FD01:01:01:30::D/64</p>
+                            </td>
+                            <td>
+                                <b>Next Hop:</b>
+                                <p>FD01:01:01:30::2</p>
+                            </td>
+                            <td><br></td>
+                            <td>
+                                <b>Local Unicast:</b>
+                                <p>FD01:01:01:50::D/64</p>
+                            </td>
+                            <td>
+                                <b>Next Hop:</b>
+                                <p>FD01:01:01:50::8</p>
+                            </td>
+                            <td><br></td>
+                            <td>
+                                <b>Global Unicast:</b>
+                                <p>2001:DB8:D:99::1/64</p>
+                            </td>
+                            <td>
+                                <b>Link-Local:</b>
+                                <p>FE80:DB8:D:99::1</p>
+                            </td>
+                            <td><br></td>
+                            <td>
+                                <b>Standort:</b>
+                                <p>München</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
         <br class="clear">
-        <footer>
-            <p>&#169; Copyright <a href="https://github.com/DIEHamburg" target="_blank">DIEHamburg</a> - School Project</p>
-        </footer>
-    </body>
+        <div class="cardsMainBox">
+            <h1 class="devicesHeading" id="switches">Switches</h1>
+            <div class="card card-hh">
+                <img src="./switch-img.jpg">
+                <div class="card-body">
+                    <h3>SW-HH-01</h3>
+                    <p class="subTxt">Switch</p>
+                    <table>
+                        <tr>
+                            <td>
+                                <b>VLAN:</b>
+                                <p>10</p>
+                            </td>
+                            <td>
+                                <b>Global Unicast:</b>
+                                <p>2001:DB8:8:10::1/64</p>
+                            </td>
+                            <td>
+                                <b>Link-Local:</b>
+                                <p>FE80:DB8:8:10::1</p>
+                            </td>
+                            <td><br></td>
+                            <td>
+                                <b>VLAN:</b>
+                                <p>20</p>
+                            </td>
+                            <td>
+                                <b>Global Unicast:</b>
+                                <p>2001:DB8:8:20::1/64</p>
+                            </td>
+                            <td>
+                                <b>Link-Local:</b>
+                                <p>FE80:DB8:8:20::1</p>
+                            </td>
+                            <td><br></td>
+                            <td>
+                                <b>Global Unicast:</b>
+                                <p>2001:DB8:8:99::2/64</p>
+                            </td>
+                            <td>
+                                <b>Link-Local:</b>
+                                <p>FE80:DB8:8:99::2</p>
+                            </td>
+                            <td>
+                                <b>Gateway:</b>
+                                <p>2001:DB8:8:99::1</p>
+                            </td>
+                            <td><br></td>
+                            <td>
+                                <b>Standort:</b>
+                                <p>Hamburg</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="card card-hl">
+                <img src="./switch-img.jpg">
+                <div class="card-body">
+                    <h3>SW-HL-01</h3>
+                    <p class="subTxt">Switch</p>
+                    <table>
+                        <tr>
+                            <td>
+                                <b>VLAN:</b>
+                                <p>30</p>
+                            </td>
+                            <td>
+                                <b>Global Unicast:</b>
+                                <p>2001:DB8:A:30::1/64</p>
+                            </td>
+                            <td>
+                                <b>Link-Local:</b>
+                                <p>FE80:DB8:A:30::1</p>
+                            </td>
+                            <td><br></td>
+                            <td>
+                                <b>VLAN:</b>
+                                <p>40</p>
+                            </td>
+                            <td>
+                                <b>Global Unicast:</b>
+                                <p>2001:DB8:A:40::1/64</p>
+                            </td>
+                            <td>
+                                <b>Link-Local:</b>
+                                <p>FE80:DB8:A:40::1</p>
+                            </td>
+                            <td><br></td>
+                            <td>
+                                <b>Global Unicast:</b>
+                                <p>2001:DB8:A:99::2/64</p>
+                            </td>
+                            <td>
+                                <b>Link-Local:</b>
+                                <p>FE80:DB8:A:99::2</p>
+                            </td>
+                            <td>
+                                <b>Gateway:</b>
+                                <p>2001:DB8:A:99::1</p>
+                            </td>
+                            <td><br></td>
+                            <td>
+                                <b>Standort:</b>
+                                <p>Lübeck</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="card card-b">
+                <img src="./switch-img.jpg">
+                <div class="card-body">
+                    <h3>SW-B-01</h3>
+                    <p class="subTxt">Switch</p>
+                    <table>
+                        <tr>
+                            <td>
+                                <b>VLAN:</b>
+                                <p>50</p>
+                            </td>
+                            <td>
+                                <b>Global Unicast:</b>
+                                <p>2001:DB8:2:50::1/64</p>
+                            </td>
+                            <td>
+                                <b>Link-Local:</b>
+                                <p>FE80:DB8:2:50::1</p>
+                            </td>
+                            <td><br></td>
+                            <td>
+                                <b>Global Unicast:</b>
+                                <p>2001:DB8:2:99::2/64</p>
+                            </td>
+                            <td>
+                                <b>Link-Local:</b>
+                                <p>FE80:DB8:2:99::2</p>
+                            </td>
+                            <td>
+                                <b>Gateway:</b>
+                                <p>2001:DB8:2:99::1</p>
+                            </td>
+                            <td><br></td>
+                            <td>
+                                <br><br>
+                            </td>
+                            <td>
+                                <p>&nbsp;</p>
+                            </td>
+                            <td>
+                                <br>
+                            </td>
+                            <td><br></td>
+                            <td>
+                                <b>Standort:</b>
+                                <p>Berlin</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="card card-m">
+                <img src="./switch-img.jpg">
+                <div class="card-body">
+                    <h3>SW-M-01</h3>
+                    <p class="subTxt">Switch</p>
+                    <table>
+                        <tr>
+                            <td>
+                                <b>VLAN:</b>
+                                <p>60</p>
+                            </td>
+                            <td>
+                                <b>Global Unicast:</b>
+                                <p>2001:DB8:D:60::1/64</p>
+                            </td>
+                            <td>
+                                <b>Link-Local:</b>
+                                <p>FE80:DB8:D:60::1</p>
+                            </td>
+                            <td><br></td>
+                            <td>
+                                <b>Global Unicast:</b>
+                                <p>2001:DB8:D:99::2/64</p>
+                            </td>
+                            <td>
+                                <b>Link-Local:</b>
+                                <p>FE80:DB8:D:99::2</p>
+                            </td>
+                            <td>
+                                <b>Gateway:</b>
+                                <p>2001:DB8:D:99::1</p>
+                            </td>
+                            <td><br></td>
+                            <td>
+                                <br><br>
+                            </td>
+                            <td>
+                                <p>&nbsp;</p>
+                            </td>
+                            <td>
+                                <br>
+                            </td>
+                            <td><br></td>
+                            <td>
+                                <b>Standort:</b>
+                                <p>München</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <br class="clear">
+        <div class="cardsMainBox">
+            <h1 class="devicesHeading" id="clientsAndServer">Clients & Server</h1>
+            <div class="card card-hh">
+                <img src="./pc-img.jpg">
+                <div class="card-body">
+                    <h3>Hacii</h3>
+                    <p class="subTxt">Windows PC</p>
+                    <table>
+                        <tr>
+                            <td>
+                                <b>Global Unicast:</b>
+                                <p>2001:DB8:8:10::A/64</p>
+                            </td>
+                            <td>
+                                <b>Link-Local:</b>
+                                <p>FE80:DB8:8:10::A</p>
+                            </td>
+                            <td>
+                                <b>Gateway:</b>
+                                <p>2001:DB8:8:10::1</p>
+                            </td>
+                            <td>
+                                <b>DNS-Server:</b>
+                                <p>2001:DB8:2:50::A</p>
+                            </td>
+                            <td>
+                                <b>Standort:</b>
+                                <p>Hamburg</p>
+                            </td>
+                            <td>
+                                <b>VLAN:</b>
+                                <p>10</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="card card-hh">
+                <img src="./pc-img.jpg">
+                <div class="card-body">
+                    <h3>Tacii</h3>
+                    <p class="subTxt">Windows PC</p>
+                    <table>
+                        <tr>
+                            <td>
+                                <b>Global Unicast:</b>
+                                <p>2001:DB8:8:20::A/64</p>
+                            </td>
+                            <td>
+                                <b>Link-Local:</b>
+                                <p>FE80:DB8:8:20::A</p>
+                            </td>
+                            <td>
+                                <b>Gateway:</b>
+                                <p>2001:DB8:8:20::1</p>
+                            </td>
+                            <td>
+                                <b>DNS-Server:</b>
+                                <p>2001:DB8:2:50::A</p>
+                            </td>
+                            <td>
+                                <b>Standort:</b>
+                                <p>Hamburg</p>
+                            </td>
+                            <td>
+                                <b>VLAN:</b>
+                                <p>20</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="card card-hl">
+                <img src="./pc-img.jpg">
+                <div class="card-body">
+                    <h3>Klacii</h3>
+                    <p class="subTxt">Windows PC</p>
+                    <table>
+                        <tr>
+                            <td>
+                                <b>Global Unicast:</b>
+                                <p>2001:DB8:A:30::A/64</p>
+                            </td>
+                            <td>
+                                <b>Link-Local:</b>
+                                <p>FE80:DB8:A:30::A</p>
+                            </td>
+                            <td>
+                                <b>Gateway:</b>
+                                <p>2001:DB8:A:30::1</p>
+                            </td>
+                            <td>
+                                <b>DNS-Server:</b>
+                                <p>2001:DB8:2:50::A</p>
+                            </td>
+                            <td>
+                                <b>Standort:</b>
+                                <p>Lübeck</p>
+                            </td>
+                            <td>
+                                <b>VLAN:</b>
+                                <p>30</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="card card-hl">
+                <img src="./pc-img.jpg">
+                <div class="card-body">
+                    <h3>Picii</h3>
+                    <p class="subTxt">Windows PC</p>
+                    <table>
+                        <tr>
+                            <td>
+                                <b>Global Unicast:</b>
+                                <p>2001:DB8:A:40::A/64</p>
+                            </td>
+                            <td>
+                                <b>Link-Local:</b>
+                                <p>FE80:DB8:A:40::A</p>
+                            </td>
+                            <td>
+                                <b>Gateway:</b>
+                                <p>2001:DB8:A:40::1</p>
+                            </td>
+                            <td>
+                                <b>DNS-Server:</b>
+                                <p>2001:DB8:2:50::A</p>
+                            </td>
+                            <td>
+                                <b>Standort:</b>
+                                <p>Lübeck</p>
+                            </td>
+                            <td>
+                                <b>VLAN:</b>
+                                <p>40</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="card card-b">
+                <img src="./server-img.jpg">
+                <div class="card-body">
+                    <h3>DNScii</h3>
+                    <p class="subTxt">DNS- & WEB-Server</p>
+                    <table>
+                        <tr>
+                            <td>
+                                <b>Global Unicast:</b>
+                                <p>2001:DB8:2:50::A/64</p>
+                            </td>
+                            <td>
+                                <b>Link-Local:</b>
+                                <p>FE80:DB8:2:50::A</p>
+                            </td>
+                            <td>
+                                <b>Gateway:</b>
+                                <p>2001:DB8:2:50::1</p>
+                            </td>
+                            <td>
+                                <b>DNS-Server:</b>
+                                <p>2001:DB8:2:50::A</p>
+                            </td>
+                            <td>
+                                <b>Standort:</b>
+                                <p>Berlin</p>
+                            </td>
+                            <td>
+                                <b>VLAN:</b>
+                                <p>50</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="card card-m">
+                <img src="./server-img.jpg">
+                <div class="card-body">
+                    <h3>Webcii</h3>
+                    <p class="subTxt">Web-Server</p>
+                    <table>
+                        <tr>
+                            <td>
+                                <b>Global Unicast:</b>
+                                <p>2001:DB8:D:60::A/64</p>
+                            </td>
+                            <td>
+                                <b>Link-Local:</b>
+                                <p>FE80:DB8:D:60::A</p>
+                            </td>
+                            <td>
+                                <b>Gateway:</b>
+                                <p>2001:DB8:D:60::1</p>
+                            </td>
+                            <td>
+                                <b>DNS-Server:</b>
+                                <p>2001:DB8:2:50::A</p>
+                            </td>
+                            <td>
+                                <b>Standort:</b>
+                                <p>München</p>
+                            </td>
+                            <td>
+                                <b>VLAN:</b>
+                                <p>60</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- Devices Cards END -->
+    </main>
+    <br class="clear">
+    <footer>
+        <p>&#169; Copyright <a href="https://github.com/DIEHamburg" target="_blank">DIEHamburg</a> - School Project</p>
+    </footer>
+</body>
+
 </html>
 
 <!-- Code Block saved for later -->
