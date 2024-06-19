@@ -15,6 +15,10 @@ p, b {
     clear: both;
 }
 
+.fakeBtn:hover {
+    cursor: pointer;
+}
+
 /* Header Styles */
 header {
     padding-left: 1rem;

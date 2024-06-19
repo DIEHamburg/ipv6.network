@@ -100,4 +100,19 @@ namespace Index {
             });
         });
     }
+
+    /**
+     * @public
+     * @event onclick
+     * @method navigates to the given link
+     * @param {string} url the url you want to navigate to
+     * @author Flowtastisch
+     * @date 19.06.2024
+     */
+    export function navigateToURL (url: string) {
+        if (url && url !== "") {
+            // -> URL is given
+            window.open(url, "_blank")?.focus();
+        }
+    }
 }
