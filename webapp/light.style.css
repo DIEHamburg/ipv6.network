@@ -60,9 +60,17 @@ footer p, a {
     background-color: rgb(255, 255, 255, 0.8);
 }
 
+.label:hover {
+    background-color: rgba(224, 224, 224, 0.8);
+}
+
 .accordionbox-active .label {
     background-color: rgb(109, 22, 160);
     color: whitesmoke
+}
+
+.accordionbox-active .label:hover {
+    background-color: rgb(87, 18, 128);
 }
 
 .content small {
