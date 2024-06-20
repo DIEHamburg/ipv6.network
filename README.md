@@ -525,86 +525,22 @@ OSPFv3:
 
 ## Banner erstellen
 
-### Hamburg
+### Alle Router/Switches
 
-#### RT-HH-01
-
-In der Cli
+Befehle:
 
     enable
     configure terminal
-    banner login #Unautorisierter Zugang verboten. Bitte geben sie das Passwort ein.#
-    exit
-
-#### SW-HH-01
-
-In der Cli
-
-    enable
-    configure terminal
-    banner login #Unautorisierter Zugang verboten. Bitte geben sie das Passwort ein.#
-    exit
-
-### Lübeck
-
-#### RT-HL-01
-
-In der Cli
-
-    enable
-    configure terminal
-    banner login #Unautorisierter Zugang verboten. Bitte geben sie das Passwort ein.#
-    exit
-
-#### SW-HL-01
-
-In der Cli
-
-    enable
-    configure terminal
-    banner login #Unautorisierter Zugang verboten. Bitte geben sie das Passwort ein.#
-    exit
-
-### Berlin
-
-#### RT-B-01
-
-In der Cli
-
-    enable
-    configure terminal
-    banner login #Unautorisierter Zugang verboten. Bitte geben sie das Passwort ein.#
-    exit
-
-#### SW-B-01
-
-In der Cli
-
-    enable
-    configure terminal
-    banner login #Unautorisierter Zugang verboten. Bitte geben sie das Passwort ein.#
-    exit
-
-### München
-
-#### RT-M-01
-
-In der Cli
-
-    enable
-    configure terminal
-    banner login #Unautorisierter Zugang verboten. Bitte geben sie das Passwort ein.#
-    exit
-
-#### SW-M-01
-
-In der Cli
-
-    enable
-    configure terminal
-    banner login #Unautorisierter Zugang verboten. Bitte geben sie das Passwort ein.#
-    exit
-
+    banner motd #********************************************
+    *                                          *
+    *          Willkommen im Netzwerk!         *
+    *                                          *
+    *        Unautorisierter Zugang verboten.  *
+    *                                          *
+    *         Bitte geben Sie das Passwort     *
+    *               ein.                       *
+    *                                          *
+    ********************************************#
 
 ## Passwort Konfiguration
 
