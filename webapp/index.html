@@ -30,110 +30,156 @@
 
             <!-- Accordion BEGIN -->
             <div class="accordion">
+
+                <!-- Transportnetze BEGIN -->
+
                 <div class="container">
-                    <div class="label">Transportnetz Router Config</div>
-                     <!-- Hamburg BEGIN -->
-                        <div class="content">
-                            <img src="./serial-routes.png">
-                            <h4>Hamburg/RT-HH-01</h4>
-                            <h5>Aktiviere Terminal</h5>
-                            <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>                  
-enable
+                 <div class="label">Transportnetz Router Config</div>
+                 <div class="content">
+                    <img src="./serial-routes.png">
+                    <h3>Alle Router</h3>
+                    <p>Aktivierung</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+enable</pre>
+                    </div>
+                    <p>In Config gehen</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
 configure terminal</pre>
-                            </div>
-                        <h5>IPV6 Routing</h5>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
-ipv6 route 2001:DB8:A:30::/64 FD01:01:01:10::A
-ipv6 route 2001:DB8:A:40::/64 FD01:01:01:10::A
-ipv6 route 2001:DB8:A:99::/64 FD01:01:01:10::A
-ipv6 route 2001:DB8:D:60::/64 FD01:01:01:50::D
-ipv6 route 2001:DB8:D:99::/64 FD01:01:01:50::D
-ipv6 route 2001:DB8:2:50::/64 FD01:01:01:40::2
-ipv6 route 2001:DB8:2:99::/64 FD01:01:01:40::2</pre>
-                                    </div>
-                        </div>
-                        <!-- Hamburg End -->
-
-                        <!-- Lübeck Begin -->
-                        <div class="content">Lübeck/RT-HL-01
-                            <h5>Aktiviere Terminal</h5>
-                            <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>                  
-enable
-configure terminal</pre>
-                            </div>
-                        <h5>IPV6 Routing</h5>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
-ipv6 route 2001:DB8:8:10::/64 FD01:01:01:10::8
-ipv6 route 2001:DB8:8:20::/64 FD01:01:01:10::8
-ipv6 route 2001:DB8:2:50::/64 FD01:01:01:60::2
-ipv6 route 2001:DB8:D:60::/64 FD01:01:01:20::D
-ipv6 route 2001:DB8:8:99::/64 FD01:01:01:10::8
-ipv6 route 2001:DB8:2:99::/64 FD01:01:01:60::2
-ipv6 route 2001:DB8:D:99::/64 FD01:01:01:20::D</pre>
-                                    </div>
-                        </div>
-                        <!-- Lübeck End -->
-
-                        <!-- München Begin -->
-                        <div class="content">München/RT-M-01
-                            <h5>Aktiviere Terminal</h5>
-                            <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>                  
-enable
-configure terminal</pre>
-                            </div>
-                        <h5>IPV6 Routing</h5>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
-ipv6 route 2001:DB8:8:10::/64 FD01:01:01:50::8
-ipv6 route 2001:DB8:8:20::/64 FD01:01:01:50::8
-ipv6 route 2001:DB8:A:30::/64 FD01:01:01:20::A
-ipv6 route 2001:DB8:A:40::/64 FD01:01:01:20::A
-ipv6 route 2001:DB8:2:50::/64 FD01:01:01:30::2
-ipv6 route 2001:DB8:8:99::/64 FD01:01:01:50::8
-ipv6 route 2001:DB8:A:99::/64 FD01:01:01:20::A
-ipv6 route 2001:DB8:2:99::/64 FD01:01:01:30::2</pre>
-                                    </div>
-                        </div>
-                        <!-- München End -->
-
-                        <!-- Berlin Begin -->
-                        <div class="content">Berlin/RT-B-01
-                            <h5>Aktiviere Terminal</h5>
-                            <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>                  
-enable
-configure terminal</pre>
-                            </div>
-                        <h5>IPV6 Routing</h5>
-                        <div class="code-block" style="clear:both">
-                            <button>Kopieren</button>
-                            <pre>
-ipv6 route 2001:DB8:8:10::/64 FD01:01:01:40::8
-ipv6 route 2001:DB8:8:20::/64 FD01:01:01:40::8
-ipv6 route 2001:DB8:A:30::/64 FD01:01:01:60::A
-ipv6 route 2001:DB8:A:40::/64 FD01:01:01:60::A
-ipv6 route 2001:DB8:D:60::/64 FD01:01:01:30::D
-ipv6 route 2001:DB8:A:99::/64 FD01:01:01:60::A
-ipv6 route 2001:DB8:8:99::/64 FD01:01:01:40::8
-ipv6 route 2001:DB8:D:99::/64 FD01:01:01:50::D</pre>
-                                    </div>
-                        </div>
-                        <!-- Berlin End -->
-
+                    </div>
+                    <p>Aktiviere ipv6</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+ipv6 unicast-routing</pre>
+                    </div>
+                    <p>Keine Domainnamenauflösung</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+no ip domain-lookup</pre>
+                    </div>
+                    <h3>RT-M-01</h3>
+                    <p>MünchenLübeck Connection</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+interface Serial0/1/0
+description MuenchenLuebeck
+ipv6 address FD01:01:01:20::D/64
+no shutdown</pre>
+                    </div>
+                    <p>MünchenBerlin Connection</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+interface Serial0/1/1
+description MuenchenBerlin
+ipv6 address FD01:01:01:30::D/64
+no shutdown</pre>
+                    </div>
+                    <p>MünchenHamburg Connection</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+interface Serial0/2/0
+description MuenchenHamburg
+ipv6 address FD01:01:01:50::D/64
+no shutdown</pre>
+                    </div>
+                    <h3>RT-B-01</h3>
+                    <p>BerlinMuenchen Connection</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+interface Serial0/1/0
+description BerlinMuenchen
+ipv6 address FD01:01:01:30::2/64
+no shutdown</pre>
+                    </div>
+                    <p>BerlinHamburg Connection</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+interface Serial0/1/1
+description BerlinHamburg
+ipv6 address FD01:01:01:40::2/64
+no shutdown</pre>
+                    </div>
+                    <p>BerlinLuebeck Connection</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+interface Serial0/2/0
+description BerlinLuebeck
+ipv6 address FD01:01:01:60::2/64
+no shutdown</pre>
+                    </div>
+                    <h3>RT-HH-01</h3>
+                    <p>HamburgLuebeck Connection</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+interface Serial0/1/0
+description HamburgLuebeck
+ipv6 address FD01:01:01:10::8/64
+no shutdown</pre>
+                    </div>
+                    <p>HamburgBerlin Connection</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+interface Serial0/1/1
+description HamburgBerlin
+ipv6 address FD01:01:01:40::8/64
+no shutdown</pre>
+                    </div>
+                    <p>HamburgMuenchen Connection</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+interface Serial0/2/0
+description HamburgMuenchen
+ipv6 address FD01:01:01:50::8/64
+no shutdown</pre>
+                    </div>
+                    <h3>RT-HL-01</h3>
+                    <p>LuebeckHamburg Connection</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+interface Serial0/1/0
+description LuebeckHamburg
+ipv6 address FD01:01:01:10::A/64
+no shutdown</pre>
+                    </div>
+                    <p>LuebeckMuenchen Connection</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+interface Serial0/1/1
+description LuebeckMuenchen
+ipv6 address FD01:01:01:20::A/64
+no shutdown</pre>
+                    </div>
+                    <p>LuebeckBerlin Connection</p>
+                    <div class="code-block" style="clear:both">
+                        <button>Kopieren</button>
+                        <pre>
+interface Serial0/2/0
+description LuebeckBerlin
+ipv6 address FD01:01:01:60::A/64
+no shutdown</pre>
+                    </div>
                 </div>
-                <hr>
+                </div>
+
+            <!-- Transportnetze End -->
+
+            <hr>
                 <div class="container">
                     <div class="label">What is CSS?</div>
                     <div class="content">inhalt</div>
