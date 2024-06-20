@@ -11,6 +11,10 @@ body {
     background-color: #131313;
 }
 
+.basicBoxShadow {
+    box-shadow: 0.5rem 0.5rem 0.4rem rgba(77, 77, 77, 0.1);
+}
+
 /* Header Styles */
 header {
     background-color:rgb(109, 22, 160);
@@ -44,7 +48,6 @@ footer {
   
 .accordion {
     background-color: rgba(37, 37, 37, 0.8);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .label {
@@ -62,10 +65,6 @@ footer {
 
 .accordionbox-active .label:hover {
     background-color: rgb(87, 18, 128);
-}
-  
-.content {
-    background: rgba(37, 37, 37, 0.8);
 }
 
 .content small {
