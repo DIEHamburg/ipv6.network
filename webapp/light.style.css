@@ -16,6 +16,10 @@ body {
     color: gray;
 }
 
+.basicBoxShadow {
+    box-shadow: 0.5rem 0.5rem 0.4rem rgba(77, 77, 77, 0.1);
+}
+
 /* Header Styles */
 header {
     background-color: rgb(109, 22, 160);
@@ -53,16 +57,23 @@ footer p, a {
   
 .accordion {
     background-color: rgb(255, 255, 255, 0.8);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
   
 .label {
     background-color: rgb(255, 255, 255, 0.8);
 }
 
+.label:hover {
+    background-color: rgba(224, 224, 224, 0.8);
+}
+
 .accordionbox-active .label {
     background-color: rgb(109, 22, 160);
     color: whitesmoke
+}
+
+.accordionbox-active .label:hover {
+    background-color: rgb(87, 18, 128);
 }
 
 .content small {

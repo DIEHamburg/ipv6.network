@@ -128,6 +128,15 @@ footer {
     padding-top: 2rem;
 }
 
+.mainPageBigImg {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 1rem;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
 /* Accordion Styles */
   
 .accordion {
@@ -146,6 +155,10 @@ footer {
 
 .content small {
     font-style: italic;
+}
+
+.content img {
+    width: 100%;
 }
   
 .label {
@@ -288,6 +301,14 @@ hr {
         width: 80%;
     }
 
+    .mainPageBigImg {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-bottom: 1rem;
+        border-radius: 12px;
+    }
+
     /* Header Styles */
     header {
         padding-left: 2rem;
@@ -320,9 +341,18 @@ hr {
         font-size: 11pt;
     }
 
+    .mainPageBigImg {
+        width: 95%;
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+    }
+
     /* Header Styles */
     header .headerLinks {
         display: block;
+        font-size: 10pt;
+        margin-top: calc(1em + (12pt - 10pt));
+        margin-bottom: calc(1em + (12pt - 10pt));;
     }
 
     /* Accordion Styles */
@@ -330,6 +360,11 @@ hr {
         width: 95%;
         margin-left: 2.5%;
         margin-right: 2.5%;
+    }
+
+    .content img {
+        width: 80%;
+        margin: 0 10%;
     }
 
     /* Cards Styles */
@@ -346,6 +381,22 @@ hr {
     }
 }
 
+@media only screen and (min-width: 1000px) {
+    /* Middle Desktop */
+    .mainPageBigImg {
+        width: 70%;
+        margin: 0 15%;
+    }
+
+    /* Header Styles */
+    header .headerLinks {
+        margin-top: 1em;
+        margin-bottom: 1em;
+        display: block;
+        font-size: 12pt;
+    }
+}
+
 @media only screen and (min-width: 1200px) {
     /* Large Desktop */
     /* Page Styles */
@@ -353,11 +404,21 @@ hr {
         font-size: 12pt;
     }
 
+    .mainPageBigImg {
+        width: 60%;
+        margin: 0 20%;
+    }
+
     /* Accordion Styles */
     .accordion {
         width: calc(90% + 4 * (5% / 3));
         margin-left: calc(5%/3);
         margin-right: calc(5%/3);
+    }
+
+    .content img {
+        width: 60%;
+        margin: 0 20%;
     }
 
     /* Cards Styles */
