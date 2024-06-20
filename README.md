@@ -741,6 +741,7 @@ Setze Hostname & SSH User
 
     hostname RT-HH-01
     username RouterHamburg password 6TDU3UnsHjCYXKgz
+    enable password yf4Xvwmy7dF2JQwE
     ip domain-name diehamburg.com
     crypto key generate rsa general-keys modulus 1024
     line vty 0 4
@@ -758,6 +759,7 @@ Setze Hostname & SSH User
 
     hostname SW-HH-01
     username SwitchHamburg password aSXr8d2SHB6RKL6n
+    enable password bxJxE9erFTXn8eHb
     ip domain-name diehamburg.com
     crypto key generate rsa general-keys modulus 1024
     line vty 0 4
@@ -775,6 +777,7 @@ Setze Hostname & SSH User
 
     hostname RT-HL-01
     username RouterLuebeck password Hu5kc9URzjcd6WeN
+    enable password ezX64jyk7MXJsjm8
     ip domain-name diehamburg.com
     crypto key generate rsa general-keys modulus 1024
     line vty 0 4
@@ -792,6 +795,7 @@ Setze Hostname & SSH User
 
     hostname SW-HL-01
     username SwitchLuebeck password M4Qw4E7DbPDrkXbT
+    enable password T85NtxJ6C3E2hda3
     ip domain-name diehamburg.com
     crypto key generate rsa general-keys modulus 1024
     line vty 0 4
@@ -809,6 +813,7 @@ Setze Hostname & SSH User
 
     hostname RT-B-01
     username RouterBerlin password zDSb4n5HQxSvXmXT
+    enable password bxRn5j2CuKyq7RVD
     ip domain-name diehamburg.com
     crypto key generate rsa general-keys modulus 1024
     line vty 0 4
@@ -826,6 +831,7 @@ Setze Hostname & SSH User
 
     hostname SW-B-01
     username SwitchBerlin password xqSCnYcrnZgyHjs2
+    enable password QVrSHsb79ANNmbeU
     ip domain-name diehamburg.com
     crypto key generate rsa general-keys modulus 1024
     line vty 0 4
@@ -843,6 +849,7 @@ Setze Hostname & SSH User
 
     hostname RT-M-01
     username RouterMuenchen password XKsVvr3w2jP5A3Ub
+    enable password ctLFAsuyfbGtES5C
     ip domain-name diehamburg.com
     crypto key generate rsa general-keys modulus 1024
     line vty 0 4
@@ -860,6 +867,7 @@ Setze Hostname & SSH User
 
     hostname SW-M-01
     username SwitchMuenchen password yhpYtsCy7Uh3S3vt
+    enable password zVJZaXawsTKVSvuk
     ip domain-name diehamburg.com
     crypto key generate rsa general-keys modulus 1024
     line vty 0 4
