@@ -37,7 +37,7 @@
 - [NodeJS](https://nodejs.org/en)
 - [TypeScript](https://www.typescriptlang.org/)
 
-## Umgesetze Features
+## Features
 
 - Transport network router config (Transportnetz Router Config)
 
