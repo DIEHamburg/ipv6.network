@@ -193,7 +193,7 @@ Router-Switch Schnitstelle
     ipv6 address 2001:DB8:D:99::1/64
     ipv6 address FE80:DB8:D:99::1 link-local
 
-IPV6 Routing Statisch **ODER** OSPFv3
+IPv6 Routing Statisch **ODER** OSPFv3
 
 Statisch:
 
@@ -253,7 +253,7 @@ Schnittstellen VLAN Zuweisung
     switchport mode access
     switchport access vlan 60
 
-IPV6 Routing Statisch **ODER** OSPFv3
+IPv6 Routing Statisch **ODER** OSPFv3
 
 Statisch:
 
@@ -292,7 +292,7 @@ Router-Switch Schnitstelle
     ipv6 address 2001:DB8:2:99::1/64
     ipv6 address FE80:DB8:2:99::1 link-local
 
-IPV6 Routing Statisch **ODER** OSPFv3
+IPv6 Routing Statisch **ODER** OSPFv3
 
 Statisch:
 
@@ -351,7 +351,7 @@ Schnittstellen VLAN Zuweisung
     switchport mode access
     switchport access vlan 50
 
-IPV6 Routing Statisch **ODER** OSPFv3
+IPv6 Routing Statisch **ODER** OSPFv3
 
 Statisch:
 
@@ -390,7 +390,7 @@ Router-Switch Schnitstelle
     ipv6 address 2001:DB8:8:99::1/64
     ipv6 address FE80:DB8:8:99::1 link-local
 
-IPV6 Routing Statisch **ODER** OSPFv3
+IPv6 Routing Statisch **ODER** OSPFv3
 
 Statisch:
 
@@ -456,7 +456,7 @@ Schnittstellen VLAN Zuweisung
     switchport mode access
     switchport access vlan 20
 
-IPV6 Routing Statisch **ODER** OSPFv3
+IPv6 Routing Statisch **ODER** OSPFv3
 
 Statisch:
 
@@ -495,7 +495,7 @@ Router-Switch Schnitstelle
     ipv6 address 2001:DB8:A:99::1/64
     ipv6 address FE80:DB8:A:99::1 link-local
 
-IPV6 Routing Statisch **ODER** OSPFv3
+IPv6 Routing Statisch **ODER** OSPFv3
 
 Statisch:
 
@@ -561,7 +561,7 @@ Schnittstellen VLAN Zuweisung
     switchport mode access
     switchport access vlan 40
 
-IPV6 Routing Statisch **ODER** OSPFv3
+IPv6 Routing Statisch **ODER** OSPFv3
 
 Statisch:
 
