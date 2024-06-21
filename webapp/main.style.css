@@ -15,6 +15,10 @@ p, b {
     clear: both;
 }
 
+.bold {
+    font-weight: bold;
+}
+
 .fakeBtn:hover {
     cursor: pointer;
 }
