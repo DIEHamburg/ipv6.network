@@ -1,0 +1,108 @@
+/* 
+    Here you define only the colors for the darkmode
+*/
+
+/* Basic */
+* {
+    color: whitesmoke;
+}
+
+body {
+    background-color: #131313;
+}
+
+.basicBoxShadow {
+    box-shadow: 0.5rem 0.5rem 0.4rem rgba(77, 77, 77, 0.1);
+}
+
+/* Header Styles */
+header {
+    background-color:rgb(109, 22, 160);
+    box-shadow: 0.25rem 0.5rem 0.4rem rgb(109, 22, 160, 0.3);
+}
+
+.subTxt {
+    color: lightgray;
+}
+
+/* Footer Styles */
+footer {
+    background-color:rgb(109, 22, 160);
+    box-shadow: 0.25rem -0.5rem 0.4rem rgb(109, 22, 160, 0.3);
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar-track {
+    background: #303030; 
+}
+   
+::-webkit-scrollbar-thumb {
+    background: rgba(117, 117, 117, 0.8);
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(166, 49, 235, 0.8);
+}
+
+/* Accordion Styles */
+  
+.accordion {
+    background-color: rgba(37, 37, 37, 0.8);
+}
+
+.label {
+    background-color: rgba(37, 37, 37, 0.8);
+    color: whitesmoke;
+}
+
+.label:hover {
+    background-color: rgba(27, 27, 27, 0.8);
+}
+
+.accordionbox-active .label {
+    background-color: rgb(109, 22, 160);
+}
+
+.accordionbox-active .label:hover {
+    background-color: rgb(87, 18, 128);
+}
+
+.content small {
+    color:rgb(215, 183, 233);
+}
+  
+hr {
+    border: 1px solid rgb(255, 255, 255);
+}
+
+/* Code Block Styles */
+.code-block {
+    background-color: rgba(56, 56, 56, 0.8);
+}
+
+.code-block button {
+    background-color: rgba(37, 37, 37, 0.8);
+}
+
+.code-block button:hover {
+    background-color: rgba(14, 14, 14, 0.8);
+}
+
+/* Cards Styles */
+.card {
+    background-color: rgba(37, 37, 37, 0.8);
+    box-shadow: 0.5rem 0.5rem 0.4rem rgba(77, 77, 77, 0.1);
+}
+
+.card-hh:hover {
+    box-shadow: 0 0 14px rgba(17, 204, 0, 0.6);
+}
+.card-hl:hover {
+    box-shadow: 0 0 14px rgba(204, 190, 0, 0.6);
+}
+.card-b:hover {
+    box-shadow: 0 0 14px rgba(0, 112, 204, 0.6);
+}
+.card-m:hover {
+    box-shadow: 0 0 14px rgba(146, 0, 204, 0.6);
+}

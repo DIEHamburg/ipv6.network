@@ -1,26 +1,26 @@
 # IPv6.Network
 
-> IPv6 Networking. Warum noch IPv4? IPv6 ist für viele Personen und Unternehmen abschreckend. Aber der erste Schein trügt. Hier ist eine Beispielsimulation eines funktionsfähigen IPv6 Netzwerkes (nicht dual stack)!
+> IPV6 Networking .Why still IPv4? IPV6 is daunting for many people and companies. But the first appearance is deceptive. Here is a example simulation of a functional IPV6 network (not dual stack)!
 
-> [Here](./README-EN.md) is the doc also in english.
+> [Hier](./README.md) ist die Doku auch in deutsch.
 
 ## Disclaimer
 
-> Bitte unbedigt vorher lesen!
+> Please read it at the beginning!
 
-### Schulprojekt (DIEHamburg)
+### School Project (DIEHamburg)
 
-- Die Produkte werden und sollen nicht gewerblich / gewinnorientiert genutzt werden
-- Wir wollen hier zeigen, was man machen kann
-- Schulprojekte sind für uns eine Chance, die man nutzen sollte
+- The products are and should not be used commercially / profit -oriented
+- We want to show what you can do here
+- School projects are an opportunity for us we should use
 
-### "Fertig" -> Keine Weiterentwicklung
+### "Finished" -> No further development
 
-- Projekte sind abgeschlossen und werden nicht weiterentwickelt
-- Code kann nicht 100% zeitgemäß sein
-- Sicherheitsschwachstellen durch ältere Versionen oder neue Möglichkeiten sind zu erwarten
+- Projects have been completed and are not developed further
+- Code cannot be 100% correct in the future
+- Security weaknesses through older versions or new possibilities are to be expected
 
-> Im folgendem ist die komplette Dokumentation des Arbeitsablaufes mit den jeweiligen Config Scripts. Probiert es gerne selbst aus! Die neuesten Dateien sind die ```main-lf9.pkt``` und die ```main-ospfv3-lf9.pkt```.
+> In the following is the complete documentation of the workflow with the respective config scripts. Feel free to try it out yourself! The newest files are the ```main-lf9.pkt``` and the ```main-ospfv3-lf9.pkt```.
 
 ## Entwickler*Innen
 
@@ -39,31 +39,33 @@
 
 ## Umgesetze Features
 
-- Transportnetz Router Config
+- Transport network router config (Transportnetz Router Config)
 
-> Verbindungen der Router untereinander. Routen sind erst im nächsten Abschnitt.
+> Connections of the router to each other. Routes are only in the next section.
 
-- Standort Konfiguration
+- Location configuration (Standort Konfiguration)
 
-> Verbindungen innerhalb der einzelnen Netze und Verbindung der Netze untereinander mittels statischen Routen in der ```main-lf9.pkt``` und mittels OSPFv3 in der ```main-ospfv3-lf9.pkt```.
+> Connections within the individual networks and connection of the networks to each other by means of static routes in the ```main-lf9.pkt``` and with OSPFv3 in the ```main-ospfv3-lf9.pkt```.
 
-- Banner erstellen
+- Banner creation (Banner erstellen)
 
-> Banner bei Zugriff auf einen Router und Switch. Für die Abschreckung von unicht autorisierten Usern.
+> Banner when accessing a router and switch. For the deterrent of unauthorized users.
 
-- Passwort Konfiguration
+- Password configuration (Passwort Konfiguration)
 
-> Passwörter, wenn man direkt am Switch oder Router ist (Generierte Passwörter).
+> Passwords if you are directly on the switch or router (generated passwords).
 
-- SSH Zugänge
+- SSH access (SSH Zugänge)
 
-> Mittels SSH an die Router und Switche pingen.
+> Ping to the routers and switches with ssh.
 
-- ACL Konfiguration
+- ACL configuration (ACL Konfiguration)
 
-> Zugriff mittels Regeln einschränken: Hamburg kann nur http und ping zu Berlin und München. Nur Hamburg kann ebenfalls SSH auf alle Router & Switches. Https können alle.
+> Restrict access by means of rules: Only Hamburg can use HTTP and Ping to Berlin and München. Only Hamburg can also use ssh to connect to all routers & switches. All clients can use https.
 
 ## Transportnetz Router Config
+
+> The config scripts are only available with German comments
 
 ### Alle Router
 
